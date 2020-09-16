@@ -11,7 +11,7 @@ import {
 const Home = (props) => {
   return (
     <Grid style={{ marginTop: "1em" }} container direction="column">
-      <Typography>Testing</Typography>
+      <Typography>Hello</Typography>
     </Grid>
   );
 };
