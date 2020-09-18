@@ -9,11 +9,7 @@ import {
 } from "@material-ui/core";
 
 const Home = (props) => {
-  return (
-    <Grid style={{ marginTop: "1em" }} container direction="column">
-      <Typography>Hello</Typography>
-    </Grid>
-  );
+  return <div>Home</div>;
 };
 
 export default Home;

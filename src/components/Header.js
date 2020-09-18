@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import {
   AppBar,
+  CssBaseline,
   Toolbar,
   Backdrop,
   List,
@@ -32,24 +34,18 @@ const ElevationScroll = (props) => {
 const useStyles = makeStyles((theme) => ({
   toolbarMargin: {
     ...theme.mixins.toolbar,
-    marginBottom: "3em",
-    [theme.breakpoints.down("md")]: {
-      marginBottom: "2em",
-    },
-    [theme.breakpoints.down("xs")]: {
-      marginBottom: "1em",
-    },
+    marginBottom: '3em'
   },
   menuIcon: {
     color: "#ffffff",
   },
   logoIcon: {
     color: "#ffffff",
-    fontSize: '8rem'
+    fontSize: "8rem",
   },
   menu: {
     zIndex: 1305,
-    background: 'rgba(0,0,0,0.8)',
+    background: "rgba(0,0,0,0.8)",
   },
   listItem: {
     color: "#ffffff",
@@ -65,22 +61,22 @@ const Header = (props) => {
   return (
     <>
       {openMenu ? null : (
-        <AppBar position="fixed">
-          <Toolbar disableGutters>
-            <IconButton
-              className={classes.menuIcon}
-              onClick={() => setOpenMenu(!openMenu)}
-              disableRipple
-            >
-              <MenuIcon />
-            </IconButton>
-            <IconButton>
-              <SportsBasketballIcon className={classes.logoIcon} />
-            </IconButton>
-          </Toolbar>
-        </AppBar>
+        <>
+          <AppBar position="fixed">
+            <Toolbar disableGutters>
+              <IconButton
+                className={classes.menuIcon}
+                onClick={() => setOpenMenu(!openMenu)}
+                disableRipple
+              >
+                <MenuIcon />
+              </IconButton>
+              {/*----Logo will go here-----*/}
+            </Toolbar>
+          </AppBar>
+          <div className={classes.toolbarMargin} />
+        </>
       )}
-      <div className={classes.toolbarMargin} />
 
       <Backdrop
         open={openMenu}
@@ -100,20 +96,20 @@ const Header = (props) => {
             </Grid>
             <Grid item>
               <List disablePadding>
-                <ListItem button>
+                <ListItem button component={Link} to="/">
                   <ListItemText className={classes.listItem}>Home</ListItemText>
                 </ListItem>
-                <ListItem button>
+                <ListItem button component={Link} to="/about">
                   <ListItemText className={classes.listItem}>
                     About Me
                   </ListItemText>
                 </ListItem>
-                <ListItem button>
+                <ListItem button component={Link} to="/muses">
                   <ListItemText className={classes.listItem}>
                     Muses
                   </ListItemText>
                 </ListItem>
-                <ListItem button>
+                <ListItem button component={Link} to="/contact">
                   <ListItemText className={classes.listItem}>
                     Contact Me
                   </ListItemText>
