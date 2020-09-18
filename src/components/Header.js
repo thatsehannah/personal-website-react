@@ -43,9 +43,18 @@ const useStyles = makeStyles((theme) => ({
   menuIcon: {
     color: "#ffffff",
   },
+  logoIcon: {
+    color: "#ffffff",
+    fontSize: '8rem'
+  },
   menu: {
-    zIndex: 1305
-  }
+    zIndex: 1305,
+    background: 'rgba(0,0,0,0.8)',
+  },
+  listItem: {
+    color: "#ffffff",
+    fontSize: "50rem",
+  },
 }));
 
 const Header = (props) => {
@@ -66,14 +75,18 @@ const Header = (props) => {
               <MenuIcon />
             </IconButton>
             <IconButton>
-              <SportsBasketballIcon />
+              <SportsBasketballIcon className={classes.logoIcon} />
             </IconButton>
           </Toolbar>
         </AppBar>
       )}
       <div className={classes.toolbarMargin} />
 
-      <Backdrop open={openMenu} className={classes.menu} onClick={() => setOpenMenu(false)}>
+      <Backdrop
+        open={openMenu}
+        className={classes.menu}
+        onClick={() => setOpenMenu(false)}
+      >
         <Grid container direction="row" style={{ height: "100%" }}>
           <Grid
             item
@@ -83,27 +96,25 @@ const Header = (props) => {
             justify="center"
           >
             <Grid item>
-              <SportsBasketballIcon />
+              <SportsBasketballIcon className={classes.logoIcon} />
             </Grid>
             <Grid item>
               <List disablePadding>
                 <ListItem button>
-                  <ListItemText style={{ color: "white", fontSize: "50rem" }}>
-                    Home
-                  </ListItemText>
+                  <ListItemText className={classes.listItem}>Home</ListItemText>
                 </ListItem>
                 <ListItem button>
-                  <ListItemText style={{ color: "white", fontSize: "5rem" }}>
+                  <ListItemText className={classes.listItem}>
                     About Me
                   </ListItemText>
                 </ListItem>
                 <ListItem button>
-                  <ListItemText style={{ color: "white", fontSize: "5rem" }}>
+                  <ListItemText className={classes.listItem}>
                     Muses
                   </ListItemText>
                 </ListItem>
                 <ListItem button>
-                  <ListItemText style={{ color: "white", fontSize: "5rem" }}>
+                  <ListItemText className={classes.listItem}>
                     Contact Me
                   </ListItemText>
                 </ListItem>
