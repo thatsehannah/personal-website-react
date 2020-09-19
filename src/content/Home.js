@@ -4,16 +4,19 @@ import {
   Typography,
   makeStyles,
   Avatar,
+  useTheme,
+  useMediaQuery,
 } from "@material-ui/core";
 import SocialMedia from "../components/SocialMedia";
 
-import landingBackgroundImg from "../assets/Miami_Sunset.jpg";
+//import landingBackgroundImg from "../assets/Hollywood.jpg";
+import landingBackgroundImg from "../assets/LA_Skyline.jpeg";
 import Me from "../assets/Me.jpeg";
 
 const useStyles = makeStyles((theme) => ({
   mainContainer: {
-    marginTop: '-1.2rem',
-    padding: 0
+    marginTop: "-3rem",
+    padding: 0,
   },
   landingBackground: {
     backgroundImage: `url(${landingBackgroundImg})`,
@@ -23,19 +26,47 @@ const useStyles = makeStyles((theme) => ({
     backgroundSize: "cover",
     height: "100vh",
     width: "100vw",
-    paddingTop: "5em",
+    paddingTop: "3em",
+    [theme.breakpoints.down("sm")]: {
+      backgroundAttachment: 'scroll'
+    },
+  },
+  sectionContainer: {
+    height: "100vh",
+    width: "100vw",
   },
   avatar: {
     width: theme.spacing(40),
     height: theme.spacing(40),
+    [theme.breakpoints.down("md")]: {
+      width: theme.spacing(35),
+      height: theme.spacing(35),
+    },
+    [theme.breakpoints.down('xs')]: {
+      width: theme.spacing(24),
+      height: theme.spacing(24)
+    }
   },
   superscript: {
-    fontSize: '0.5em'
+    fontSize: "0.5em",
+  },
+  name: {
+    [theme.breakpoints.down('xs')]: {
+      fontSize: '2rem'
+    },
+    [theme.breakpoints.down('md')]: {
+      fontSize: ''
+    }
   }
 }));
 
 const Home = (props) => {
   const classes = useStyles();
+  const theme = useTheme();
+  //const matchesMD = useMediaQuery(theme.breakpoints.down('md'))
+  const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
+  const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
+
 
   return (
     <Grid container className={classes.mainContainer} direction="column">
@@ -49,18 +80,22 @@ const Home = (props) => {
         <Grid item>
           <Avatar src={Me} className={classes.avatar} />
         </Grid>
-        <Grid item>
-          <Typography variant="h2" align="center">
+        <Grid item style={{marginTop: '1.5em'}}>
+          <Typography
+            variant="h2"
+            style={{ fontSize: matchesXS ? '2rem' : '5.5rem' }}
+            align="center"
+          >
             Elliot C. Hannah
             <sup className={classes.superscript}>III</sup>
           </Typography>
-          <Typography variant="subtitle1" align="center">
+          <Typography variant="subtitle1" style={{ fontSize: matchesXS ? '1rem' : '2.5rem' }} align="center">
             - FULL STACK DEVELOPER -
           </Typography>
         </Grid>
-        <SocialMedia size='90' />
+        <SocialMedia size="90" />
       </Grid>
-      <Grid container>
+      <Grid container className={classes.sectionContainer}>
         <Grid item>
           <Typography variant="body1">What's good?</Typography>
         </Grid>

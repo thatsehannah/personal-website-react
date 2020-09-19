@@ -1,5 +1,11 @@
 import React from "react";
-import { Grid, makeStyles, IconButton } from "@material-ui/core";
+import {
+  Grid,
+  makeStyles,
+  useTheme,
+  IconButton,
+  useMediaQuery,
+} from "@material-ui/core";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import FacebookIcon from "@material-ui/icons/Facebook";
 import InstagramIcon from "@material-ui/icons/Instagram";
@@ -10,13 +16,19 @@ const useStyles = makeStyles((theme) => ({
   },
   icon: {
     color: "#ffffff",
-    marginRight: '0.5em',
-    marginLeft: '0.5em'
+    marginRight: "0.5em",
+    marginLeft: "0.5em",
+    [theme.breakpoints.down("xs")]: {
+      marginRight: 0,
+      marginLeft: '0.2em'
+    },
   },
 }));
 
 const SocialMedia = (props) => {
   const classes = useStyles();
+  const theme = useTheme();
+  const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
 
   return (
     <Grid
@@ -34,7 +46,10 @@ const SocialMedia = (props) => {
         target="_blank"
       >
         <IconButton className={classes.icon}>
-          <FacebookIcon color={props.color} style={{ fontSize: props.size }} />
+          <FacebookIcon
+            color={props.color}
+            style={{ fontSize: matchesXS ? "50" : props.size }}
+          />
         </IconButton>
       </Grid>
       <Grid
@@ -44,8 +59,11 @@ const SocialMedia = (props) => {
         rel="noopener noreferrer"
         target="_blank"
       >
-        <IconButton  className={classes.icon}>
-          <InstagramIcon color={props.color} style={{ fontSize: props.size }} />
+        <IconButton className={classes.icon}>
+          <InstagramIcon
+            color={props.color}
+            style={{ fontSize: matchesXS ? "50" : props.size }}
+          />
         </IconButton>
       </Grid>
       <Grid
@@ -56,7 +74,10 @@ const SocialMedia = (props) => {
         target="_blank"
       >
         <IconButton className={classes.icon}>
-          <LinkedInIcon color={props.color} style={{ fontSize: props.size }} />
+          <LinkedInIcon
+            color={props.color}
+            style={{ fontSize: matchesXS ? "50" : props.size }}
+          />
         </IconButton>
       </Grid>
     </Grid>

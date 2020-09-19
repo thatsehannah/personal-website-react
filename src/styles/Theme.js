@@ -1,12 +1,12 @@
 import { createMuiTheme } from "@material-ui/core/styles";
 
-const ehannahGold = "#9B004C";
+const ehannahGold = "#d4af37";
 
 const theme = createMuiTheme({
   palette: {
     common: {
       black: "#000000",
-      pink: ehannahGold,
+      gold: ehannahGold,
       white: "#ffffff",
     },
     primary: {
@@ -17,12 +17,11 @@ const theme = createMuiTheme({
     },
   },
   typography: {
-    fontSize: 40,
     h2: {
       fontFamily: 'Permanent Marker',
       fontWeight: 700,
-      fontSize: '7.5rem',
-      color: '#ffffff'
+      fontSize: '5.5rem',
+      color: '#ffffff',
     },
     subtitle1: {
       fontWeight: 400,

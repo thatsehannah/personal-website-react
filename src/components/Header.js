@@ -16,10 +16,17 @@ import MenuIcon from "@material-ui/icons/Menu";
 const useStyles = makeStyles((theme) => ({
   toolbarMargin: {
     ...theme.mixins.toolbar,
-    marginBottom: "3em",
+    marginBottom: "1em",
   },
   menuIcon: {
-    color: theme.palette.common.pink,
+    fontSize: 50,
+    color: theme.palette.common.gold,
+    [theme.breakpoints.down("xs")]: {
+      fontSize: 30,
+    },
+    [theme.breakpoints.down('md')] : {
+      fontSize: 40
+    }
   },
   logoIcon: {
     color: "#ffffff",
@@ -43,12 +50,8 @@ const Header = (props) => {
     <>
       <AppBar position="fixed">
         <Toolbar disableGutters>
-          <IconButton
-            className={classes.menuIcon}
-            onClick={() => setOpenMenu(!openMenu)}
-            disableRipple
-          >
-            <MenuIcon />
+          <IconButton onClick={() => setOpenMenu(!openMenu)} disableRipple>
+            <MenuIcon className={classes.menuIcon} />
           </IconButton>
           {/*----Logo will go here-----*/}
         </Toolbar>
