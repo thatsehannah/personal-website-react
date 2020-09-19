@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import {
   AppBar,
-  CssBaseline,
   Toolbar,
   Backdrop,
   List,
@@ -11,33 +10,16 @@ import {
   IconButton,
   Grid,
   makeStyles,
-  useTheme,
 } from "@material-ui/core";
-import useScrollTrigger from "@material-ui/core/useScrollTrigger";
 import MenuIcon from "@material-ui/icons/Menu";
-import CloseIcon from "@material-ui/icons/Close";
-import SportsBasketballIcon from "@material-ui/icons/SportsBasketball";
-
-const ElevationScroll = (props) => {
-  const { children } = props;
-
-  const trigger = useScrollTrigger({
-    disableHysteresis: true,
-    threshold: 0,
-  });
-
-  return React.cloneElement(children, {
-    elevation: trigger ? 4 : 0,
-  });
-};
 
 const useStyles = makeStyles((theme) => ({
   toolbarMargin: {
     ...theme.mixins.toolbar,
-    marginBottom: '3em'
+    marginBottom: "3em",
   },
   menuIcon: {
-    color: "#ffffff",
+    color: theme.palette.common.pink,
   },
   logoIcon: {
     color: "#ffffff",
@@ -45,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
   },
   menu: {
     zIndex: 1305,
-    background: "rgba(0,0,0,0.8)",
+    background: "rgba(0,0,0,0.9)",
   },
   listItem: {
     color: "#ffffff",
@@ -56,27 +38,23 @@ const useStyles = makeStyles((theme) => ({
 const Header = (props) => {
   const [openMenu, setOpenMenu] = useState(false);
   const classes = useStyles();
-  const theme = useTheme();
 
   return (
     <>
-      {openMenu ? null : (
-        <>
-          <AppBar position="fixed">
-            <Toolbar disableGutters>
-              <IconButton
-                className={classes.menuIcon}
-                onClick={() => setOpenMenu(!openMenu)}
-                disableRipple
-              >
-                <MenuIcon />
-              </IconButton>
-              {/*----Logo will go here-----*/}
-            </Toolbar>
-          </AppBar>
-          <div className={classes.toolbarMargin} />
-        </>
-      )}
+      <AppBar position="fixed">
+        <Toolbar disableGutters>
+          <IconButton
+            className={classes.menuIcon}
+            onClick={() => setOpenMenu(!openMenu)}
+            disableRipple
+          >
+            <MenuIcon />
+          </IconButton>
+          {/*----Logo will go here-----*/}
+        </Toolbar>
+      </AppBar>
+
+      <div className={classes.toolbarMargin} />
 
       <Backdrop
         open={openMenu}
@@ -91,9 +69,6 @@ const Header = (props) => {
             alignItems="center"
             justify="center"
           >
-            <Grid item>
-              <SportsBasketballIcon className={classes.logoIcon} />
-            </Grid>
             <Grid item>
               <List disablePadding>
                 <ListItem button component={Link} to="/">

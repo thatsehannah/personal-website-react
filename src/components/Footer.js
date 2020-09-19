@@ -1,8 +1,6 @@
 import React from "react";
-import { Grid, makeStyles, IconButton, Typography } from "@material-ui/core";
-import LinkedInIcon from "@material-ui/icons/LinkedIn";
-import FacebookIcon from "@material-ui/icons/Facebook";
-import InstagramIcon from "@material-ui/icons/Instagram";
+import { Grid, makeStyles, Typography } from "@material-ui/core";
+import SocialMedia from "./SocialMedia";
 
 const useStyles = makeStyles((theme) => ({
   footer: {
@@ -50,47 +48,7 @@ const Footer = (props) => {
             -Kobe Bryant
           </Typography>
         </Grid>
-        <Grid
-          item
-          container
-          className={classes.socialContainer}
-          justify="center"
-          alignItems="flex-end"
-        >
-          <Grid
-            item
-            component={"a"}
-            href="https:///wwww.facebook.com/ehannahiii"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <IconButton className={classes.icon}>
-              <FacebookIcon style={{ fontSize: 45 }} />
-            </IconButton>
-          </Grid>
-          <Grid
-            item
-            component={"a"}
-            href="https:///wwww.instagram.com/thatsehannah"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <IconButton className={classes.icon}>
-              <InstagramIcon style={{ fontSize: 45 }} />
-            </IconButton>
-          </Grid>
-          <Grid
-            item
-            component={"a"}
-            href="https:///wwww.linkedin.com/in/elliotchannahiii"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <IconButton className={classes.icon}>
-              <LinkedInIcon style={{ fontSize: 45 }} />
-            </IconButton>
-          </Grid>
-        </Grid>
+        <SocialMedia color="secondary" size="48" />
       </Grid>
     </footer>
   );

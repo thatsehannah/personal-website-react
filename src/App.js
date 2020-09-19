@@ -5,10 +5,10 @@ import theme from "./styles/Theme";
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import Home from "./components/Home";
-import ContactMe from "./components/ContactMe";
-import AboutMe from "./components/AboutMe";
-import Muses from "./components/Muses";
+import Home from "./content/Home";
+import ContactMe from "./content/ContactMe";
+import AboutMe from "./content/AboutMe";
+import Muses from "./content/Muses";
 
 const App = () => {
   return (
