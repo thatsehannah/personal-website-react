@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: "0.5em",
     [theme.breakpoints.down("xs")]: {
       marginRight: 0,
-      marginLeft: '0.2em'
+      marginLeft: "0.2em",
     },
   },
 }));
@@ -28,6 +28,7 @@ const useStyles = makeStyles((theme) => ({
 const SocialMedia = (props) => {
   const classes = useStyles();
   const theme = useTheme();
+  const matchesMD = useMediaQuery(theme.breakpoints.down("md"));
   const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
 
   return (
@@ -48,7 +49,9 @@ const SocialMedia = (props) => {
         <IconButton className={classes.icon}>
           <FacebookIcon
             color={props.color}
-            style={{ fontSize: matchesXS ? "50" : props.size }}
+            style={{
+              fontSize: matchesXS ? "40" : matchesMD ? "70" : props.size,
+            }}
           />
         </IconButton>
       </Grid>
@@ -62,7 +65,9 @@ const SocialMedia = (props) => {
         <IconButton className={classes.icon}>
           <InstagramIcon
             color={props.color}
-            style={{ fontSize: matchesXS ? "50" : props.size }}
+            style={{
+              fontSize: matchesXS ? "40" : matchesMD ? "70" : props.size,
+            }}
           />
         </IconButton>
       </Grid>
@@ -76,7 +81,9 @@ const SocialMedia = (props) => {
         <IconButton className={classes.icon}>
           <LinkedInIcon
             color={props.color}
-            style={{ fontSize: matchesXS ? "50" : props.size }}
+            style={{
+              fontSize: matchesXS ? "40" : matchesMD ? "70" : props.size,
+            }}
           />
         </IconButton>
       </Grid>

@@ -27,74 +27,93 @@ const useStyles = makeStyles((theme) => ({
     height: "100vh",
     width: "100vw",
     paddingTop: "3em",
-    [theme.breakpoints.down("sm")]: {
-      backgroundAttachment: 'scroll'
+    [theme.breakpoints.down("md")]: {
+      backgroundAttachment: "scroll",
+      paddingTop: "6em",
     },
   },
   sectionContainer: {
     height: "100vh",
     width: "100vw",
+    [theme.breakpoints.down("md")]: {},
   },
   avatar: {
-    width: theme.spacing(40),
-    height: theme.spacing(40),
+    width: theme.spacing(60),
+    height: theme.spacing(60),
     [theme.breakpoints.down("md")]: {
-      width: theme.spacing(35),
-      height: theme.spacing(35),
+      width: theme.spacing(50),
+      height: theme.spacing(50),
     },
-    [theme.breakpoints.down('xs')]: {
-      width: theme.spacing(24),
-      height: theme.spacing(24)
-    }
+    [theme.breakpoints.down("xs")]: {
+      width: theme.spacing(23),
+      height: theme.spacing(23),
+    },
   },
   superscript: {
     fontSize: "0.5em",
   },
   name: {
-    [theme.breakpoints.down('xs')]: {
-      fontSize: '2rem'
+    fontSize: "8rem",
+    [theme.breakpoints.down("md")]: {
+      fontSize: "5rem",
     },
-    [theme.breakpoints.down('md')]: {
-      fontSize: ''
-    }
-  }
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "4rem",
+    },
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "2.2rem",
+    },
+  },
+  title: {
+    fontSize: "3rem",
+    [theme.breakpoints.down("md")]: {
+      fontSize: "2.5rem",
+    },
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "2.25rem",
+    },
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "1.1rem",
+    },
+  },
 }));
 
 const Home = (props) => {
   const classes = useStyles();
   const theme = useTheme();
-  //const matchesMD = useMediaQuery(theme.breakpoints.down('md'))
-  const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
-  const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
-
+  const matchesMD = useMediaQuery(theme.breakpoints.down("md"));
 
   return (
     <Grid container className={classes.mainContainer} direction="column">
-      <Grid
-        item
-        container
-        direction="column"
-        alignItems="center"
-        className={classes.landingBackground}
-      >
-        <Grid item>
-          <Avatar src={Me} className={classes.avatar} />
+      <Grid container className={classes.sectionContainer}>
+        <Grid
+          item
+          container
+          direction="column"
+          justify={matchesMD ? undefined : "center"}
+          alignItems="center"
+          className={classes.landingBackground}
+        >
+          <Grid item>
+            <Avatar src={Me} className={classes.avatar} />
+          </Grid>
+          <Grid item style={{ marginTop: "1.5em" }}>
+            <Typography variant="h2" className={classes.name} align="center">
+              Elliot C. Hannah
+              <sup className={classes.superscript}>III</sup>
+            </Typography>
+            <Typography
+              variant="subtitle1"
+              className={classes.title}
+              align="center"
+            >
+              - FULL STACK DEVELOPER -
+            </Typography>
+          </Grid>
+          <SocialMedia size="90" />
         </Grid>
-        <Grid item style={{marginTop: '1.5em'}}>
-          <Typography
-            variant="h2"
-            style={{ fontSize: matchesXS ? '2rem' : '5.5rem' }}
-            align="center"
-          >
-            Elliot C. Hannah
-            <sup className={classes.superscript}>III</sup>
-          </Typography>
-          <Typography variant="subtitle1" style={{ fontSize: matchesXS ? '1rem' : '2.5rem' }} align="center">
-            - FULL STACK DEVELOPER -
-          </Typography>
-        </Grid>
-        <SocialMedia size="90" />
       </Grid>
+
       <Grid container className={classes.sectionContainer}>
         <Grid item>
           <Typography variant="body1">What's good?</Typography>
