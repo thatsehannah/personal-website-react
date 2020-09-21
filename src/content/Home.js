@@ -15,32 +15,41 @@ import landingBackgroundDark from "../assets/LA_Skyline.jpeg";
 import Me from "../assets/Me.jpeg";
 
 const useStyles = makeStyles((theme) => ({
-  mainContainer: {
-    marginTop: "-3rem",
+  mainContainer: {},
+  profile: {
+    width: "auto",
+    height: "auto",
+    padding: "0.5em",
+    [theme.breakpoints.down("xs")]: {
+      marginTop: "3em",
+    },
   },
-  landingBackground: {
+  sectionContainer: {
     backgroundAttachment: "fixed",
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
     height: "100vh",
-    width: "100vw",
-    [theme.breakpoints.down("md")]: {
+    width: "100%",
+    [theme.breakpoints.down("sm")]: {
       backgroundAttachment: "scroll",
+      height: "auto",
     },
-  },
-  sectionContainer: {
-    height: "100vh",
-    width: "100vw",
   },
   avatar: {
-    width: "18em",
-    height: "18em",
+    width: "20em",
+    height: "20em",
+    marginTop: "1em",
+    marginBottom: "0.5em",
     [theme.breakpoints.down("md")]: {
-      width: "13em",
-      height: "13em",
+      width: "15em",
+      height: "15em",
     },
     [theme.breakpoints.down("sm")]: {
+      width: "12em",
+      height: "12em",
+    },
+    [theme.breakpoints.down("xs")]: {
       width: "8em",
       height: "8em",
     },
@@ -51,21 +60,25 @@ const useStyles = makeStyles((theme) => ({
   name: {
     fontSize: "8rem",
     [theme.breakpoints.down("md")]: {
-      fontSize: "5rem",
+      fontSize: "6rem",
     },
-    
     [theme.breakpoints.down("sm")]: {
-      fontSize: "2.2rem",
+      fontSize: "4rem",
+    },
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "2rem",
     },
   },
   title: {
-    fontSize: "3rem",
+    fontSize: "4rem",
     [theme.breakpoints.down("md")]: {
-      fontSize: "2.5rem",
+      fontSize: "3rem",
     },
-    
     [theme.breakpoints.down("sm")]: {
-      fontSize: "1.1rem",
+      fontSize: "2rem",
+    },
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "1rem",
     },
   },
 }));
@@ -75,7 +88,14 @@ const Home = (props) => {
   const theme = useTheme();
   const matchesMD = useMediaQuery(theme.breakpoints.down("md"));
   const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
-  const iconSize = matchesSM ? 34 : matchesMD ? 56 : 81;
+  const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
+  const iconSize = matchesXS
+    ? "1.5em"
+    : matchesSM
+    ? "2.5em"
+    : matchesMD
+    ? "3em"
+    : "4em";
 
   const background =
     props.mode.modeName === "light"
@@ -84,20 +104,27 @@ const Home = (props) => {
 
   return (
     <Grid container className={classes.mainContainer} direction="column">
-      <Grid container className={classes.sectionContainer}>
+      <Grid
+        item
+        container
+        className={classes.sectionContainer}
+        style={{
+          backgroundImage: `url(${background})`,
+        }}
+        justify="center"
+        alignItems="center"
+      >
         <Grid
           item
           container
           direction="column"
-          justify="center"
           alignItems="center"
-          className={classes.landingBackground}
-          style={{ backgroundImage: `url(${background})` }}
+          className={classes.profile}
         >
-          <Grid item>
+          <Grid item sm>
             <Avatar src={Me} className={classes.avatar} />
           </Grid>
-          <Grid item style={{ marginTop: "1.5em" }}>
+          <Grid item sm>
             <Typography variant="h2" className={classes.name} align="center">
               Elliot C. Hannah
               <sup className={classes.superscript}>III</sup>
@@ -110,13 +137,16 @@ const Home = (props) => {
               - FULL STACK DEVELOPER -
             </Typography>
           </Grid>
-          <SocialMedia color="#ffffff" size={iconSize} />
+          <Grid item sm style={{ marginBottom: "4em" }}>
+            <SocialMedia color="#ffffff" size={iconSize} />
+          </Grid>
         </Grid>
       </Grid>
-
-      <Grid container className={classes.sectionContainer}>
-        <Grid item>
-          <Typography variant="body1">What's good?</Typography>
+      <Grid item className={classes.sectionContainer}>
+        <Grid container>
+          <Grid item>
+            <Typography variant="body1">What's good?</Typography>
+          </Grid>
         </Grid>
       </Grid>
     </Grid>

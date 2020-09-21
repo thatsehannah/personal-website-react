@@ -14,9 +14,9 @@ const useStyles = makeStyles((theme) => ({
     "&:hover": {
       backgroundColor: "transparent",
     },
-    [theme.breakpoints.down("xs")]: {
+    [theme.breakpoints.down("sm")]: {
       marginRight: 0,
-      marginLeft: "0.2em",
+      marginLeft: 0,
     },
   },
   icon: {

@@ -21,7 +21,7 @@ import { connect } from "react-redux";
 const useStyles = makeStyles((theme) => ({
   toolbarMargin: {
     ...theme.mixins.toolbar,
-    marginBottom: "1em",
+    marginBottom: "-1em",
   },
   appBar: {
     backgroundColor: theme.palette.common.base,
@@ -32,16 +32,14 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   menuIcon: {
-    fontSize: 50,
-    marginLeft: "auto",
+    fontSize: "2em",
     color: theme.palette.secondary.main,
-
-    [theme.breakpoints.down("xs")]: {
-      fontSize: 30,
-    },
     [theme.breakpoints.down("md")]: {
-      fontSize: 40,
+      fontSize: '1.5em',
     },
+    [theme.breakpoints.down('xs')]: {
+      fontSize: '1.2em'
+    }
   },
   menu: {
     zIndex: 1305,
