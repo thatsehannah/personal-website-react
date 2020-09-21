@@ -1,33 +1,32 @@
 import { createMuiTheme } from "@material-ui/core/styles";
 
-const ehannahGold = "#d4af37";
+const standoutColor = "#d4af37";
 
 const theme = createMuiTheme({
   palette: {
     common: {
-      black: "#000000",
-      gold: ehannahGold,
-      white: "#ffffff",
+      base: "#000000",
+      standout: standoutColor,
     },
     primary: {
       main: "#000000",
     },
     secondary: {
-      main: ehannahGold,
+      main: standoutColor,
     },
   },
   typography: {
     h2: {
-      fontFamily: 'Permanent Marker',
+      fontFamily: "Permanent Marker",
       fontWeight: 700,
-      fontSize: '5.5rem',
-      color: '#ffffff',
+      fontSize: "5.5rem",
+      color: "#ffffff",
     },
     subtitle1: {
       fontWeight: 400,
-      fontSize: '2.5rem',
-      color: '#ffffff'
-    }
+      fontSize: "2.5rem",
+      color: "#ffffff",
+    },
   },
 });
 

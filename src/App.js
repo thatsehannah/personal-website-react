@@ -1,7 +1,7 @@
 import React from "react";
+import { connect } from "react-redux";
 import { ThemeProvider } from "@material-ui/styles";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import theme from "./styles/Theme";
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -10,9 +10,9 @@ import ContactMe from "./content/ContactMe";
 import AboutMe from "./content/AboutMe";
 import Muses from "./content/Muses";
 
-const App = () => {
+const App = (props) => {
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={props.mode.theme}>
       <BrowserRouter>
         <Header />
         <Switch>
@@ -27,4 +27,10 @@ const App = () => {
   );
 };
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    mode: state.mode,
+  };
+};
+
+export default connect(mapStateToProps)(App);

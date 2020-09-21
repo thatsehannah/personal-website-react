@@ -1,4 +1,5 @@
 import React from "react";
+import { connect } from "react-redux";
 import {
   Grid,
   Typography,
@@ -9,44 +10,39 @@ import {
 } from "@material-ui/core";
 import SocialMedia from "../components/SocialMedia";
 
-//import landingBackgroundImg from "../assets/Hollywood.jpg";
-import landingBackgroundImg from "../assets/LA_Skyline.jpeg";
+import landingBackgroundLight from "../assets/DT_Skyline1.jpg";
+import landingBackgroundDark from "../assets/LA_Skyline.jpeg";
 import Me from "../assets/Me.jpeg";
 
 const useStyles = makeStyles((theme) => ({
   mainContainer: {
     marginTop: "-3rem",
-    padding: 0,
   },
   landingBackground: {
-    backgroundImage: `url(${landingBackgroundImg})`,
     backgroundAttachment: "fixed",
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
     height: "100vh",
     width: "100vw",
-    paddingTop: "3em",
     [theme.breakpoints.down("md")]: {
       backgroundAttachment: "scroll",
-      paddingTop: "6em",
     },
   },
   sectionContainer: {
     height: "100vh",
     width: "100vw",
-    [theme.breakpoints.down("md")]: {},
   },
   avatar: {
-    width: theme.spacing(60),
-    height: theme.spacing(60),
+    width: "18em",
+    height: "18em",
     [theme.breakpoints.down("md")]: {
-      width: theme.spacing(50),
-      height: theme.spacing(50),
+      width: "13em",
+      height: "13em",
     },
-    [theme.breakpoints.down("xs")]: {
-      width: theme.spacing(23),
-      height: theme.spacing(23),
+    [theme.breakpoints.down("sm")]: {
+      width: "8em",
+      height: "8em",
     },
   },
   superscript: {
@@ -57,10 +53,8 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("md")]: {
       fontSize: "5rem",
     },
+    
     [theme.breakpoints.down("sm")]: {
-      fontSize: "4rem",
-    },
-    [theme.breakpoints.down("xs")]: {
       fontSize: "2.2rem",
     },
   },
@@ -69,10 +63,8 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("md")]: {
       fontSize: "2.5rem",
     },
+    
     [theme.breakpoints.down("sm")]: {
-      fontSize: "2.25rem",
-    },
-    [theme.breakpoints.down("xs")]: {
       fontSize: "1.1rem",
     },
   },
@@ -82,6 +74,13 @@ const Home = (props) => {
   const classes = useStyles();
   const theme = useTheme();
   const matchesMD = useMediaQuery(theme.breakpoints.down("md"));
+  const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
+  const iconSize = matchesSM ? 34 : matchesMD ? 56 : 81;
+
+  const background =
+    props.mode.modeName === "light"
+      ? landingBackgroundLight
+      : landingBackgroundDark;
 
   return (
     <Grid container className={classes.mainContainer} direction="column">
@@ -90,9 +89,10 @@ const Home = (props) => {
           item
           container
           direction="column"
-          justify={matchesMD ? undefined : "center"}
+          justify="center"
           alignItems="center"
           className={classes.landingBackground}
+          style={{ backgroundImage: `url(${background})` }}
         >
           <Grid item>
             <Avatar src={Me} className={classes.avatar} />
@@ -110,7 +110,7 @@ const Home = (props) => {
               - FULL STACK DEVELOPER -
             </Typography>
           </Grid>
-          <SocialMedia size="90" />
+          <SocialMedia color="#ffffff" size={iconSize} />
         </Grid>
       </Grid>
 
@@ -123,4 +123,10 @@ const Home = (props) => {
   );
 };
 
-export default Home;
+const mapStateToProps = (state) => {
+  return {
+    mode: state.mode,
+  };
+};
+
+export default connect(mapStateToProps)(Home);

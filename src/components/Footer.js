@@ -1,10 +1,10 @@
 import React from "react";
-import { Grid, makeStyles, Typography } from "@material-ui/core";
+import { Grid, makeStyles, Typography, useTheme } from "@material-ui/core";
 import SocialMedia from "./SocialMedia";
 
 const useStyles = makeStyles((theme) => ({
   footer: {
-    backgroundColor: theme.palette.common.black,
+    backgroundColor: theme.palette.common.base,
     height: "20em",
     width: "100%",
     position: "relative",
@@ -16,10 +16,18 @@ const useStyles = makeStyles((theme) => ({
   icon: {
     color: "#ffffff",
   },
+  text: {
+    fontSize: 20,
+    color: theme.palette.secondary.main,
+    [theme.breakpoints.down("sm")]: {
+      fontSize: 14,
+    },
+  },
 }));
 
 const Footer = (props) => {
   const classes = useStyles();
+  const theme = useTheme();
 
   return (
     <footer className={classes.footer}>
@@ -34,21 +42,17 @@ const Footer = (props) => {
           <Typography
             align="center"
             variant="body1"
-            style={{ color: "white", fontSize: 20 }}
+            className={classes.text}
             gutterBottom
           >
             "Everything negative - pressure, challenges - is all an opportunity
             for me to rise"
           </Typography>
-          <Typography
-            align="center"
-            variant="body1"
-            style={{ color: "white", fontSize: 20 }}
-          >
+          <Typography align="center" variant="body1" className={classes.text}>
             -Kobe Bryant
           </Typography>
         </Grid>
-        <SocialMedia color="secondary" size="48" />
+        <SocialMedia color={theme.palette.common.standout} />
       </Grid>
     </footer>
   );

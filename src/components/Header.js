@@ -11,26 +11,37 @@ import {
   Grid,
   makeStyles,
 } from "@material-ui/core";
+
+import * as actionTypes from "../redux/actions";
+import LightModeIcon from "@material-ui/icons/Brightness4";
+import DarkModeIcon from "@material-ui/icons/Brightness7";
 import MenuIcon from "@material-ui/icons/Menu";
+import { connect } from "react-redux";
 
 const useStyles = makeStyles((theme) => ({
   toolbarMargin: {
     ...theme.mixins.toolbar,
     marginBottom: "1em",
   },
+  appBar: {
+    backgroundColor: theme.palette.common.base,
+  },
+  button: {
+    "&:hover": {
+      backgroundColor: theme.palette.common.base,
+    },
+  },
   menuIcon: {
     fontSize: 50,
-    color: theme.palette.common.gold,
+    marginLeft: "auto",
+    color: theme.palette.secondary.main,
+
     [theme.breakpoints.down("xs")]: {
       fontSize: 30,
     },
-    [theme.breakpoints.down('md')] : {
-      fontSize: 40
-    }
-  },
-  logoIcon: {
-    color: "#ffffff",
-    fontSize: "8rem",
+    [theme.breakpoints.down("md")]: {
+      fontSize: 40,
+    },
   },
   menu: {
     zIndex: 1305,
@@ -42,18 +53,41 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+let isLightMode = true;
+
 const Header = (props) => {
   const [openMenu, setOpenMenu] = useState(false);
-  const classes = useStyles();
+  const classes = useStyles(props);
+
+  const toggleModeWrapper = () => {
+    isLightMode = !isLightMode;
+    props.toggleModeHandler(isLightMode);
+  };
 
   return (
     <>
-      <AppBar position="fixed">
+      <AppBar position="fixed" className={classes.appBar}>
         <Toolbar disableGutters>
-          <IconButton onClick={() => setOpenMenu(!openMenu)} disableRipple>
+          <IconButton
+            className={classes.button}
+            onClick={() => setOpenMenu(!openMenu)}
+            disableRipple
+          >
             <MenuIcon className={classes.menuIcon} />
           </IconButton>
           {/*----Logo will go here-----*/}
+          {/*----Toggle Mode button will go here-----*/}
+          <IconButton
+            onClick={toggleModeWrapper}
+            disableRipple
+            className={classes.button}
+          >
+            {isLightMode ? (
+              <LightModeIcon className={classes.menuIcon} />
+            ) : (
+              <DarkModeIcon className={classes.menuIcon} />
+            )}
+          </IconButton>
         </Toolbar>
       </AppBar>
 
@@ -101,4 +135,20 @@ const Header = (props) => {
   );
 };
 
-export default Header;
+const mapStateToProps = (state) => {
+  return {
+    mode: state.mode,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    toggleModeHandler: (isLightMode) =>
+      dispatch({
+        type: actionTypes.TOGGLE_MODE,
+        payload: { isLight: isLightMode },
+      }),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);
