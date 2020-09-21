@@ -35,11 +35,15 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "2em",
     color: theme.palette.secondary.main,
     [theme.breakpoints.down("md")]: {
-      fontSize: '1.5em',
+      fontSize: "1.5em",
     },
-    [theme.breakpoints.down('xs')]: {
-      fontSize: '1.2em'
-    }
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "1.2em",
+    },
+  },
+  toggleModeIcon: {
+    fontSize: "1.2em",
+    color: theme.palette.secondary.main,
   },
   menu: {
     zIndex: 1305,
@@ -66,26 +70,36 @@ const Header = (props) => {
     <>
       <AppBar position="fixed" className={classes.appBar}>
         <Toolbar disableGutters>
-          <IconButton
-            className={classes.button}
-            onClick={() => setOpenMenu(!openMenu)}
-            disableRipple
+          <Grid
+            container
+            direction="row"
+            alignItems="center"
+            justify="space-between"
           >
-            <MenuIcon className={classes.menuIcon} />
-          </IconButton>
-          {/*----Logo will go here-----*/}
-          {/*----Toggle Mode button will go here-----*/}
-          <IconButton
-            onClick={toggleModeWrapper}
-            disableRipple
-            className={classes.button}
-          >
-            {isLightMode ? (
-              <LightModeIcon className={classes.menuIcon} />
-            ) : (
-              <DarkModeIcon className={classes.menuIcon} />
-            )}
-          </IconButton>
+            <Grid item>
+              <IconButton
+                className={classes.button}
+                onClick={() => setOpenMenu(!openMenu)}
+                disableRipple
+              >
+                <MenuIcon className={classes.menuIcon} />
+              </IconButton>
+            </Grid>
+            <Grid item>{/*----Logo will go here-----*/}</Grid>
+            <Grid item>
+              <IconButton
+                onClick={toggleModeWrapper}
+                disableRipple
+                className={classes.button}
+              >
+                {isLightMode ? (
+                  <LightModeIcon className={classes.toggleModeIcon} />
+                ) : (
+                  <DarkModeIcon className={classes.toggleModeIcon} />
+                )}
+              </IconButton>
+            </Grid>
+          </Grid>
         </Toolbar>
       </AppBar>
 
