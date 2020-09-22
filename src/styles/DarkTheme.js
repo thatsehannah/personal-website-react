@@ -5,11 +5,11 @@ const standoutColor = "#d4af37";
 const theme = createMuiTheme({
   palette: {
     common: {
-      base: "#000000",
+      base: "#202020",
       standout: standoutColor,
     },
     primary: {
-      main: "#000000",
+      main: "#202020",
     },
     secondary: {
       main: standoutColor,
