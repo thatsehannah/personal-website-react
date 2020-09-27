@@ -17,9 +17,8 @@ import Me from "../assets/Me.jpeg";
 const useStyles = makeStyles((theme) => ({
   mainContainer: {},
   profile: {
-    width: "auto",
+    width: "80%",
     height: "auto",
-    padding: "0.5em",
     [theme.breakpoints.down("xs")]: {
       marginTop: "3em",
     },
@@ -39,20 +38,6 @@ const useStyles = makeStyles((theme) => ({
   avatar: {
     width: "20em",
     height: "20em",
-    marginTop: "1em",
-    marginBottom: "0.5em",
-    [theme.breakpoints.down("md")]: {
-      width: "15em",
-      height: "15em",
-    },
-    [theme.breakpoints.down("sm")]: {
-      width: "12em",
-      height: "12em",
-    },
-    [theme.breakpoints.down("xs")]: {
-      width: "8em",
-      height: "8em",
-    },
   },
   superscript: {
     fontSize: "0.5em",
@@ -103,53 +88,7 @@ const Home = (props) => {
       : landingBackgroundDark;
 
   return (
-    <Grid container className={classes.mainContainer} direction="column">
-      <Grid
-        item
-        container
-        className={classes.sectionContainer}
-        style={{
-          backgroundImage: `url(${background})`,
-        }}
-        justify="center"
-        alignItems="center"
-      >
-        <Grid
-          item
-          container
-          direction="column"
-          alignItems="center"
-          className={classes.profile}
-        >
-          <Grid item sm>
-            <Avatar src={Me} className={classes.avatar} />
-          </Grid>
-          <Grid item sm>
-            <Typography variant="h2" className={classes.name} align="center">
-              Elliot C. Hannah
-              <sup className={classes.superscript}>III</sup>
-            </Typography>
-            <Typography
-              variant="subtitle1"
-              className={classes.title}
-              align="center"
-            >
-              - FULL STACK DEVELOPER -
-            </Typography>
-          </Grid>
-          <Grid item sm style={{ marginBottom: "4em" }}>
-            <SocialMedia color="#ffffff" size={iconSize} />
-          </Grid>
-        </Grid>
-      </Grid>
-      <Grid item className={classes.sectionContainer}>
-        <Grid container>
-          <Grid item>
-            <Typography variant="body1">What's good?</Typography>
-          </Grid>
-        </Grid>
-      </Grid>
-    </Grid>
+    <Grid container className={classes.mainContainer} direction="column"></Grid>
   );
 };
 

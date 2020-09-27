@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import useScrollTrigger from "@material-ui/core/useScrollTrigger";
 import {
   AppBar,
   Toolbar,
@@ -18,10 +19,23 @@ import DarkModeIcon from "@material-ui/icons/Brightness7";
 import MenuIcon from "@material-ui/icons/Menu";
 import { connect } from "react-redux";
 
+const ElevationScroll = (props) => {
+  const { children } = props;
+
+  const trigger = useScrollTrigger({
+    disableHysteresis: true,
+    threshold: 0,
+  });
+
+  return React.cloneElement(children, {
+    elevation: trigger ? 4 : 0,
+  });
+};
+
 const useStyles = makeStyles((theme) => ({
   toolbarMargin: {
     ...theme.mixins.toolbar,
-    marginBottom: "-1em",
+
   },
   appBar: {
     backgroundColor: theme.palette.common.base,
@@ -68,44 +82,44 @@ const Header = (props) => {
 
   return (
     <>
-      <AppBar position="fixed" className={classes.appBar}>
-        <Toolbar disableGutters>
-          <Grid
-            container
-            direction="row"
-            alignItems="center"
-            justify="space-between"
-          >
-            <Grid item>
-              <IconButton
-                className={classes.button}
-                onClick={() => setOpenMenu(!openMenu)}
-                disableRipple
-              >
-                <MenuIcon className={classes.menuIcon} />
-              </IconButton>
+      <ElevationScroll>
+        <AppBar position="fixed" className={classes.appBar}>
+          <Toolbar disableGutters>
+            <Grid
+              container
+              direction="row"
+              alignItems="center"
+              justify="space-between"
+            >
+              <Grid item>
+                <IconButton
+                  className={classes.button}
+                  onClick={() => setOpenMenu(!openMenu)}
+                  disableRipple
+                >
+                  <MenuIcon className={classes.menuIcon} />
+                </IconButton>
+              </Grid>
+              <Grid item>{/*----Logo will go here-----*/}</Grid>
+              <Grid item>
+                <IconButton
+                  onClick={toggleModeWrapper}
+                  disableRipple
+                  className={classes.button}
+                >
+                  {isLightMode ? (
+                    <LightModeIcon className={classes.toggleModeIcon} />
+                  ) : (
+                    <DarkModeIcon className={classes.toggleModeIcon} />
+                  )}
+                </IconButton>
+              </Grid>
             </Grid>
-            <Grid item>{/*----Logo will go here-----*/}</Grid>
-            <Grid item>
-              <IconButton
-                onClick={toggleModeWrapper}
-                disableRipple
-                className={classes.button}
-              >
-                {isLightMode ? (
-                  <LightModeIcon className={classes.toggleModeIcon} />
-                ) : (
-                  <DarkModeIcon className={classes.toggleModeIcon} />
-                )}
-              </IconButton>
-            </Grid>
-          </Grid>
-        </Toolbar>
-      </AppBar>
-
+          </Toolbar>
+        </AppBar>
+      </ElevationScroll>
       <div className={classes.toolbarMargin} />
-
-      <Backdrop
+      {/* <Backdrop
         open={openMenu}
         className={classes.menu}
         onClick={() => setOpenMenu(false)}
@@ -142,7 +156,7 @@ const Header = (props) => {
             </Grid>
           </Grid>
         </Grid>
-      </Backdrop>
+      </Backdrop> */}
     </>
   );
 };

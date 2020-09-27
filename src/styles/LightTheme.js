@@ -19,12 +19,12 @@ const theme = createMuiTheme({
     h2: {
       fontFamily: "Permanent Marker",
       fontWeight: 700,
-      fontSize: "5.5rem",
+      fontSize: "4rem",
       color: "#ffffff",
     },
     subtitle1: {
       fontWeight: 400,
-      fontSize: "2.5rem",
+      fontSize: "2rem",
       color: "#ffffff",
     },
   },
