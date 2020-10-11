@@ -1,6 +1,6 @@
 import * as actionTypes from "./actions";
-import LightTheme from "../styles/LightTheme";
-import DarkTheme from "../styles/DarkTheme";
+import LightTheme from "../themes/LightTheme";
+import DarkTheme from "../themes/DarkTheme";
 
 const initialState = {
   mode: {
