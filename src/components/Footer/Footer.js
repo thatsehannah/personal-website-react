@@ -1,29 +1,10 @@
 import React from "react";
-import { Grid, makeStyles, Typography, useTheme } from "@material-ui/core";
-import SocialMedia from "./SocialMedia";
+import { useTheme } from "@material-ui/core/styles";
+import Grid from "@material-ui/core/Grid";
+import Typography from "@material-ui/core/Typography";
 
-const useStyles = makeStyles((theme) => ({
-  footer: {
-    backgroundColor: theme.palette.common.base,
-    height: "20em",
-    width: "100%",
-    position: "relative",
-    marginTop: "1.5em",
-  },
-  socialContainer: {
-    right: "1.5em",
-  },
-  icon: {
-    color: "#ffffff",
-  },
-  text: {
-    fontSize: 20,
-    color: theme.palette.secondary.main,
-    [theme.breakpoints.down("sm")]: {
-      fontSize: 14,
-    },
-  },
-}));
+import { useStyles } from "./styles";
+import SocialMedia from "../SocialMedia/SocialMedia";
 
 const Footer = (props) => {
   const classes = useStyles();

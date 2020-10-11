@@ -3,12 +3,12 @@ import { connect } from "react-redux";
 import { ThemeProvider } from "@material-ui/styles";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import Home from "./content/Home";
-import ContactMe from "./content/ContactMe";
-import AboutMe from "./content/AboutMe";
-import Muses from "./content/Muses";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
+import Home from "./content/Home/Home";
+import Contact from "./content/Contact/Contact";
+import About from "./content/About/About";
+import Muses from "./content/Muses/Muses";
 
 const App = (props) => {
   return (
@@ -17,8 +17,8 @@ const App = (props) => {
         <Header />
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route exact path="/contact" component={ContactMe} />
-          <Route exact path="/about" component={AboutMe} />
+          <Route exact path="/contact" component={Contact} />
+          <Route exact path="/about" component={About} />
           <Route exact path="/muses" component={Muses} />
         </Switch>
         <Footer />

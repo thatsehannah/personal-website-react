@@ -1,23 +1,22 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import useScrollTrigger from "@material-ui/core/useScrollTrigger";
-import {
-  AppBar,
-  Toolbar,
-  Backdrop,
-  List,
-  ListItem,
-  ListItemText,
-  IconButton,
-  Grid,
-  makeStyles,
-} from "@material-ui/core";
+import { connect } from "react-redux";
 
-import * as actionTypes from "../redux/actions";
+import useScrollTrigger from "@material-ui/core/useScrollTrigger";
+import AppBar from '@material-ui/core/AppBar'
+import Toolbar from '@material-ui/core/Toolbar'
+import Backdrop from '@material-ui/core/Backdrop'
+import List from '@material-ui/core/List'
+import ListItem from '@material-ui/core/ListItem'
+import ListItemText from '@material-ui/core/ListItemText'
+import IconButton from '@material-ui/core/IconButton'
+import Grid from '@material-ui/core/Grid'
 import LightModeIcon from "@material-ui/icons/Brightness4";
 import DarkModeIcon from "@material-ui/icons/Brightness7";
 import MenuIcon from "@material-ui/icons/Menu";
-import { connect } from "react-redux";
+
+import { useStyles } from "./styles";
+import * as actionTypes from "../../redux/actions";
 
 const ElevationScroll = (props) => {
   const { children } = props;
@@ -31,43 +30,6 @@ const ElevationScroll = (props) => {
     elevation: trigger ? 4 : 0,
   });
 };
-
-const useStyles = makeStyles((theme) => ({
-  toolbarMargin: {
-    ...theme.mixins.toolbar,
-    marginBottom: '0.5em'
-  },
-  appBar: {
-    backgroundColor: theme.palette.common.base,
-  },
-  button: {
-    "&:hover": {
-      backgroundColor: theme.palette.common.base,
-    },
-  },
-  menuIcon: {
-    fontSize: "2em",
-    color: theme.palette.secondary.main,
-    [theme.breakpoints.down("md")]: {
-      fontSize: "1.5em",
-    },
-    [theme.breakpoints.down("xs")]: {
-      fontSize: "1.2em",
-    },
-  },
-  toggleModeIcon: {
-    fontSize: "1.5em",
-    color: theme.palette.secondary.main,
-  },
-  menu: {
-    zIndex: 1305,
-    background: "rgba(0,0,0,0.9)",
-  },
-  listItem: {
-    color: "#ffffff",
-    fontSize: "50rem",
-  },
-}));
 
 let isLightMode = true;
 

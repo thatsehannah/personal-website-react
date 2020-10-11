@@ -1,30 +1,13 @@
 import React from "react";
-import { Grid, makeStyles, IconButton } from "@material-ui/core";
+
+import IconButton from "@material-ui/core/IconButton";
+import Grid from "@material-ui/core/Grid";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import FacebookIcon from "@material-ui/icons/Facebook";
 import InstagramIcon from "@material-ui/icons/Instagram";
 import GitHubIcon from "@material-ui/icons/GitHub";
 
-const useStyles = makeStyles((theme) => ({
-  socialContainer: {
-    right: "1.5em",
-  },
-  button: {
-    marginRight: "0.5em",
-    marginLeft: "0.5em",
-    "&:hover": {
-      backgroundColor: "transparent",
-    },
-    [theme.breakpoints.down("sm")]: {
-      marginRight: 0,
-      marginLeft: 0,
-    },
-  },
-  icon: {
-    fontSize: 81,
-    color: (props) => props.color,
-  },
-}));
+import { useStyles } from "./styles";
 
 const SocialMedia = (props) => {
   const classes = useStyles(props);
