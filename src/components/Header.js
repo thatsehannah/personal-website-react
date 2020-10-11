@@ -35,7 +35,7 @@ const ElevationScroll = (props) => {
 const useStyles = makeStyles((theme) => ({
   toolbarMargin: {
     ...theme.mixins.toolbar,
-
+    marginBottom: '0.5em'
   },
   appBar: {
     backgroundColor: theme.palette.common.base,
@@ -56,7 +56,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   toggleModeIcon: {
-    fontSize: "1.2em",
+    fontSize: "1.5em",
     color: theme.palette.secondary.main,
   },
   menu: {

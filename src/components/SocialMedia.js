@@ -3,6 +3,7 @@ import { Grid, makeStyles, IconButton } from "@material-ui/core";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import FacebookIcon from "@material-ui/icons/Facebook";
 import InstagramIcon from "@material-ui/icons/Instagram";
+import GitHubIcon from "@material-ui/icons/GitHub";
 
 const useStyles = makeStyles((theme) => ({
   socialContainer: {
@@ -20,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   icon: {
-    fontSize: (props) => props.size,
+    fontSize: 81,
     color: (props) => props.color,
   },
 }));
@@ -30,6 +31,17 @@ const SocialMedia = (props) => {
 
   return (
     <Grid item container className={classes.socialContainer} justify="center">
+      <Grid
+        item
+        component={"a"}
+        href="https:///www.github.com/thatsehannah"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <IconButton className={classes.button}>
+          <GitHubIcon className={classes.icon} />
+        </IconButton>
+      </Grid>
       <Grid
         item
         component={"a"}

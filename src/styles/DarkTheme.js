@@ -16,6 +16,11 @@ const theme = createMuiTheme({
     },
   },
   typography: {
+    h1: {
+      fontFamily: "Permanent Marker",
+      fontWeight: 800,
+      color: "#fff",
+    },
     h2: {
       fontFamily: "Permanent Marker",
       fontWeight: 700,

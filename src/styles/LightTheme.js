@@ -1,6 +1,6 @@
 import { createMuiTheme } from "@material-ui/core/styles";
 
-const standoutColor = "#000000";
+const standoutColor = "#2f6f2f";
 
 const theme = createMuiTheme({
   palette: {
@@ -16,6 +16,11 @@ const theme = createMuiTheme({
     },
   },
   typography: {
+    h1: {
+      fontFamily: "Permanent Marker",
+      fontWeight: 800,
+      color: "#fff",
+    },
     h2: {
       fontFamily: "Permanent Marker",
       fontWeight: 700,
