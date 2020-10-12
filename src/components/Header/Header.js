@@ -3,19 +3,20 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 
 import useScrollTrigger from "@material-ui/core/useScrollTrigger";
-import AppBar from '@material-ui/core/AppBar'
-import Toolbar from '@material-ui/core/Toolbar'
-import Backdrop from '@material-ui/core/Backdrop'
-import List from '@material-ui/core/List'
-import ListItem from '@material-ui/core/ListItem'
-import ListItemText from '@material-ui/core/ListItemText'
-import IconButton from '@material-ui/core/IconButton'
-import Grid from '@material-ui/core/Grid'
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
+import Backdrop from "@material-ui/core/Backdrop";
+import List from "@material-ui/core/List";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemText from "@material-ui/core/ListItemText";
+import IconButton from "@material-ui/core/IconButton";
+import Grid from "@material-ui/core/Grid";
 import LightModeIcon from "@material-ui/icons/Brightness4";
 import DarkModeIcon from "@material-ui/icons/Brightness7";
 import MenuIcon from "@material-ui/icons/Menu";
 
 import { useStyles } from "./styles";
+import logo from "../../assets/images/sampleLogo.svg";
 import * as actionTypes from "../../redux/actions";
 
 const ElevationScroll = (props) => {
@@ -62,7 +63,13 @@ const Header = (props) => {
                   <MenuIcon className={classes.menuIcon} />
                 </IconButton>
               </Grid>
-              <Grid item>{/*----Logo will go here-----*/}</Grid>
+              <Grid item>
+                <img
+                  src={logo}
+                  style={{ width: "4em", height: "4em" }}
+                  alt="EH logo"
+                />
+              </Grid>
               <Grid item>
                 <IconButton
                   onClick={toggleModeWrapper}
@@ -81,7 +88,7 @@ const Header = (props) => {
         </AppBar>
       </ElevationScroll>
       <div className={classes.toolbarMargin} />
-      {/* <Backdrop
+      <Backdrop
         open={openMenu}
         className={classes.menu}
         onClick={() => setOpenMenu(false)}
@@ -118,7 +125,7 @@ const Header = (props) => {
             </Grid>
           </Grid>
         </Grid>
-      </Backdrop> */}
+      </Backdrop>
     </>
   );
 };

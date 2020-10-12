@@ -16,7 +16,12 @@ export const useStyles = makeStyles((theme) => ({
     },
   },
   icon: {
-    fontSize: 81,
+    height: 81,
+    width: 81,
     color: (props) => props.color,
+    [theme.breakpoints.down('sm')]: {
+      height: 45,
+      width: 45
+    }
   },
 }));

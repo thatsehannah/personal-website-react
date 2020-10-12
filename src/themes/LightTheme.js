@@ -13,6 +13,7 @@ const theme = createMuiTheme({
     common: {
       base: "#ffffff",
       standout: standoutColor,
+      background: '#e9e6e1'
     },
     primary: {
       main: "#ffffff",
@@ -23,18 +24,16 @@ const theme = createMuiTheme({
   },
   typography: {
     h1: {
-      fontFamily: "Oxygen",
+      fontFamily: "Balsamiq Sans",
       fontWeight: 800,
       color: "#fff",
     },
-    h2: {
-      fontFamily: "Rubik",
-      fontWeight: 700,
-      fontSize: "4rem",
+    h3: {
+      fontFamily: "Oxygen",
       color: "#ffffff",
     },
     subtitle1: {
-      fontWeight: 400,
+      fontFamily: "Oxygen",
       fontSize: "2rem",
       color: "#ffffff",
     },

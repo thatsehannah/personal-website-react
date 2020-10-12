@@ -11,8 +11,9 @@ const standoutColor = "#d4af37";
 const theme = createMuiTheme({
   palette: {
     common: {
-      base: "#202020",
+      base: "rgba(0,0,0, 0.87)",
       standout: standoutColor,
+      background: '#121212'
     },
     primary: {
       main: "#202020",
@@ -23,19 +24,17 @@ const theme = createMuiTheme({
   },
   typography: {
     h1: {
-      fontFamily: "Lato",
+      fontFamily: "Balsamiq Sans",
       fontWeight: 800,
-      color: "##cece",
+      color: "#fff",
     },
-    h2: {
-      fontFamily: "Rubik",
-      fontWeight: 700,
-      fontSize: "5.5rem",
+    h3: {
+      fontFamily: "Oxygen",
       color: "#ffffff",
     },
     subtitle1: {
-      fontWeight: 400,
-      fontSize: "2.5rem",
+      fontFamily: "Oxygen",
+      fontSize: "2rem",
       color: "#ffffff",
     },
   },
