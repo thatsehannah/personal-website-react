@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "react-scroll";
 import { connect } from "react-redux";
 
 import useScrollTrigger from "@material-ui/core/useScrollTrigger";
@@ -103,20 +103,70 @@ const Header = (props) => {
           >
             <Grid item>
               <List disablePadding>
-                <ListItem button component={Link} to="/">
+                <ListItem
+                  button
+                  onClick={() => setOpenMenu(false)}
+                  component={Link}
+                  to="landing"
+                  spy={true}
+                  smooth={true}
+                  duration={1200}
+                  delay={500}
+                >
                   <ListItemText className={classes.listItem}>Home</ListItemText>
                 </ListItem>
-                <ListItem button component={Link} to="/about">
+                <ListItem
+                  button
+                  onClick={() => setOpenMenu(false)}
+                  component={Link}
+                  to="about"
+                  spy={true}
+                  smooth={true}
+                  duration={1200}
+                  delay={300}
+                >
                   <ListItemText className={classes.listItem}>
                     About Me
                   </ListItemText>
                 </ListItem>
-                <ListItem button component={Link} to="/muses">
+                <ListItem
+                  button
+                  onClick={() => setOpenMenu(false)}
+                  component={Link}
+                  to="education"
+                  spy={true}
+                  smooth={true}
+                  duration={1200}
+                  delay={300}
+                >
+                  <ListItemText className={classes.listItem}>
+                    Education & Skills
+                  </ListItemText>
+                </ListItem>
+                <ListItem
+                  button
+                  onClick={() => setOpenMenu(false)}
+                  component={Link}
+                  to="muses"
+                  spy={true}
+                  smooth={true}
+                  duration={1200}
+                  delay={300}
+                >
                   <ListItemText className={classes.listItem}>
                     Muses
                   </ListItemText>
                 </ListItem>
-                <ListItem button component={Link} to="/contact">
+                <ListItem
+                  button
+                  onClick={() => setOpenMenu(false)}
+                  component={Link}
+                  to="contact"
+                  spy={true}
+                  smooth={true}
+                  duration={1200}
+                  delay={300}
+                >
                   <ListItemText className={classes.listItem}>
                     Contact Me
                   </ListItemText>

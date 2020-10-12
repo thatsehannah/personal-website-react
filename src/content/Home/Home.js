@@ -21,6 +21,7 @@ const Home = (props) => {
     <Grid container direction="column">
       <Grid item>
         <Grid
+          id="landing"
           container
           justify="center"
           alignItems="center"
@@ -60,7 +61,48 @@ const Home = (props) => {
         </Grid>
       </Grid>
       <Grid item>
-        <Grid container className={classes.section}></Grid>
+        <Grid
+          id="about"
+          container
+          justify="center"
+          alignItems="center"
+          className={classes.section}
+        >
+          More about Me
+        </Grid>
+      </Grid>
+      <Grid item>
+        <Grid
+          id="education"
+          container
+          justify="center"
+          alignItems="center"
+          className={classes.section}
+        >
+          Education & Skills
+        </Grid>
+      </Grid>
+      <Grid item>
+        <Grid
+          id="muses"
+          container
+          justify="center"
+          alignItems="center"
+          className={classes.section}
+        >
+          Muses
+        </Grid>
+      </Grid>
+      <Grid item>
+        <Grid
+          id="contact"
+          container
+          justify="center"
+          alignItems="center"
+          className={classes.section}
+        >
+          Contact Me
+        </Grid>
       </Grid>
     </Grid>
   );
