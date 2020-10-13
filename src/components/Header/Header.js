@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-scroll";
+import { Link, animateScroll as scroll } from "react-scroll";
 import { connect } from "react-redux";
 
 import useScrollTrigger from "@material-ui/core/useScrollTrigger";
@@ -16,7 +16,7 @@ import DarkModeIcon from "@material-ui/icons/Brightness7";
 import MenuIcon from "@material-ui/icons/Menu";
 
 import { useStyles } from "./styles";
-import logo from "../../assets/images/sampleLogo.svg";
+import logo from "../../assets/logo/sampleLogo.svg";
 import * as actionTypes from "../../redux/actions";
 
 const ElevationScroll = (props) => {
@@ -63,13 +63,7 @@ const Header = (props) => {
                   <MenuIcon className={classes.menuIcon} />
                 </IconButton>
               </Grid>
-              <Grid item>
-                <img
-                  src={logo}
-                  style={{ width: "4em", height: "4em" }}
-                  alt="EH logo"
-                />
-              </Grid>
+
               <Grid item>
                 <IconButton
                   onClick={toggleModeWrapper}
@@ -105,9 +99,11 @@ const Header = (props) => {
               <List disablePadding>
                 <ListItem
                   button
-                  onClick={() => setOpenMenu(false)}
+                  onClick={() => {
+                    setOpenMenu(false);
+                    scroll.scrollToTop();
+                  }}
                   component={Link}
-                  to="landing"
                   spy={true}
                   smooth={true}
                   duration={1200}

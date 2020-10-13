@@ -21,15 +21,41 @@ export const useStyles = makeStyles((theme) => ({
     backgroundSize: "cover",
     [theme.breakpoints.down("sm")]: {
       backgroundAttachment: "scroll",
-      height: "auto",
     },
   },
   intro: {
-    height: "auto",
-    maxWidth: "90em",
+    [theme.breakpoints.down("sm")]: {
+      marginTop: "-5em",
+    },
+  },
+  name_statement: {
+    width: "40%",
+    [theme.breakpoints.down("sm")]: {
+      width: "90%",
+    },
+  },
+  name: {
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "1.8em",
+      fontWeight: "800",
+    },
+  },
+  statement: {
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "1em",
+    },
   },
   divider: {
     color: "#fff",
     marginBottom: "2em",
+  },
+  avatar: {
+    height: "15em",
+    width: "15em",
+    marginBottom: "1em",
+    [theme.breakpoints.down("sm")]: {
+      height: "9em",
+      width: "9em",
+    },
   },
 }));

@@ -1,15 +1,12 @@
 import React from "react";
-import { connect } from "react-redux";
 
 import IconButton from "@material-ui/core/IconButton";
 import Grid from "@material-ui/core/Grid";
 
 import { useStyles } from "./styles";
-import { lightIcons, darkIcons } from "./icons";
 
 const SocialMedia = (props) => {
   const classes = useStyles(props);
-  let icons = props.mode.modeName === "light" ? lightIcons : darkIcons;
 
   return (
     <Grid item container className={classes.socialContainer} justify="center">
@@ -22,7 +19,7 @@ const SocialMedia = (props) => {
       >
         <IconButton className={classes.button}>
           <img
-            src={icons.githubIcon}
+            src={props.icons.githubIcon}
             alt="Github Icon"
             className={classes.icon}
           />
@@ -37,7 +34,7 @@ const SocialMedia = (props) => {
       >
         <IconButton className={classes.button}>
           <img
-            src={icons.facebookIcon}
+            src={props.icons.facebookIcon}
             alt="Facebook Icon"
             className={classes.icon}
           />
@@ -52,7 +49,7 @@ const SocialMedia = (props) => {
       >
         <IconButton className={classes.button}>
           <img
-            src={icons.instagramIcon}
+            src={props.icons.instagramIcon}
             alt="Instagram Icon"
             className={classes.icon}
           />
@@ -67,7 +64,7 @@ const SocialMedia = (props) => {
       >
         <IconButton className={classes.button}>
           <img
-            src={icons.linkedinIcon}
+            src={props.icons.linkedinIcon}
             alt="Linked In Icon"
             className={classes.icon}
           />
@@ -82,7 +79,7 @@ const SocialMedia = (props) => {
       >
         <IconButton className={classes.button}>
           <img
-            src={icons.cashAppIcon}
+            src={props.icons.cashAppIcon}
             alt="Cash app Icon"
             className={classes.icon}
           />
@@ -92,10 +89,6 @@ const SocialMedia = (props) => {
   );
 };
 
-const mapStateToProps = (state) => {
-  return {
-    mode: state.mode,
-  };
-};
 
-export default connect(mapStateToProps)(SocialMedia);
+
+export default SocialMedia;

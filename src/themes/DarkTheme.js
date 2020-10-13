@@ -13,7 +13,7 @@ const theme = createMuiTheme({
     common: {
       base: "rgba(0,0,0, 0.87)",
       standout: standoutColor,
-      background: '#121212'
+      background: "#121212",
     },
     primary: {
       main: "#202020",
@@ -34,7 +34,7 @@ const theme = createMuiTheme({
     },
     subtitle1: {
       fontFamily: "Oxygen",
-      fontSize: "2rem",
+      fontSize: "1.5rem",
       color: "#ffffff",
     },
   },

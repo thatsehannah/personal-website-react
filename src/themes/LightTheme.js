@@ -34,7 +34,7 @@ const theme = createMuiTheme({
     },
     subtitle1: {
       fontFamily: "Oxygen",
-      fontSize: "2rem",
+      fontSize: "1.5rem",
       color: "#ffffff",
     },
   },

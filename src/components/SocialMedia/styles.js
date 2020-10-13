@@ -16,12 +16,11 @@ export const useStyles = makeStyles((theme) => ({
     },
   },
   icon: {
-    height: 81,
-    width: 81,
-    color: (props) => props.color,
-    [theme.breakpoints.down('sm')]: {
-      height: 45,
-      width: 45
-    }
+    height: (props) => props.size[0],
+    width: (props) => props.size[0],
+    [theme.breakpoints.down("sm")]: {
+      height: (props) => props.size[1],
+      width: (props) => props.size[1],
+    },
   },
 }));

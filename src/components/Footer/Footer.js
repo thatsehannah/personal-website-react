@@ -1,14 +1,17 @@
 import React from "react";
-import { useTheme } from "@material-ui/core/styles";
+import {connect} from 'react-redux'
+
+// import { useTheme } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 
 import { useStyles } from "./styles";
 import SocialMedia from "../SocialMedia/SocialMedia";
+import {lightIcons, darkIcons} from '../SocialMedia/icons'
 
 const Footer = (props) => {
   const classes = useStyles();
-  const theme = useTheme();
+  let icons = props.mode.modeName === "light" ? lightIcons : darkIcons;
 
   return (
     <footer className={classes.footer}>
@@ -33,10 +36,16 @@ const Footer = (props) => {
             -Kobe Bryant
           </Typography>
         </Grid>
-        <SocialMedia color={theme.palette.common.standout} />
+        <SocialMedia size={[45, 45]} icons={icons} />
       </Grid>
     </footer>
   );
 };
 
-export default Footer;
+const mapStateToProps = (state) => {
+  return {
+    mode: state.mode,
+  };
+};
+
+export default connect(mapStateToProps)(Footer);

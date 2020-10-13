@@ -3,19 +3,23 @@ import { connect } from "react-redux";
 
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
-import Button from "@material-ui/core/Button";
+//import Button from "@material-ui/core/Button";
 import Divider from "@material-ui/core/Divider";
+import Avatar from "@material-ui/core/Avatar";
 import { useTheme } from "@material-ui/core/styles";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 import { useStyles } from "./styles";
+import ehannah from "../../assets/images/avatar.jpeg";
+import { whiteIcons } from "../../components/SocialMedia/icons";
+import SocialMedia from "../../components/SocialMedia/SocialMedia";
 
 const Home = (props) => {
   const theme = useTheme();
   const classes = useStyles(props);
-  const matchesMD = useMediaQuery(theme.breakpoints.down("md"));
+  // const matchesMD = useMediaQuery(theme.breakpoints.down("md"));
   const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
-  const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
+  // const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
 
   return (
     <Grid container direction="column">
@@ -31,30 +35,36 @@ const Home = (props) => {
             <Grid
               container
               alignItems="center"
-              justify="center"
+              justify={matchesSM ? undefined : "center"}
               direction="column"
               className={classes.intro}
             >
               <Grid item>
-                <Typography variant="h1" align="center">
+                <Avatar src={ehannah} className={classes.avatar} />
+              </Grid>
+              <Grid item className={classes.name_statement}>
+                <Typography
+                  variant="h1"
+                  align="center"
+                  className={classes.name}
+                >
                   ELLIOT C. HANNAH III
                 </Typography>
-                <Typography variant="subtitle1" align="center" gutterBottom>
+                <Typography
+                  variant="subtitle1"
+                  align="center"
+                  gutterBottom
+                  className={classes.statement}
+                >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                   Volutpat ac tincidunt vitae semper quis lectus nulla at. Non
                   arcu risus quis varius quam. Mattis pellentesque id nibh
                   tortor id aliquet lectus.
                 </Typography>
-                <Divider variant="middle" classes={{ root: classes.divider }} />
               </Grid>
-              <Grid item container justify="center" direction="row">
-                <Grid item>
-                  <Button variant="contained">Project</Button>
-                </Grid>
-                <Grid item>
-                  <Button variant="contained">Github</Button>
-                </Grid>
+              <Grid item>
+                <SocialMedia size={[45, 35]} icons={whiteIcons} />
               </Grid>
             </Grid>
           </Grid>
