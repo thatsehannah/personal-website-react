@@ -11,7 +11,8 @@ const standoutColor = "#d4af37";
 const theme = createMuiTheme({
   palette: {
     common: {
-      base: "rgba(0,0,0, 0.87)",
+      base: "#303030",
+      appBar: "rgba(48,48,48,0.87)",
       standout: standoutColor,
       background: "#121212",
       altBackground: "#565151",
@@ -26,18 +27,26 @@ const theme = createMuiTheme({
   typography: {
     h1: {
       fontFamily: "Archivo Black",
-      fontWeight: 800,
+      textTransform: 'uppercase',
       color: "#fff",
     },
     h3: {
-      fontFamily: "Oxygen",
+      fontFamily: "Roboto",
       color: "#ffffff",
     },
+    h4: {
+      fontFamily: 'Archivo Black',
+      textTransform: 'uppercase',
+    },
     subtitle1: {
-      fontFamily: "Oxygen",
+      fontFamily: "Roboto",
       fontSize: "1.5rem",
       color: "#ffffff",
     },
+    body1: {
+      fontFamily: 'Oxygen',
+      fontSize: '1.1em'
+    }
   },
 });
 

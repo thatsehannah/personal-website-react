@@ -4,9 +4,12 @@ export const useStyles = makeStyles((theme) => ({
   toolbarMargin: {
     ...theme.mixins.toolbar,
     marginBottom: "0.5em",
+    [theme.breakpoints.down('sm')]: {
+      marginBottom: '0.25em'
+    }
   },
   appBar: {
-    backgroundColor: theme.palette.common.base,
+    backgroundColor: theme.palette.common.appBar
   },
   button: {
     "&:hover": {

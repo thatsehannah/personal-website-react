@@ -16,7 +16,6 @@ import DarkModeIcon from "@material-ui/icons/Brightness7";
 import MenuIcon from "@material-ui/icons/Menu";
 
 import { useStyles } from "./styles";
-import logo from "../../assets/logo/sampleLogo.svg";
 import * as actionTypes from "../../redux/actions";
 
 const ElevationScroll = (props) => {

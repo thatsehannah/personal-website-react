@@ -4,7 +4,6 @@ import { connect } from "react-redux";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 //import Button from "@material-ui/core/Button";
-import Divider from "@material-ui/core/Divider";
 import Avatar from "@material-ui/core/Avatar";
 import { useTheme } from "@material-ui/core/styles";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
@@ -24,13 +23,12 @@ const Home = (props) => {
 
   return (
     <Grid container direction="column">
-      <Grid item>
+      <Grid item id="landing">
         <Grid
-          id="landing"
           container
           justify="center"
           alignItems="center"
-          className={[classes.section, classes.landingSection].join(" ")}
+          className={classes.landingSection}
         >
           <Grid item>
             <Grid
@@ -49,7 +47,7 @@ const Home = (props) => {
                   align="center"
                   className={classes.name}
                 >
-                  ELLIOT C. HANNAH III
+                  Elliot C. Hannah III
                 </Typography>
                 <Typography
                   variant="subtitle1"
@@ -71,13 +69,13 @@ const Home = (props) => {
           </Grid>
         </Grid>
       </Grid>
-      <Grid item>
+      <Grid item id="about">
         <Grid
-          id="about"
           container
           justify="center"
-          alignItems="center"
-          className={classes.section}
+          alignItems={matchesSM ? undefined : "center"}
+          className={classes.aboutSection}
+          style={{height: matchesSM ? '50em' : '100vh'}}
         >
           <About />
         </Grid>

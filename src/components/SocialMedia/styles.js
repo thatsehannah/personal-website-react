@@ -8,7 +8,7 @@ export const useStyles = makeStyles((theme) => ({
     marginRight: "0.5em",
     marginLeft: "0.5em",
     "&:hover": {
-      backgroundColor: "transparent",
+      backgroundColor: 'transparent',
     },
     [theme.breakpoints.down("sm")]: {
       marginRight: 0,
@@ -18,6 +18,7 @@ export const useStyles = makeStyles((theme) => ({
   icon: {
     height: (props) => props.size[0],
     width: (props) => props.size[0],
+
     [theme.breakpoints.down("sm")]: {
       height: (props) => props.size[1],
       width: (props) => props.size[1],

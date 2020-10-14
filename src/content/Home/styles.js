@@ -6,14 +6,16 @@ export const useStyles = makeStyles((theme) => ({
   section: {
     width: "100vw",
     height: "100vh",
-    backgroundColor: theme.palette.common.background,
+    backgroundImage: `linear-gradient(to right, ${theme.palette.common.background}, ${theme.palette.common.altBackground})`,
   },
   altSection: {
     width: "100vw",
     height: "100vh",
-    backgroundColor: theme.palette.common.altBackground,
+    backgroundImage: `linear-gradient(to left, ${theme.palette.common.background}, ${theme.palette.common.altBackground})`,
   },
   landingSection: {
+    width: "100vw",
+    height: "100vh",
     backgroundImage: (props) =>
       `url(${
         props.mode.modeName === "light"
@@ -28,28 +30,43 @@ export const useStyles = makeStyles((theme) => ({
       backgroundAttachment: "scroll",
     },
   },
+  aboutSection: {
+    width: "100vw",
+    height: "100vh",
+    backgroundImage: (props) =>
+      props.mode.modeName === "light"
+        ? `linear-gradient(to right, ${theme.palette.primary.main}, #fff)`
+        : `linear-gradient(to right, ${theme.palette.common.altBackground}, ${theme.palette.primary.main})`,
+  },
   intro: {
     [theme.breakpoints.down("lg")]: {
       marginTop: "-3em",
     },
     [theme.breakpoints.down("sm")]: {
-      marginTop: "-5em",
+      marginTop: "-9em",
     },
   },
   name_statement: {
-    width: "50%",
+    width: "75em",
+    [theme.breakpoints.down("md")]: {
+      width: "60em",
+    },
     [theme.breakpoints.down("sm")]: {
-      width: "90%",
+      width: "45em",
+    },
+    [theme.breakpoints.down("xs")]: {
+      width: "22em",
     },
   },
   name: {
     [theme.breakpoints.down("lg")]: {
       fontSize: "4.2em",
-      fontWeight: "800",
     },
     [theme.breakpoints.down("sm")]: {
+      fontSize: "3.4em",
+    },
+    [theme.breakpoints.down("xs")]: {
       fontSize: "1.8em",
-      fontWeight: "800",
     },
   },
   statement: {
@@ -57,24 +74,28 @@ export const useStyles = makeStyles((theme) => ({
       fontSize: "1.5em",
     },
     [theme.breakpoints.down("sm")]: {
+      fontSize: "1.3em",
+    },
+    [theme.breakpoints.down("xs")]: {
       fontSize: "1em",
     },
   },
-  divider: {
-    color: "#fff",
-    marginBottom: "2em",
-  },
+  
   avatar: {
-    height: "15em",
-    width: "15em",
+    height: "22em",
+    width: "22em",
     marginBottom: "1em",
     [theme.breakpoints.down("lg")]: {
       height: "12em",
       width: "12em",
     },
     [theme.breakpoints.down("sm")]: {
-      height: "7em",
-      width: "7em",
+      height: "11em",
+      width: "11em",
+    },
+    [theme.breakpoints.down("xs")]: {
+      height: "8em",
+      width: "8em",
     },
   },
 }));
