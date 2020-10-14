@@ -14,17 +14,18 @@ const theme = createMuiTheme({
       base: "rgba(0,0,0, 0.87)",
       standout: standoutColor,
       background: "#121212",
+      altBackground: "#565151",
     },
     primary: {
-      main: "#202020",
+      main: standoutColor,
     },
     secondary: {
-      main: standoutColor,
+      main: "#202020",
     },
   },
   typography: {
     h1: {
-      fontFamily: "Balsamiq Sans",
+      fontFamily: "Archivo Black",
       fontWeight: 800,
       color: "#fff",
     },

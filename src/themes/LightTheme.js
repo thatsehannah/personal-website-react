@@ -13,30 +13,33 @@ const theme = createMuiTheme({
     common: {
       base: "#ffffff",
       standout: standoutColor,
-      background: '#e9e6e1'
+      background: '#e9e6e1',
+      altBackground: '#a19b90'
     },
     primary: {
-      main: "#ffffff",
+      main: standoutColor,
     },
     secondary: {
-      main: standoutColor,
+      main: "#fff",
     },
   },
   typography: {
     h1: {
-      fontFamily: "Balsamiq Sans",
-      fontWeight: 800,
+      fontFamily: "Archivo Black",
       color: "#fff",
     },
     h3: {
-      fontFamily: "Oxygen",
+      fontFamily: "Roboto",
       color: "#ffffff",
     },
     subtitle1: {
-      fontFamily: "Oxygen",
+      fontFamily: "Roboto",
       fontSize: "1.5rem",
       color: "#ffffff",
     },
+    body1: {
+      fontFamily: 'Oxygen'
+    }
   },
 });
 

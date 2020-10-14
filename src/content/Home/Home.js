@@ -13,6 +13,7 @@ import { useStyles } from "./styles";
 import ehannah from "../../assets/images/avatar.jpeg";
 import { whiteIcons } from "../../components/SocialMedia/icons";
 import SocialMedia from "../../components/SocialMedia/SocialMedia";
+import About from "../About/About";
 
 const Home = (props) => {
   const theme = useTheme();
@@ -35,7 +36,7 @@ const Home = (props) => {
             <Grid
               container
               alignItems="center"
-              justify={matchesSM ? undefined : "center"}
+              justify={matchesSM ? "center" : undefined}
               direction="column"
               className={classes.intro}
             >
@@ -78,7 +79,7 @@ const Home = (props) => {
           alignItems="center"
           className={classes.section}
         >
-          More about Me
+          <About />
         </Grid>
       </Grid>
       <Grid item>
@@ -87,7 +88,7 @@ const Home = (props) => {
           container
           justify="center"
           alignItems="center"
-          className={classes.section}
+          className={classes.altSection}
         >
           Education & Skills
         </Grid>
@@ -109,7 +110,7 @@ const Home = (props) => {
           container
           justify="center"
           alignItems="center"
-          className={classes.section}
+          className={classes.altSection}
         >
           Contact Me
         </Grid>

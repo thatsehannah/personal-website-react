@@ -15,7 +15,7 @@ export const useStyles = makeStyles((theme) => ({
   },
   menuIcon: {
     fontSize: "2em",
-    color: theme.palette.secondary.main,
+    color: theme.palette.primary.main,
     [theme.breakpoints.down("md")]: {
       fontSize: "1.5em",
     },
@@ -25,7 +25,7 @@ export const useStyles = makeStyles((theme) => ({
   },
   toggleModeIcon: {
     fontSize: "1.5em",
-    color: theme.palette.secondary.main,
+    color: theme.palette.primary.main,
   },
   menu: {
     zIndex: 1305,
@@ -33,6 +33,10 @@ export const useStyles = makeStyles((theme) => ({
   },
   listItem: {
     color: "#ffffff",
-    fontSize: "50rem",
+    fontSize: "2rem",
+    fontWeight: '600',
+    fontFamily: 'Roboto',
+    textTransform: 'uppercase',
+    textAlign: 'center'
   },
 }));

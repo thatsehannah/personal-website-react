@@ -109,7 +109,9 @@ const Header = (props) => {
                   duration={1200}
                   delay={500}
                 >
-                  <ListItemText className={classes.listItem}>Home</ListItemText>
+                  <ListItemText disableTypography className={classes.listItem}>
+                    Home
+                  </ListItemText>
                 </ListItem>
                 <ListItem
                   button
@@ -121,7 +123,7 @@ const Header = (props) => {
                   duration={1200}
                   delay={300}
                 >
-                  <ListItemText className={classes.listItem}>
+                  <ListItemText disableTypography className={classes.listItem}>
                     About Me
                   </ListItemText>
                 </ListItem>
@@ -135,7 +137,7 @@ const Header = (props) => {
                   duration={1200}
                   delay={300}
                 >
-                  <ListItemText className={classes.listItem}>
+                  <ListItemText disableTypography className={classes.listItem}>
                     Education & Skills
                   </ListItemText>
                 </ListItem>
@@ -149,7 +151,7 @@ const Header = (props) => {
                   duration={1200}
                   delay={300}
                 >
-                  <ListItemText className={classes.listItem}>
+                  <ListItemText disableTypography className={classes.listItem}>
                     Muses
                   </ListItemText>
                 </ListItem>
@@ -163,7 +165,7 @@ const Header = (props) => {
                   duration={1200}
                   delay={300}
                 >
-                  <ListItemText className={classes.listItem}>
+                  <ListItemText disableTypography className={classes.listItem}>
                     Contact Me
                   </ListItemText>
                 </ListItem>

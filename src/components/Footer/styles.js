@@ -16,7 +16,7 @@ export const useStyles = makeStyles((theme) => ({
   },
   text: {
     fontSize: 20,
-    color: theme.palette.secondary.main,
+    color: theme.palette.primary.main,
     [theme.breakpoints.down("sm")]: {
       fontSize: 14,
     },
