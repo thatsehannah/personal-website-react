@@ -9,7 +9,7 @@ export const useStyles = makeStyles((theme) => ({
     }
   },
   appBar: {
-    backgroundColor: theme.palette.common.appBar
+    backgroundColor: theme.palette.common.base
   },
   button: {
     "&:hover": {

@@ -13,6 +13,7 @@ import ehannah from "../../assets/images/avatar.jpeg";
 import { whiteIcons } from "../../components/SocialMedia/icons";
 import SocialMedia from "../../components/SocialMedia/SocialMedia";
 import About from "../About/About";
+import EducationSkills from '../EducationSkills/EducationSkills'
 
 const Home = (props) => {
   const theme = useTheme();
@@ -80,15 +81,14 @@ const Home = (props) => {
           <About />
         </Grid>
       </Grid>
-      <Grid item>
+      <Grid item id="education">
         <Grid
-          id="education"
           container
           justify="center"
           alignItems="center"
           className={classes.altSection}
         >
-          Education & Skills
+          <EducationSkills />
         </Grid>
       </Grid>
       <Grid item>

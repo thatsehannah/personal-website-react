@@ -1,26 +1,13 @@
 import { makeStyles } from "@material-ui/core/styles";
 
 export const useStyles = makeStyles((theme) => ({
-  paper: {
-    width: "90em",
-    height: "50em",
-    marginTop: "4em",
-    borderRadius: "2em",
-    [theme.breakpoints.down("md")]: {
-      marginLeft: "2em",
-      marginRight: "2em",
-      padding: "1em",
-      height: "30em",
-    },
-  },
-
   about: {
     width: "40em",
+
     [theme.breakpoints.down("md")]: {
       width: "25em",
     },
     [theme.breakpoints.down("sm")]: {
-      marginTop: "3em",
       width: "21.5em",
     },
   },
@@ -40,8 +27,8 @@ export const useStyles = makeStyles((theme) => ({
     },
   },
   button: {
+    color: (props) => (props.mode.modeName === "light" ? "#fff" : "#000"),
     backgroundColor: theme.palette.primary.main,
-    color: "#fff",
     height: "4em",
     "&:hover": {
       backgroundColor: theme.palette.primary.light,
@@ -50,11 +37,20 @@ export const useStyles = makeStyles((theme) => ({
       height: "4em",
     },
   },
+  text: {
+    color: (props) => (props.mode.modeName === "light" ? "#000" : "#fff"),
+    [theme.breakpoints.down("xs")]: {
+      color: (props) => (props.mode.modeName === "light" ? "#fff" : null),
+    },
+  },
   email: {
     textDecoration: "none",
-    color: (props) => (props.mode.modeName === "dark" ? "#fff" : "inherit"),
+    color: (props) => (props.mode.modeName === "light" ? "#000" : "#fff"),
     "&:hover": {
       color: theme.palette.primary.light,
+    },
+    [theme.breakpoints.down("xs")]: {
+      color: (props) => (props.mode.modeName === "light" ? "#fff" : null),
     },
   },
 }));

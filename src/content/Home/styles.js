@@ -1,6 +1,7 @@
 import { makeStyles } from "@material-ui/core/styles";
-import landingBackgroundLight from "../../assets/backgrounds/DT_Skyline1.jpg";
-import landingBackgroundDark from "../../assets/backgrounds/LA_Skyline.jpeg";
+import landingBackgroundLight from "../../assets/backgrounds/landingBg.png";
+import aboutBackgroundLight from "../../assets/backgrounds/aboutBgLight.jpg";
+import aboutBackgroundDark from "../../assets/backgrounds/aboutBgDark.jpg";
 
 export const useStyles = makeStyles((theme) => ({
   section: {
@@ -16,11 +17,18 @@ export const useStyles = makeStyles((theme) => ({
   landingSection: {
     width: "100vw",
     height: "100vh",
+    backgroundImage: `url(${landingBackgroundLight})`,
+    backgroundPosition: "center",
+    backgroundSize: "cover",
+  },
+  aboutSection: {
+    width: "100vw",
+    height: "100vh",
     backgroundImage: (props) =>
       `url(${
         props.mode.modeName === "light"
-          ? landingBackgroundLight
-          : landingBackgroundDark
+          ? aboutBackgroundLight
+          : aboutBackgroundDark
       })`,
     backgroundAttachment: "fixed",
     backgroundPosition: "center",
@@ -29,14 +37,6 @@ export const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("sm")]: {
       backgroundAttachment: "scroll",
     },
-  },
-  aboutSection: {
-    width: "100vw",
-    height: "100vh",
-    backgroundImage: (props) =>
-      props.mode.modeName === "light"
-        ? `linear-gradient(to right, ${theme.palette.primary.main}, #fff)`
-        : `linear-gradient(to right, ${theme.palette.common.altBackground}, ${theme.palette.primary.main})`,
   },
   intro: {
     [theme.breakpoints.down("lg")]: {
@@ -80,7 +80,7 @@ export const useStyles = makeStyles((theme) => ({
       fontSize: "1em",
     },
   },
-  
+
   avatar: {
     height: "22em",
     width: "22em",

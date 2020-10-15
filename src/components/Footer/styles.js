@@ -6,7 +6,6 @@ export const useStyles = makeStyles((theme) => ({
     height: "20em",
     width: "100%",
     position: "relative",
-    marginTop: "1.5em",
   },
   socialContainer: {
     right: "1.5em",

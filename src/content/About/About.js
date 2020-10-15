@@ -19,7 +19,6 @@ const About = (props) => {
   const classes = useStyles(props);
   const theme = useTheme();
   const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
-  const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
   const matchesMD = useMediaQuery(theme.breakpoints.down("md"));
 
   const aboutMeContent = (
@@ -27,7 +26,7 @@ const About = (props) => {
       container
       alignItems="center"
       style={{
-        padding: matchesSM ? 0 : "0 2em",
+        padding: matchesMD ? 0 : "0 2em",
         margin: matchesMD ? 0 : "2em 0",
       }}
     >
@@ -42,24 +41,14 @@ const About = (props) => {
             <Typography
               variant="h4"
               gutterBottom
-              style={{
-                color:
-                  props.mode.modeName === "dark"
-                    ? "#fff"
-                    : "inherit",
-              }}
+              className={classes.text}
             >
               About Me
             </Typography>
             <Typography
               variant="body1"
               gutterBottom
-              style={{
-                color:
-                  props.mode.modeName === "dark"
-                    ? "#fff"
-                    : "inherit",
-              }}
+              className={classes.text}
             >
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
@@ -72,36 +61,21 @@ const About = (props) => {
             <Typography
               variant="h4"
               gutterBottom
-              style={{
-                color:
-                  props.mode.modeName === "dark"
-                    ? "#fff"
-                    : "inherit",
-              }}
+              className={classes.text}
             >
               Contact Info
             </Typography>
             <Typography
               variant="body1"
               gutterBottom
-              style={{
-                color:
-                  props.mode.modeName === "dark"
-                    ? "#fff"
-                    : "inherit",
-              }}
+              className={classes.text}
             >
-              Elliot C. Hannah
+              Elliot C. Hannah III
             </Typography>
             <Typography
               variant="body1"
               gutterBottom
-              style={{
-                color:
-                  props.mode.modeName === "dark"
-                    ? "#fff"
-                    : "inherit",
-              }}
+              className={classes.text}
             >
               Los Angeles, California 90028
             </Typography>
@@ -134,7 +108,7 @@ const About = (props) => {
             >
               <Button variant="contained" className={classes.button}>
                 <GetAppIcon />
-                <span style={{ marginLeft: "0.5em" }}>Download My Resume</span>
+                <span style={{ marginLeft: "0.5em" }}>Download My Résumé</span>
               </Button>
             </Grid>
           </Grid>
