@@ -19,6 +19,7 @@ const About = (props) => {
   const classes = useStyles(props);
   const theme = useTheme();
   const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
+  const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
   const matchesMD = useMediaQuery(theme.breakpoints.down("md"));
 
   const aboutMeContent = (
@@ -38,18 +39,10 @@ const About = (props) => {
       <Grid item>
         <Grid container direction="column" className={classes.about}>
           <Grid item>
-            <Typography
-              variant="h4"
-              gutterBottom
-              className={classes.text}
-            >
+            <Typography variant="h4" gutterBottom className={classes.text}>
               About Me
             </Typography>
-            <Typography
-              variant="body1"
-              gutterBottom
-              className={classes.text}
-            >
+            <Typography variant="body1" gutterBottom className={classes.text}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam, quis nostrud exercitation ullamco laboris
@@ -58,25 +51,13 @@ const About = (props) => {
               nulla pariatur.
             </Typography>
             <br />
-            <Typography
-              variant="h4"
-              gutterBottom
-              className={classes.text}
-            >
+            <Typography variant="h4" gutterBottom className={classes.text}>
               Contact Info
             </Typography>
-            <Typography
-              variant="body1"
-              gutterBottom
-              className={classes.text}
-            >
+            <Typography variant="body1" gutterBottom className={classes.text}>
               Elliot C. Hannah III
             </Typography>
-            <Typography
-              variant="body1"
-              gutterBottom
-              className={classes.text}
-            >
+            <Typography variant="body1" gutterBottom className={classes.text}>
               Los Angeles, California 90028
             </Typography>
             <Typography
@@ -104,7 +85,7 @@ const About = (props) => {
               container
               alignItems="center"
               justify="center"
-              style={{ marginTop: "3em" }}
+              style={{ marginTop: matchesMD ? '1em' : "3em" }}
             >
               <Button variant="contained" className={classes.button}>
                 <GetAppIcon />
@@ -117,11 +98,25 @@ const About = (props) => {
     </Grid>
   );
 
-  if (matchesXS) {
-    return <MobileAbout>{aboutMeContent}</MobileAbout>;
+  let aboutMe = null;
+
+  if (matchesSM) {
+    aboutMe = <MobileAbout>{aboutMeContent}</MobileAbout>;
   } else {
-    return <DesktopAbout mode={props.mode}>{aboutMeContent}</DesktopAbout>;
+    aboutMe = <DesktopAbout mode={props.mode}>{aboutMeContent}</DesktopAbout>;
   }
+
+  return (
+    <Grid
+      container
+      justify="center"
+      alignItems={matchesSM ? undefined : "center"}
+      className={classes.aboutSection}
+      style={{ height: matchesSM ? "50em" : "100vh" }}
+    >
+      {aboutMe}
+    </Grid>
+  );
 };
 
 const mapStateToProps = (state) => {

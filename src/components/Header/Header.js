@@ -117,6 +117,7 @@ const Header = (props) => {
                   onClick={() => setOpenMenu(false)}
                   component={Link}
                   to="about"
+                  value='about'
                   spy={true}
                   smooth={true}
                   duration={1200}

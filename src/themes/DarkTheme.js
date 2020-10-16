@@ -20,7 +20,7 @@ const theme = createMuiTheme({
       main: standoutColor,
     },
     secondary: {
-      main: "#202020",
+      main: "#565151",
     },
   },
   typography: {

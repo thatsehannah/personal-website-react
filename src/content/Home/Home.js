@@ -13,7 +13,7 @@ import ehannah from "../../assets/images/avatar.jpeg";
 import { whiteIcons } from "../../components/SocialMedia/icons";
 import SocialMedia from "../../components/SocialMedia/SocialMedia";
 import About from "../About/About";
-import EducationSkills from '../EducationSkills/EducationSkills'
+import EducationSkills from "../EducationSkills/EducationSkills";
 
 const Home = (props) => {
   const theme = useTheme();
@@ -70,26 +70,12 @@ const Home = (props) => {
           </Grid>
         </Grid>
       </Grid>
-      <Grid item id="about">
-        <Grid
-          container
-          justify="center"
-          alignItems={matchesSM ? undefined : "center"}
-          className={classes.aboutSection}
-          style={{height: matchesSM ? '50em' : '100vh'}}
-        >
-          <About />
-        </Grid>
+      <Grid item id="about" className={classes.aboutSection}>
+        
+            <About />
       </Grid>
-      <Grid item id="education">
-        <Grid
-          container
-          justify="center"
-          alignItems="center"
-          className={classes.altSection}
-        >
-          <EducationSkills />
-        </Grid>
+      <Grid item id="education" className={classes.educationSkillsSection}>
+        <EducationSkills />
       </Grid>
       <Grid item>
         <Grid

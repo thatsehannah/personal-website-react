@@ -34,9 +34,13 @@ export const useStyles = makeStyles((theme) => ({
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.down("md")]: {
       backgroundAttachment: "scroll",
     },
+  },
+  educationSkillsSection: {
+    height: 'auto',
+    backgroundColor: theme.palette.common.background
   },
   intro: {
     [theme.breakpoints.down("lg")]: {
