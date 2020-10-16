@@ -1,5 +1,6 @@
 import React from "react";
 
+import Grid from "@material-ui/core/Grid";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 
@@ -9,9 +10,11 @@ const DesktopAbout = (props) => {
   const classes = useStyles(props);
 
   return (
-    <Card raised className={classes.card}>
-      <CardContent>{props.children}</CardContent>
-    </Card>
+    <Grid container style={{marginTop: '5em'}}>
+      <Card raised className={classes.card}>
+        <CardContent>{props.children}</CardContent>
+      </Card>
+    </Grid>
   );
 };
 export default DesktopAbout;

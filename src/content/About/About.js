@@ -11,7 +11,7 @@ import Button from "@material-ui/core/Button";
 import GetAppIcon from "@material-ui/icons/GetApp";
 
 import { useStyles } from "./styles";
-import MobileAbout from "./MobileAbout/MoibleAbout";
+import MobileAbout from "./MobileAbout/MobileAbout";
 import DesktopAbout from "./DesktopAbout/DesktopAbout";
 import Me from "../../assets/images/Me.jpeg";
 
@@ -26,6 +26,7 @@ const About = (props) => {
     <Grid
       container
       alignItems="center"
+      justify='center'
       style={{
         padding: matchesMD ? 0 : "0 2em",
         margin: matchesMD ? 0 : "2em 0",
@@ -71,27 +72,18 @@ const About = (props) => {
               elliotchannah@outlook.com
             </Typography>
           </Grid>
-          <Grid
-            item
-            style={{
-              textDecoration: "none",
-            }}
-            component={"a"}
-            href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <Grid
-              container
-              alignItems="center"
-              justify="center"
-              style={{ marginTop: matchesMD ? '1em' : "3em" }}
+          <Grid item>
+            <Button
+              variant="contained"
+              className={classes.button}
+              component={"a"}
+              rel="noopener noreferrer"
+              target="_blank"
+              href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
             >
-              <Button variant="contained" className={classes.button}>
-                <GetAppIcon />
-                <span style={{ marginLeft: "0.5em" }}>Download My Résumé</span>
-              </Button>
-            </Grid>
+              <GetAppIcon />
+              <span style={{ marginLeft: "0.5em" }}>Download My Résumé</span>
+            </Button>
           </Grid>
         </Grid>
       </Grid>
@@ -107,14 +99,8 @@ const About = (props) => {
   }
 
   return (
-    <Grid
-      container
-      justify="center"
-      alignItems={matchesSM ? undefined : "center"}
-      className={classes.aboutSection}
-      style={{ height: matchesSM ? "50em" : "100vh" }}
-    >
-      {aboutMe}
+    <Grid container justify="center" alignItems="center">
+      <Grid item>{aboutMe}</Grid>
     </Grid>
   );
 };

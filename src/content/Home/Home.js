@@ -71,8 +71,7 @@ const Home = (props) => {
         </Grid>
       </Grid>
       <Grid item id="about" className={classes.aboutSection}>
-        
-            <About />
+        <About />
       </Grid>
       <Grid item id="education" className={classes.educationSkillsSection}>
         <EducationSkills />

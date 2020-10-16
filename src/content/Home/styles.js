@@ -5,25 +5,21 @@ import aboutBackgroundDark from "../../assets/backgrounds/aboutBgDark.jpg";
 
 export const useStyles = makeStyles((theme) => ({
   section: {
-    width: "100vw",
-    height: "100vh",
+    height: "80em",
     backgroundImage: `linear-gradient(to right, ${theme.palette.common.background}, ${theme.palette.common.altBackground})`,
   },
   altSection: {
-    width: "100vw",
-    height: "100vh",
+    height: "80em",
     backgroundImage: `linear-gradient(to left, ${theme.palette.common.background}, ${theme.palette.common.altBackground})`,
   },
   landingSection: {
-    width: "100vw",
-    height: "100vh",
+    height: "60em",
     backgroundImage: `url(${landingBackgroundLight})`,
     backgroundPosition: "center",
     backgroundSize: "cover",
   },
   aboutSection: {
-    width: "100vw",
-    height: "100vh",
+    height: "50em",
     backgroundImage: (props) =>
       `url(${
         props.mode.modeName === "light"
@@ -44,7 +40,7 @@ export const useStyles = makeStyles((theme) => ({
   },
   intro: {
     [theme.breakpoints.down("lg")]: {
-      marginTop: "-3em",
+      marginTop: "-8em",
     },
     [theme.breakpoints.down("sm")]: {
       marginTop: "-9em",
@@ -84,14 +80,13 @@ export const useStyles = makeStyles((theme) => ({
       fontSize: "1em",
     },
   },
-
   avatar: {
     height: "22em",
     width: "22em",
     marginBottom: "1em",
     [theme.breakpoints.down("lg")]: {
-      height: "12em",
-      width: "12em",
+      height: "17em",
+      width: "17em",
     },
     [theme.breakpoints.down("sm")]: {
       height: "11em",
