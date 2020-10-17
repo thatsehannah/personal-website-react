@@ -70,11 +70,11 @@ const Home = (props) => {
           </Grid>
         </Grid>
       </Grid>
-      <Grid item id="about" className={classes.aboutSection}>
-        <About />
+      <Grid item id="about">
+        <About mode={props.mode}/>
       </Grid>
-      <Grid item id="education" className={classes.educationSkillsSection}>
-        <EducationSkills />
+      <Grid item id="education">
+        <EducationSkills mode={props.mode}/>
       </Grid>
       <Grid item>
         <Grid

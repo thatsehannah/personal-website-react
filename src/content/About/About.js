@@ -1,5 +1,4 @@
 import React from "react";
-import { connect } from "react-redux";
 
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { useTheme } from "@material-ui/core/styles";
@@ -18,7 +17,7 @@ import Me from "../../assets/images/Me.jpeg";
 const About = (props) => {
   const classes = useStyles(props);
   const theme = useTheme();
-  const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
+  // const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
   const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
   const matchesMD = useMediaQuery(theme.breakpoints.down("md"));
 
@@ -26,7 +25,7 @@ const About = (props) => {
     <Grid
       container
       alignItems="center"
-      justify='center'
+      justify="center"
       style={{
         padding: matchesMD ? 0 : "0 2em",
         margin: matchesMD ? 0 : "2em 0",
@@ -38,9 +37,9 @@ const About = (props) => {
         </Grid>
       </Hidden>
       <Grid item>
-        <Grid container direction="column" className={classes.about}>
+        <Grid container direction="column" className={classes.textColumn}>
           <Grid item>
-            <Typography variant="h4" gutterBottom className={classes.text}>
+            <Typography variant="h5" gutterBottom className={classes.text}>
               About Me
             </Typography>
             <Typography variant="body1" gutterBottom className={classes.text}>
@@ -52,7 +51,7 @@ const About = (props) => {
               nulla pariatur.
             </Typography>
             <br />
-            <Typography variant="h4" gutterBottom className={classes.text}>
+            <Typography variant="h5" gutterBottom className={classes.text}>
               Contact Info
             </Typography>
             <Typography variant="body1" gutterBottom className={classes.text}>
@@ -73,17 +72,19 @@ const About = (props) => {
             </Typography>
           </Grid>
           <Grid item>
-            <Button
-              variant="contained"
-              className={classes.button}
-              component={"a"}
-              rel="noopener noreferrer"
-              target="_blank"
-              href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
-            >
-              <GetAppIcon />
-              <span style={{ marginLeft: "0.5em" }}>Download My Résumé</span>
-            </Button>
+            <Grid container justify={matchesSM ? "center" : undefined}>
+              <Button
+                variant="contained"
+                className={classes.button}
+                component={"a"}
+                rel="noopener noreferrer"
+                target="_blank"
+                href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
+              >
+                <GetAppIcon />
+                <span style={{ marginLeft: "0.5em" }}>Download My Résumé</span>
+              </Button>
+            </Grid>
           </Grid>
         </Grid>
       </Grid>
@@ -95,20 +96,19 @@ const About = (props) => {
   if (matchesSM) {
     aboutMe = <MobileAbout>{aboutMeContent}</MobileAbout>;
   } else {
-    aboutMe = <DesktopAbout mode={props.mode}>{aboutMeContent}</DesktopAbout>;
+    aboutMe = <DesktopAbout>{aboutMeContent}</DesktopAbout>;
   }
 
   return (
-    <Grid container justify="center" alignItems="center">
+    <Grid
+      container
+      justify="center"
+      alignItems="center"
+      className={classes.aboutSection}
+    >
       <Grid item>{aboutMe}</Grid>
     </Grid>
   );
 };
 
-const mapStateToProps = (state) => {
-  return {
-    mode: state.mode,
-  };
-};
-
-export default connect(mapStateToProps)(About);
+export default About;

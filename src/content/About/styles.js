@@ -1,9 +1,26 @@
 import { makeStyles } from "@material-ui/core/styles";
+import aboutBackgroundLight from "../../assets/backgrounds/aboutBgLight.jpg";
+import aboutBackgroundDark from "../../assets/backgrounds/aboutBgDark.jpg";
 
 export const useStyles = makeStyles((theme) => ({
-  about: {
-    width: "40em",
-
+  aboutSection: {
+    height: "50em",
+    backgroundImage: (props) =>
+      `url(${
+        props.mode.modeName === "light"
+          ? aboutBackgroundLight
+          : aboutBackgroundDark
+      })`,
+    backgroundAttachment: "fixed",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "cover",
+    [theme.breakpoints.down("md")]: {
+      backgroundAttachment: "scroll",
+    },
+  },
+  textColumn: {
+    width: "45em",
     [theme.breakpoints.down("md")]: {
       width: "25em",
     },
@@ -27,6 +44,7 @@ export const useStyles = makeStyles((theme) => ({
     },
   },
   button: {
+    marginTop: "2em",
     color: (props) => (props.mode.modeName === "light" ? "#fff" : "#000"),
     backgroundColor: theme.palette.primary.main,
     height: "4em",
@@ -39,7 +57,7 @@ export const useStyles = makeStyles((theme) => ({
   },
   text: {
     color: (props) => (props.mode.modeName === "light" ? "#000" : "#fff"),
-    [theme.breakpoints.down("xs")]: {
+    [theme.breakpoints.down("sm")]: {
       color: (props) => (props.mode.modeName === "light" ? "#fff" : null),
     },
   },
@@ -49,7 +67,7 @@ export const useStyles = makeStyles((theme) => ({
     "&:hover": {
       color: theme.palette.primary.light,
     },
-    [theme.breakpoints.down("xs")]: {
+    [theme.breakpoints.down("sm")]: {
       color: (props) => (props.mode.modeName === "light" ? "#fff" : null),
     },
   },

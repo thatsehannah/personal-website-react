@@ -1,7 +1,6 @@
 import { makeStyles } from "@material-ui/core/styles";
 import landingBackgroundLight from "../../assets/backgrounds/landingBg.png";
-import aboutBackgroundLight from "../../assets/backgrounds/aboutBgLight.jpg";
-import aboutBackgroundDark from "../../assets/backgrounds/aboutBgDark.jpg";
+
 
 export const useStyles = makeStyles((theme) => ({
   section: {
@@ -13,30 +12,17 @@ export const useStyles = makeStyles((theme) => ({
     backgroundImage: `linear-gradient(to left, ${theme.palette.common.background}, ${theme.palette.common.altBackground})`,
   },
   landingSection: {
-    height: "60em",
+    height: "80em",
     backgroundImage: `url(${landingBackgroundLight})`,
     backgroundPosition: "center",
     backgroundSize: "cover",
-  },
-  aboutSection: {
-    height: "50em",
-    backgroundImage: (props) =>
-      `url(${
-        props.mode.modeName === "light"
-          ? aboutBackgroundLight
-          : aboutBackgroundDark
-      })`,
-    backgroundAttachment: "fixed",
-    backgroundPosition: "center",
-    backgroundRepeat: "no-repeat",
-    backgroundSize: "cover",
-    [theme.breakpoints.down("md")]: {
-      backgroundAttachment: "scroll",
+    [theme.breakpoints.down("lg")]: {
+      height: "60em",
     },
   },
   educationSkillsSection: {
-    height: 'auto',
-    backgroundColor: theme.palette.common.background
+    height: "auto",
+    backgroundColor: theme.palette.common.background,
   },
   intro: {
     [theme.breakpoints.down("lg")]: {
@@ -59,6 +45,7 @@ export const useStyles = makeStyles((theme) => ({
     },
   },
   name: {
+    color: '#fff',
     [theme.breakpoints.down("lg")]: {
       fontSize: "4.2em",
     },
@@ -70,6 +57,7 @@ export const useStyles = makeStyles((theme) => ({
     },
   },
   statement: {
+    color: '#fff',
     [theme.breakpoints.down("lg")]: {
       fontSize: "1.5em",
     },

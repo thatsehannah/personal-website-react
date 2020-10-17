@@ -10,7 +10,7 @@ const DesktopAbout = (props) => {
   const classes = useStyles(props);
 
   return (
-    <Grid container style={{marginTop: '5em'}}>
+    <Grid container>
       <Card raised className={classes.card}>
         <CardContent>{props.children}</CardContent>
       </Card>
