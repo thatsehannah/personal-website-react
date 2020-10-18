@@ -46,8 +46,8 @@ const EducationSkills = (props) => {
               <Grid item>
                 <Grid
                   container
+                  className={classes.section}
                   direction={matchesSM ? "column" : "row"}
-                  style={{ margin: matchesSM ? "1em" : "2em" }}
                 >
                   <Grid item xs={matchesSM ? 0 : 4}>
                     <Typography variant="h5">
@@ -64,8 +64,13 @@ const EducationSkills = (props) => {
                         marginTop: matchesSM ? "1em" : undefined,
                       }}
                     >
-                      <Grid item className={classes.school}>
-                        <Grid item container direction="column">
+                      <Grid item>
+                        <Grid
+                          item
+                          className={classes.item}
+                          container
+                          direction="column"
+                        >
                           <Grid item>
                             <Typography
                               variant="h6"
@@ -117,7 +122,12 @@ const EducationSkills = (props) => {
                         </Grid>
                       </Grid>
                       <Grid item>
-                        <Grid item container direction="column">
+                        <Grid
+                          item
+                          className={classes.item}
+                          container
+                          direction="column"
+                        >
                           <Grid item>
                             <Typography
                               variant="h6"
@@ -133,7 +143,13 @@ const EducationSkills = (props) => {
                               gutterBottom
                               className={classes.subtext}
                             >
-                              Bachelor's of Computer Science | May 2017
+                              Bachelor's of Computer Science{" "}
+                              <span
+                                style={{ color: theme.palette.primary.main }}
+                              >
+                                |
+                              </span>{" "}
+                              May 2017
                             </Typography>
                           </Grid>
                           <Grid item>
@@ -169,8 +185,8 @@ const EducationSkills = (props) => {
               <Grid item>
                 <Grid
                   container
+                  className={classes.section}
                   direction={matchesSM ? "column" : "row"}
-                  style={{ margin: matchesSM ? "1em" : "2em", width: "100%" }}
                 >
                   <Grid item xs={matchesSM ? 0 : 4}>
                     <Typography variant="h5">
@@ -187,8 +203,13 @@ const EducationSkills = (props) => {
                         marginTop: matchesSM ? "1em" : undefined,
                       }}
                     >
-                      <Grid item className={classes.school}>
-                        <Grid item container direction="column">
+                      <Grid item>
+                        <Grid
+                          item
+                          className={classes.item}
+                          container
+                          direction="column"
+                        >
                           <Grid item>
                             <Typography
                               variant="h6"
@@ -204,7 +225,13 @@ const EducationSkills = (props) => {
                               gutterBottom
                               className={classes.subtext}
                             >
-                              Programmer | March 2019 - July 2020
+                              Programmer{" "}
+                              <span
+                                style={{ color: theme.palette.primary.main }}
+                              >
+                                |
+                              </span>{" "}
+                              March 2019 - July 2020
                             </Typography>
                           </Grid>
                           <Grid item>
@@ -234,7 +261,12 @@ const EducationSkills = (props) => {
                         </Grid>
                       </Grid>
                       <Grid item>
-                        <Grid item container direction="column">
+                        <Grid
+                          item
+                          className={classes.item}
+                          container
+                          direction="column"
+                        >
                           <Grid item>
                             <Typography
                               variant="h6"
@@ -250,7 +282,13 @@ const EducationSkills = (props) => {
                               gutterBottom
                               className={classes.subtext}
                             >
-                              Associate | April 2018 - March 2019
+                              Associate{" "}
+                              <span
+                                style={{ color: theme.palette.primary.main }}
+                              >
+                                |
+                              </span>{" "}
+                              April 2018 - March 2019
                             </Typography>
                           </Grid>
                           <Grid item>
@@ -285,10 +323,9 @@ const EducationSkills = (props) => {
               </Grid>
               <Grid item>
                 <Grid
-                  item
                   container
+                  className={classes.section}
                   direction={matchesSM ? "column" : "row"}
-                  style={{ margin: matchesSM ? "1em" : "2em" }}
                 >
                   <Grid item xs={matchesSM ? 0 : 4}>
                     <Typography variant="h5">

@@ -6,18 +6,22 @@ export const useStyles = makeStyles((theme) => ({
     width: "100%",
     padding: "3em",
     [theme.breakpoints.down("sm")]: {
-      padding: "0.5em",
+      padding: "1.2em",
     },
   },
   paper: {
-    width: "60%",
+    width: "75%",
+    padding: "1.3em",
     backgroundColor: theme.palette.common.base,
     [theme.breakpoints.down("md")]: {
       width: "auto",
     },
   },
-  school: {
-    marginBottom: "3em",
+  section: {
+    marginTop: "2em",
+  },
+  item: {
+    marginBottom: '1em'
   },
   title: {
     borderBottom: `3px solid ${theme.palette.primary.light}`,

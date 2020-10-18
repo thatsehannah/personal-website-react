@@ -5,6 +5,7 @@ import aboutBackgroundDark from "../../assets/backgrounds/aboutBgDark.jpg";
 export const useStyles = makeStyles((theme) => ({
   aboutSection: {
     height: "50em",
+    width: '100vw',
     backgroundImage: (props) =>
       `url(${
         props.mode.modeName === "light"
@@ -18,6 +19,9 @@ export const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("md")]: {
       backgroundAttachment: "scroll",
     },
+    [theme.breakpoints.down('xs')]: {
+      padding: '1em',
+    }
   },
   textColumn: {
     width: "45em",
@@ -54,6 +58,9 @@ export const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("sm")]: {
       height: "4em",
     },
+  },
+  title: {
+
   },
   text: {
     color: (props) => (props.mode.modeName === "light" ? "#000" : "#fff"),

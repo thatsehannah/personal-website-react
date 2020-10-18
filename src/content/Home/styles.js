@@ -1,7 +1,6 @@
 import { makeStyles } from "@material-ui/core/styles";
 import landingBackgroundLight from "../../assets/backgrounds/landingBg.png";
 
-
 export const useStyles = makeStyles((theme) => ({
   section: {
     height: "80em",
@@ -33,19 +32,16 @@ export const useStyles = makeStyles((theme) => ({
     },
   },
   name_statement: {
-    width: "75em",
+    width: '50%',
     [theme.breakpoints.down("md")]: {
-      width: "60em",
+      width: "70%",
     },
     [theme.breakpoints.down("sm")]: {
-      width: "45em",
-    },
-    [theme.breakpoints.down("xs")]: {
-      width: "22em",
+      width: "90%",
     },
   },
   name: {
-    color: '#fff',
+    color: "#fff",
     [theme.breakpoints.down("lg")]: {
       fontSize: "4.2em",
     },
@@ -57,7 +53,7 @@ export const useStyles = makeStyles((theme) => ({
     },
   },
   statement: {
-    color: '#fff',
+    color: "#fff",
     [theme.breakpoints.down("lg")]: {
       fontSize: "1.5em",
     },
@@ -77,8 +73,8 @@ export const useStyles = makeStyles((theme) => ({
       width: "17em",
     },
     [theme.breakpoints.down("sm")]: {
-      height: "11em",
-      width: "11em",
+      height: "13em",
+      width: "13em",
     },
     [theme.breakpoints.down("xs")]: {
       height: "8em",
