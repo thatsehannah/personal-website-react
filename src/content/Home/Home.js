@@ -14,6 +14,7 @@ import { whiteIcons } from "../../components/SocialMedia/icons";
 import SocialMedia from "../../components/SocialMedia/SocialMedia";
 import About from "../About/About";
 import EducationSkills from "../EducationSkills/EducationSkills";
+import Muses from "../Muses/Muses";
 
 const Home = (props) => {
   const theme = useTheme();
@@ -71,30 +72,16 @@ const Home = (props) => {
         </Grid>
       </Grid>
       <Grid item id="about">
-        <About mode={props.mode}/>
+        <About mode={props.mode} />
       </Grid>
       <Grid item id="education">
-        <EducationSkills mode={props.mode}/>
+        <EducationSkills mode={props.mode} />
       </Grid>
-      <Grid item>
-        <Grid
-          id="muses"
-          container
-          justify="center"
-          alignItems="center"
-          className={classes.section}
-        >
-          Muses
-        </Grid>
+      <Grid item id="muses">
+        <Muses mode={props.mode}/>
       </Grid>
-      <Grid item>
-        <Grid
-          id="contact"
-          container
-          justify="center"
-          alignItems="center"
-          className={classes.altSection}
-        >
+      <Grid item id="contact">
+        <Grid container justify="center" alignItems="center">
           Contact Me
         </Grid>
       </Grid>
