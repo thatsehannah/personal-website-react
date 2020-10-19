@@ -6,7 +6,7 @@ import { Typography } from "@material-ui/core";
 import { useStyles } from "./styles";
 import MuseCard from "./MuseCard/MuseCard";
 import wife from "../../assets/images/wife.jpeg";
-import dtla from "../../assets/images/dtla.jpg";
+import overlook from "../../assets/images/overlook.jpg";
 import fam from "../../assets/images/fam.jpeg";
 import kobemjbron from "../../assets/images/kobemjbron.jpg";
 import music from "../../assets/images/music.jpeg";
@@ -30,7 +30,7 @@ const Muses = (props) => {
     },
     {
       title: "I ♥️ LA",
-      pic: { url: dtla, title: "DTLA" },
+      pic: { url: overlook, title: "Overlook of Los Angeles" },
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     },
@@ -48,7 +48,7 @@ const Muses = (props) => {
     },
     {
       title: "Basketball",
-      pic: { url: kobemjbron, title: "Kobe, Mike, Bron" },
+      pic: { url: kobemjbron, title: "Kobe, MJ, Bron" },
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     },
@@ -60,7 +60,7 @@ const Muses = (props) => {
         <Typography align="center" variant="h3" gutterBottom>
           My Muses
         </Typography>
-        <Typography align="center" variant="subtitle1">
+        <Typography align="center" variant="subtitle1" gutterBottom>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </Typography>

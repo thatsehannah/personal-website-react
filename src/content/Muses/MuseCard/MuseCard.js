@@ -32,10 +32,7 @@ const MuseCard = (props) => {
         className={classes.museImage}
         component="img"
         classes={{
-          root:
-            muse.pic.title === "DTLA"
-              ? classes.museDTLAImageResize
-              : classes.museImageResize,
+          root: classes.museImageResize,
         }}
         image={muse.pic.url}
         title={muse.pic.title}

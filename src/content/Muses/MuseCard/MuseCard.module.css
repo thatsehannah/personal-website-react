@@ -14,11 +14,6 @@
     object-position: 100% 5%;
 }
 
-.museDTLAImageResize {
-    object-fit: none;
-    object-position: 100% 95%;
-}
-
 .museDescription {
     padding: 2em 1em;
     transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
