@@ -6,18 +6,13 @@ import { createMuiTheme } from "@material-ui/core/styles";
 // font-family: 'Oxygen', sans-serif;
 // font-family: 'Rubik', sans-serif;
 
-const standoutColor = "#d4af37";
-
 const theme = createMuiTheme({
   palette: {
     common: {
       base: "#303030",
-      standout: standoutColor,
-      background: "#121212",
-      altBackground: "#565151",
     },
     primary: {
-      main: standoutColor,
+      main: "#d4af37",
     },
     secondary: {
       main: "#565151",

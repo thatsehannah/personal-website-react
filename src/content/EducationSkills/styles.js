@@ -2,7 +2,7 @@ import { makeStyles } from "@material-ui/core/styles";
 
 export const useStyles = makeStyles((theme) => ({
   educationSkillsSection: {
-    backgroundColor: theme.palette.common.background,
+    backgroundColor: theme.palette.secondary.light,
     width: "100%",
     padding: "3em",
     [theme.breakpoints.down("sm")]: {
