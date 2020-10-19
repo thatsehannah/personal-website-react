@@ -19,10 +19,6 @@ export const useStyles = makeStyles((theme) => ({
       height: "60em",
     },
   },
-  educationSkillsSection: {
-    height: "auto",
-    backgroundColor: theme.palette.common.background,
-  },
   intro: {
     [theme.breakpoints.down("lg")]: {
       marginTop: "-8em",
