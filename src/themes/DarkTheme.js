@@ -48,7 +48,7 @@ const theme = createMuiTheme({
     body1: {
       fontFamily: "Rubik",
       fontSize: "1.1em",
-      fontWeight: 600,
+      fontWeight: 300,
     },
     body2: {
       fontFamily: "Rubik",

@@ -5,7 +5,7 @@ import aboutBackgroundDark from "../../assets/backgrounds/aboutBgDark.jpg";
 export const useStyles = makeStyles((theme) => ({
   aboutSection: {
     height: "50em",
-    width: '100vw',
+    width: "100vw",
     backgroundImage: (props) =>
       `url(${
         props.mode.modeName === "light"
@@ -19,9 +19,9 @@ export const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("md")]: {
       backgroundAttachment: "scroll",
     },
-    [theme.breakpoints.down('xs')]: {
-      padding: '1em',
-    }
+    [theme.breakpoints.down("xs")]: {
+      padding: "1em",
+    },
   },
   textColumn: {
     width: "45em",
@@ -59,9 +59,7 @@ export const useStyles = makeStyles((theme) => ({
       height: "4em",
     },
   },
-  title: {
-
-  },
+  title: {},
   text: {
     color: (props) => (props.mode.modeName === "light" ? "#000" : "#fff"),
     [theme.breakpoints.down("sm")]: {
@@ -70,6 +68,7 @@ export const useStyles = makeStyles((theme) => ({
   },
   email: {
     textDecoration: "none",
+    fontWeight: 700,
     color: (props) => (props.mode.modeName === "light" ? "#000" : "#fff"),
     "&:hover": {
       color: theme.palette.primary.light,
