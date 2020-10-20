@@ -4,18 +4,22 @@ export const useStyles = makeStyles((theme) => ({
   educationSkillsSection: {
     backgroundColor: theme.palette.secondary.light,
     width: "100%",
-    padding: "3em",
+    padding: "5em",
+    
     [theme.breakpoints.down("sm")]: {
       padding: "0.5em",
     },
   },
   paper: {
     width: "75%",
-    padding: "1.3em",
+    padding: "1.7em",
     backgroundColor: theme.palette.common.base,
-    [theme.breakpoints.down("md")]: {
+    [theme.breakpoints.down("lg")]: {
       width: "auto",
     },
+    [theme.breakpoints.down('sm')]: {
+      padding: '1em'
+    }
   },
   section: {
     marginTop: "2em",

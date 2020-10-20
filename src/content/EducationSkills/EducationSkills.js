@@ -183,10 +183,7 @@ const EducationSkills = (props) => {
                 </Grid>
               </Grid>
               <Grid item>
-                <Grid
-                  container
-                  direction={matchesSM ? "column" : "row"}
-                >
+                <Grid container direction={matchesSM ? "column" : "row"}>
                   <Grid item sm={matchesSM ? 0 : 4}>
                     <Typography variant="h5">
                       <span className={classes.title}>Work Experience</span>
@@ -337,7 +334,7 @@ const EducationSkills = (props) => {
                       container
                       direction="column"
                       style={{
-                        maxWidth: "90%",
+                        maxWidth: "95%",
                         marginTop: matchesSM ? "1em" : undefined,
                       }}
                     >

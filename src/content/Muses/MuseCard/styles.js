@@ -5,6 +5,7 @@ export const useStyles = makeStyles((theme) => ({
     height: "24em",
     width: "24em",
     marginRight: "2em",
+    marginBottom: "2em",
     "&:hover $museImage": {
       height: "10em",
     },
@@ -12,18 +13,18 @@ export const useStyles = makeStyles((theme) => ({
       height: "20em",
       width: "20em",
       marginRight: 0,
-      marginBottom: '2em',
+
       "&:hover $museImage": {
         height: "8em",
       },
     },
-    [theme.breakpoints.down('xs')]: {
-        height: '15em',
-        width: '15em',
-        "&:hover $museImage": {
-            height: "6em",
-          },
-    }
+    [theme.breakpoints.down("xs")]: {
+      height: "15em",
+      width: "15em",
+      "&:hover $museImage": {
+        height: "6em",
+      },
+    },
   },
   cardContent: {
     padding: 0,
@@ -47,10 +48,10 @@ export const useStyles = makeStyles((theme) => ({
       height: "12em",
       padding: "1em",
     },
-    [theme.breakpoints.down('xs')]: {
-        height: '9em',
-        padding: '0.5em 0'
-    }
+    [theme.breakpoints.down("xs")]: {
+      height: "9em",
+      padding: "0.5em 0",
+    },
   },
   button: {
     color: theme.palette.primary.main,
