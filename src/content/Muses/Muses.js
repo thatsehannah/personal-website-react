@@ -12,14 +12,14 @@ const Muses = (props) => {
 
   return (
     <Grid container direction="column" className={classes.musesSection}>
-      <Grid item>
+      <Grid item sm>
         <Typography align="center" variant="subtitle1" gutterBottom>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </Typography>
       </Grid>
-      <Grid item>
-        <Grid container justify="center" alignItems="center" spacing={8}>
+      <Grid item sm>
+        <Grid container justify="center" alignItems="center">
           {muses.map((muse) => (
             <Grid item key={muse.title}>
               <MuseCard mode={props.mode} muse={muse} />

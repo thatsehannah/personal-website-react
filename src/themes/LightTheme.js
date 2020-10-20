@@ -6,11 +6,10 @@ import { createMuiTheme } from "@material-ui/core/styles";
 // font-family: 'Oxygen', sans-serif;
 // font-family: 'Rubik', sans-serif;
 
-
 const theme = createMuiTheme({
   palette: {
     common: {
-      base: "#ffffff",
+      base: "#fff",
     },
     primary: {
       main: "#2f6f2f",
@@ -31,12 +30,12 @@ const theme = createMuiTheme({
     h5: {
       fontFamily: "Archivo Black",
       textTransform: "uppercase",
-      fontSize: '1.75em'
+      fontSize: "1.5em",
     },
     h6: {
-      fontFamily: 'Rubik',
+      fontFamily: "Rubik",
       fontWeight: 700,
-      fontSize: '1.5em'
+      fontSize: "1.3em",
     },
     subtitle1: {
       fontFamily: "Rubik",
@@ -44,7 +43,7 @@ const theme = createMuiTheme({
     },
     subtitle2: {
       fontFamily: "Rubik",
-      fontSize: '1.3em'
+      fontSize: "1.1em",
     },
     body1: {
       fontFamily: "Rubik",
@@ -52,10 +51,10 @@ const theme = createMuiTheme({
       fontWeight: 300,
     },
     body2: {
-      fontFamily: 'Rubik',
-      fontSize: '1.15rem',
-      fontWeight: 300
-    }
+      fontFamily: "Rubik",
+      fontSize: "1.15rem",
+      fontWeight: 300,
+    },
   },
 });
 

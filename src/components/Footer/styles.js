@@ -2,7 +2,7 @@ import { makeStyles } from "@material-ui/core/styles";
 
 export const useStyles = makeStyles((theme) => ({
   footer: {
-    backgroundColor: theme.palette.common.base,
+    backgroundColor: "#f5f5ff",
     height: "20em",
     width: "100%",
     position: "relative",

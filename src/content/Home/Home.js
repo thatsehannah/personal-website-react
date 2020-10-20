@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
-//import Button from "@material-ui/core/Button";
 import Avatar from "@material-ui/core/Avatar";
 import { useTheme } from "@material-ui/core/styles";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
@@ -15,16 +14,15 @@ import SocialMedia from "../../components/SocialMedia/SocialMedia";
 import About from "../About/About";
 import EducationSkills from "../EducationSkills/EducationSkills";
 import Muses from "../Muses/Muses";
+import Contact from "../Contact/Contact";
 
 const Home = (props) => {
   const theme = useTheme();
   const classes = useStyles(props);
-  // const matchesMD = useMediaQuery(theme.breakpoints.down("md"));
   const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
-  // const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
 
   return (
-    <Grid container direction="column">
+    <Grid container direction="column" style={{flexWrap: 'nowrap'}}>
       <Grid item id="landing">
         <Grid
           container
@@ -78,12 +76,10 @@ const Home = (props) => {
         <EducationSkills mode={props.mode} />
       </Grid>
       <Grid item id="muses">
-        <Muses mode={props.mode}/>
+        <Muses mode={props.mode} />
       </Grid>
       <Grid item id="contact">
-        <Grid container justify="center" alignItems="center">
-          Contact Me
-        </Grid>
+        <Contact mode={props.mode} />
       </Grid>
     </Grid>
   );

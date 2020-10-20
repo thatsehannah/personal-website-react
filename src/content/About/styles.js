@@ -5,7 +5,6 @@ import aboutBackgroundDark from "../../assets/backgrounds/aboutBgDark.jpg";
 export const useStyles = makeStyles((theme) => ({
   aboutSection: {
     height: "50em",
-    width: "100vw",
     backgroundImage: (props) =>
       `url(${
         props.mode.modeName === "light"
@@ -29,7 +28,7 @@ export const useStyles = makeStyles((theme) => ({
       width: "25em",
     },
     [theme.breakpoints.down("sm")]: {
-      width: "21.5em",
+      width: "100%",
     },
   },
   avatar: {
@@ -40,11 +39,6 @@ export const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("md")]: {
       height: "11em",
       width: "11em",
-    },
-    [theme.breakpoints.down("sm")]: {
-      height: "9em",
-      width: "9em",
-      marginRight: "2em",
     },
   },
   button: {

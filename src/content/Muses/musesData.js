@@ -6,40 +6,40 @@ import music from "../../assets/images/music.jpeg";
 import nip from "../../assets/images/nip.jpeg";
 
 export const muses = [
-    {
-      title: "My Wife, Wilma",
-      pic: { url: wife, title: "My wife Wilma" },
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    },
-    {
-      title: "Family",
-      pic: { url: fam, title: "My parents" },
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    },
-    {
-      title: "I ♥️ LA",
-      pic: { url: overlook, title: "Overlook of Los Angeles" },
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    },
-    {
-      title: "Nipsey Hussle",
-      pic: { url: nip, title: "Nipsey Hussle" },
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    },
-    {
-      title: "Music",
-      pic: { url: music, title: "Me holding a keyboard" },
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    },
-    {
-      title: "Basketball",
-      pic: { url: kobemjbron, title: "Kobe, MJ, Bron" },
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    },
-  ];
+  {
+    title: "My Wife, Wilma",
+    pic: { url: wife, title: "E. Hannah's wife Wilma" },
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  },
+  {
+    title: "Family",
+    pic: { url: fam, title: "E. Hannah's parents" },
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  },
+  {
+    title: "I ♥️ LA",
+    pic: { url: overlook, title: "Overlook of Los Angeles" },
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  },
+  {
+    title: "Nipsey Hussle",
+    pic: { url: nip, title: "Nipsey Hussle" },
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  },
+  {
+    title: "Music",
+    pic: { url: music, title: "E. Hannah holding a keyboard" },
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  },
+  {
+    title: "Basketball",
+    pic: { url: kobemjbron, title: "Kobe, MJ, Bron" },
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  },
+];

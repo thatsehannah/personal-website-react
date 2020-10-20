@@ -4,12 +4,12 @@ export const useStyles = makeStyles((theme) => ({
   toolbarMargin: {
     ...theme.mixins.toolbar,
     marginBottom: "0.5em",
-    [theme.breakpoints.down('sm')]: {
-      marginBottom: '0.5em'
-    }
+    [theme.breakpoints.down("sm")]: {
+      marginBottom: "0.5em",
+    },
   },
   appBar: {
-    backgroundColor: theme.palette.common.base
+    backgroundColor: "#f5f5ff",
   },
   button: {
     "&:hover": {
@@ -35,11 +35,14 @@ export const useStyles = makeStyles((theme) => ({
     background: "rgba(0,0,0,0.9)",
   },
   listItem: {
-    color: "#ffffff",
+    color: "#fff",
     fontSize: "2rem",
-    fontWeight: '600',
-    fontFamily: 'Roboto',
-    textTransform: 'uppercase',
-    textAlign: 'center'
+    fontWeight: "600",
+    fontFamily: "Roboto",
+    textTransform: "uppercase",
+    textAlign: "center",
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "1.7em",
+    },
   },
 }));

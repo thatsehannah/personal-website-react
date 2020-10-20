@@ -6,7 +6,7 @@ export const useStyles = makeStyles((theme) => ({
     width: "100%",
     padding: "3em",
     [theme.breakpoints.down("sm")]: {
-      padding: "1.2em",
+      padding: "0.5em",
     },
   },
   paper: {
@@ -21,10 +21,10 @@ export const useStyles = makeStyles((theme) => ({
     marginTop: "2em",
   },
   item: {
-    marginBottom: '1em'
+    marginBottom: "1em",
   },
   title: {
-    borderBottom: `3px solid ${theme.palette.primary.light}`,
+    borderBottom: `3px solid ${theme.palette.primary.main}`,
     paddingBottom: "0.2em",
     color: (props) => (props.mode.modeName === "dark" ? "#fff" : "inherit"),
     [theme.breakpoints.down("sm")]: {
