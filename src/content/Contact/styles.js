@@ -26,7 +26,8 @@ export const useStyles = makeStyles((theme) => ({
     
   },
   fieldset: {
-    color: "#fff",
+    color: props => props.mode.modeName === 'light' ? "inherit" : "#fff",
+    fontWeight: 600,
     "&:hover $notchedOutline": {
       borderColor: `${theme.palette.primary.light}`,
     },
