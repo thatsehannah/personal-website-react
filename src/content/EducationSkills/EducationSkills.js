@@ -49,7 +49,7 @@ const EducationSkills = (props) => {
                   className={classes.section}
                   direction={matchesSM ? "column" : "row"}
                 >
-                  <Grid item sm={matchesSM ? 0 : 4}>
+                  <Grid item sm={matchesSM ? undefined : 4}>
                     <Typography variant="h5">
                       <span className={classes.title}>Education</span>
                     </Typography>
@@ -184,7 +184,7 @@ const EducationSkills = (props) => {
               </Grid>
               <Grid item>
                 <Grid container direction={matchesSM ? "column" : "row"}>
-                  <Grid item sm={matchesSM ? 0 : 4}>
+                  <Grid item sm={matchesSM ? undefined : 4}>
                     <Typography variant="h5">
                       <span className={classes.title}>Work Experience</span>
                     </Typography>
@@ -323,7 +323,7 @@ const EducationSkills = (props) => {
                   className={classes.section}
                   direction={matchesSM ? "column" : "row"}
                 >
-                  <Grid item sm={matchesSM ? 0 : 4}>
+                  <Grid item sm={matchesSM ? undefined : 4}>
                     <Typography variant="h5">
                       <span className={classes.title}>Skills</span>
                     </Typography>

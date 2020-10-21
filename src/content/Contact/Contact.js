@@ -23,7 +23,7 @@ const Contact = (props) => {
         item
         xl={5}
         lg={5}
-        style={{ marginTop: matchesSM ? '1.5em' : "2.5em" }}
+        style={{ marginTop: matchesSM ? "1.5em" : "2.5em" }}
       >
         <Grid
           container
