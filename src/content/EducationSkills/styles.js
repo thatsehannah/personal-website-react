@@ -2,10 +2,10 @@ import { makeStyles } from "@material-ui/core/styles";
 
 export const useStyles = makeStyles((theme) => ({
   educationSkillsSection: {
-    backgroundColor: theme.palette.secondary.light,
+    backgroundColor: theme.palette.secondary.main,
     width: "100%",
     padding: "5em",
-    
+
     [theme.breakpoints.down("sm")]: {
       padding: "0.5em",
     },
@@ -13,13 +13,14 @@ export const useStyles = makeStyles((theme) => ({
   paper: {
     width: "75%",
     padding: "1.7em",
-    backgroundColor: theme.palette.common.base,
+    backgroundColor: (props) =>
+      props.mode.modeName === "light" ? "#fff" : theme.palette.secondary.dark,
     [theme.breakpoints.down("lg")]: {
       width: "auto",
     },
-    [theme.breakpoints.down('sm')]: {
-      padding: '1em'
-    }
+    [theme.breakpoints.down("sm")]: {
+      padding: "1em",
+    },
   },
   section: {
     marginTop: "2em",
@@ -44,6 +45,7 @@ export const useStyles = makeStyles((theme) => ({
     color: (props) => (props.mode.modeName === "dark" ? "#fff" : "#696969"),
   },
   description: {
+    fontSize: "1em",
     color: (props) => (props.mode.modeName === "dark" ? "#fff" : "#696969"),
   },
 }));

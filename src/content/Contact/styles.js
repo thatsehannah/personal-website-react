@@ -1,15 +1,18 @@
 import { makeStyles } from "@material-ui/core/styles";
+import contactBg from "../../assets/backgrounds/contactBg.jpeg";
 
 export const useStyles = makeStyles((theme) => ({
   contactSection: {
-    backgroundColor: theme.palette.secondary.light,
-    padding: "1em",
+    backgroundColor: theme.palette.secondary.main,
+    [theme.breakpoints.down("sm")]: {
+      paddingTop: "1em",
+    },
   },
   textField: {
     marginBottom: "2em",
-    width: "50%",
-    [theme.breakpoints.down("xs")]: {
-      width: "auto",
+    width: "70%",
+    [theme.breakpoints.down("sm")]: {
+      width: "90%",
     },
   },
   inputLabel: {
@@ -17,12 +20,10 @@ export const useStyles = makeStyles((theme) => ({
     "&.focused": {
       color: (props) => (props.mode.modeName === "light" ? "#505050" : "#fff"),
     },
-    "&.shrink $root": {
+    "&.shrink": {
       color: (props) => (props.mode.modeName === "light" ? "inherit" : "#fff"),
     },
-    [theme.breakpoints.down("sm")]: {
-      fontSize: "0.8em",
-    },
+    
   },
   fieldset: {
     color: "#fff",
@@ -36,11 +37,11 @@ export const useStyles = makeStyles((theme) => ({
   statement: {
     fontSize: "2em",
     color: (props) => (props.mode.modeName === "light" ? "inherit" : "#fff"),
-    [theme.breakpoints.down("md")]: {
-      fontSize: "1.5em",
+    [theme.breakpoints.down("lg")]: {
+      fontSize: "1.8em",
     },
     [theme.breakpoints.down("sm")]: {
-      fontSize: "1em",
+      fontSize: "1.4em",
     },
   },
   email: {
@@ -54,19 +55,37 @@ export const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("md")]: {
       fontSize: "1.25em",
     },
-    [theme.breakpoints.down("sm")]: {
-      fontSize: "1em",
-    },
+    
   },
   mailIcon: {
     fontSize: "2.1em",
     color: theme.palette.primary.main,
     marginRight: "0.2em",
     [theme.breakpoints.down("md")]: {
-      fontSize: "1.85em",
+      fontSize: "1.9em",
+    },
+    
+  },
+  contactBg: {
+    height: "100%",
+    width: "100%",
+    backgroundImage: `url(${contactBg})`,
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "cover",
+  },
+  button: {
+    marginTop: "0.5em",
+    width: '25em',
+    color: (props) => (props.mode.modeName === "light" ? "#fff" : "#000"),
+    backgroundColor: theme.palette.primary.main,
+    height: "4em",
+    "&:hover": {
+      backgroundColor: theme.palette.primary.light,
     },
     [theme.breakpoints.down("sm")]: {
-      fontSize: "1.4em",
+      height: "4em",
+      width: '15em',
     },
   },
 }));

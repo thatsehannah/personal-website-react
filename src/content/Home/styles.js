@@ -33,7 +33,7 @@ export const useStyles = makeStyles((theme) => ({
       width: "70%",
     },
     [theme.breakpoints.down("sm")]: {
-      width: "90%",
+      width: "95%",
     },
   },
   name: {
@@ -45,7 +45,7 @@ export const useStyles = makeStyles((theme) => ({
       fontSize: "3.4em",
     },
     [theme.breakpoints.down("xs")]: {
-      fontSize: "1.8em",
+      fontSize: "1.9em",
     },
   },
   statement: {
@@ -73,8 +73,8 @@ export const useStyles = makeStyles((theme) => ({
       width: "13em",
     },
     [theme.breakpoints.down("xs")]: {
-      height: "8em",
-      width: "8em",
+      height: "11em",
+      width: "11em",
     },
   },
 }));

@@ -22,7 +22,7 @@ const Home = (props) => {
   const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
 
   return (
-    <Grid container direction="column" style={{flexWrap: 'nowrap'}}>
+    <Grid container direction="column">
       <Grid item id="landing">
         <Grid
           container

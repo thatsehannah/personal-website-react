@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Link, animateScroll as scroll } from "react-scroll";
-import { connect } from "react-redux";
 
 import useScrollTrigger from "@material-ui/core/useScrollTrigger";
 import AppBar from "@material-ui/core/AppBar";
@@ -16,7 +15,7 @@ import DarkModeIcon from "@material-ui/icons/Brightness7";
 import MenuIcon from "@material-ui/icons/Menu";
 
 import { useStyles } from "./styles";
-import * as actionTypes from "../../redux/actions";
+
 
 const ElevationScroll = (props) => {
   const { children } = props;
@@ -31,15 +30,15 @@ const ElevationScroll = (props) => {
   });
 };
 
-let isLightMode = true;
-
 const Header = (props) => {
   const [openMenu, setOpenMenu] = useState(false);
   const classes = useStyles(props);
 
+  let isLightMode = props.mode.modeName === 'light';
+
   const toggleModeWrapper = () => {
     isLightMode = !isLightMode;
-    props.toggleModeHandler(isLightMode);
+    props.toggler(isLightMode);
   };
 
   return (
@@ -178,20 +177,4 @@ const Header = (props) => {
   );
 };
 
-const mapStateToProps = (state) => {
-  return {
-    mode: state.mode,
-  };
-};
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    toggleModeHandler: (isLightMode) =>
-      dispatch({
-        type: actionTypes.TOGGLE_MODE,
-        payload: { isLight: isLightMode },
-      }),
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Header);
+export default Header;

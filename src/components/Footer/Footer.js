@@ -1,7 +1,5 @@
 import React from "react";
-import {connect} from 'react-redux'
 
-// import { useTheme } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 
@@ -10,7 +8,7 @@ import SocialMedia from "../SocialMedia/SocialMedia";
 import {lightIcons, darkIcons} from '../SocialMedia/icons'
 
 const Footer = (props) => {
-  const classes = useStyles();
+  const classes = useStyles(props);
   let icons = props.mode.modeName === "light" ? lightIcons : darkIcons;
 
   return (
@@ -42,10 +40,4 @@ const Footer = (props) => {
   );
 };
 
-const mapStateToProps = (state) => {
-  return {
-    mode: state.mode,
-  };
-};
-
-export default connect(mapStateToProps)(Footer);
+export default Footer;

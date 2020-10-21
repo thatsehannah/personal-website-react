@@ -6,7 +6,9 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import TextField from "@material-ui/core/TextField";
 import MailOutlineIcon from "@material-ui/icons/MailOutline";
-// import Button from "@material-ui/core/Button";
+import Hidden from "@material-ui/core/Hidden";
+import Button from "@material-ui/core/Button";
+import SendIcon from "@material-ui/icons/Send";
 
 import { useStyles } from "./styles";
 
@@ -17,14 +19,19 @@ const Contact = (props) => {
 
   return (
     <Grid container justify="center" className={classes.contactSection}>
-      <Grid item>
+      <Grid
+        item
+        xl={5}
+        lg={5}
+        style={{ marginTop: matchesSM ? '1.5em' : "2.5em" }}
+      >
         <Grid
           container
           direction="column"
           alignItems="center"
-          style={{ width: "100%" }}
+          style={{ width: matchesSM ? "100%" : "auto" }}
         >
-          <Grid item sm style={{maxWidth: '90%'}}>
+          <Grid item style={{ width: "90%" }}>
             <Typography
               align="center"
               variant="h6"
@@ -35,7 +42,7 @@ const Contact = (props) => {
               like to get in contact with me. I'd love to hear from you!{" "}
             </Typography>
           </Grid>
-          <Grid item sm>
+          <Grid item>
             <Grid item container style={{ marginTop: "1.3em" }}>
               <Grid item>
                 <MailOutlineIcon className={classes.mailIcon} />
@@ -49,12 +56,12 @@ const Contact = (props) => {
                   target="_blank"
                   className={classes.email}
                 >
-                  Elliot C. Hannah III
+                  elliotchannah@outlook.com
                 </Typography>
               </Grid>
             </Grid>
           </Grid>
-          <Grid item sm style={{ width: "90%" }}>
+          <Grid item style={{ width: "90%" }}>
             <Grid
               container
               style={{ width: "100%", marginTop: "2em" }}
@@ -151,15 +158,31 @@ const Contact = (props) => {
                     },
                   }}
                   multiline
-                  rows={16}
+                  rows={12}
                   variant="outlined"
                   id="message-field"
                 />
+              </Grid>
+              <Grid
+                item
+                container
+                justify="center"
+                style={{ marginBottom: "2em" }}
+              >
+                <Button variant="contained" className={classes.button}>
+                  <span style={{ marginRight: "0.5em" }}>Send Message</span>
+                  <SendIcon />
+                </Button>
               </Grid>
             </Grid>
           </Grid>
         </Grid>
       </Grid>
+      <Hidden smDown>
+        <Grid item xl={7} lg={7}>
+          <Grid container className={classes.contactBg} />
+        </Grid>
+      </Hidden>
     </Grid>
   );
 };

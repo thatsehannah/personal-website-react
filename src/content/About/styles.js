@@ -18,8 +18,11 @@ export const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("md")]: {
       backgroundAttachment: "scroll",
     },
+    [theme.breakpoints.down("sm")]: {
+      padding: "3em",
+    },
     [theme.breakpoints.down("xs")]: {
-      padding: "1em",
+      padding: "0.5em",
     },
   },
   textColumn: {
@@ -53,7 +56,6 @@ export const useStyles = makeStyles((theme) => ({
       height: "4em",
     },
   },
-  title: {},
   text: {
     color: (props) => (props.mode.modeName === "light" ? "#000" : "#fff"),
     [theme.breakpoints.down("sm")]: {

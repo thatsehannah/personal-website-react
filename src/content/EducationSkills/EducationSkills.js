@@ -60,7 +60,7 @@ const EducationSkills = (props) => {
                       container
                       direction="column"
                       style={{
-                        maxWidth: "90%",
+                        maxWidth: matchesSM ? undefined : "90%",
                         marginTop: matchesSM ? "1em" : undefined,
                       }}
                     >
@@ -195,7 +195,7 @@ const EducationSkills = (props) => {
                       container
                       direction="column"
                       style={{
-                        maxWidth: "90%",
+                        maxWidth: matchesSM ? undefined : "90%",
                         marginTop: matchesSM ? "1em" : undefined,
                       }}
                     >
@@ -334,7 +334,7 @@ const EducationSkills = (props) => {
                       container
                       direction="column"
                       style={{
-                        maxWidth: "95%",
+                        maxWidth: matchesSM ? undefined : "90%",
                         marginTop: matchesSM ? "1em" : undefined,
                       }}
                     >

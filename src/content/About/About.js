@@ -17,7 +17,6 @@ import Me from "../../assets/images/Me.jpeg";
 const About = (props) => {
   const classes = useStyles(props);
   const theme = useTheme();
-  // const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
   const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
   const matchesMD = useMediaQuery(theme.breakpoints.down("md"));
 
@@ -96,7 +95,7 @@ const About = (props) => {
   if (matchesSM) {
     aboutMe = <MobileAbout>{aboutMeContent}</MobileAbout>;
   } else {
-    aboutMe = <DesktopAbout>{aboutMeContent}</DesktopAbout>;
+    aboutMe = <DesktopAbout mode={props.mode}>{aboutMeContent}</DesktopAbout>;
   }
 
   return (
