@@ -16,7 +16,6 @@ import MenuIcon from "@material-ui/icons/Menu";
 
 import { useStyles } from "./styles";
 
-
 const ElevationScroll = (props) => {
   const { children } = props;
 
@@ -34,7 +33,7 @@ const Header = (props) => {
   const [openMenu, setOpenMenu] = useState(false);
   const classes = useStyles(props);
 
-  let isLightMode = props.mode.modeName === 'light';
+  let isLightMode = props.mode.modeName === "light";
 
   const toggleModeWrapper = () => {
     isLightMode = !isLightMode;
@@ -57,6 +56,7 @@ const Header = (props) => {
                   className={classes.button}
                   onClick={() => setOpenMenu(!openMenu)}
                   disableRipple
+                  disableTouchRipple
                 >
                   <MenuIcon className={classes.menuIcon} />
                 </IconButton>
@@ -66,6 +66,7 @@ const Header = (props) => {
                 <IconButton
                   onClick={toggleModeWrapper}
                   disableRipple
+                  disableTouchRipple
                   className={classes.button}
                 >
                   {isLightMode ? (
@@ -116,7 +117,7 @@ const Header = (props) => {
                   onClick={() => setOpenMenu(false)}
                   component={Link}
                   to="about"
-                  value='about'
+                  value="about"
                   spy={true}
                   smooth={true}
                   duration={1200}

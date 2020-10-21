@@ -7,8 +7,11 @@ export const useStyles = makeStyles((theme) => ({
     padding: "5em",
 
     [theme.breakpoints.down("sm")]: {
-      padding: "0.5em",
+      padding: "3em",
     },
+    [theme.breakpoints.down('xs')]: {
+      padding: '1em'
+    }
   },
   paper: {
     width: "75%",

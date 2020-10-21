@@ -1,31 +1,76 @@
 import React from "react";
 
-import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import Card from "@material-ui/core/Card";
+import IconButton from "@material-ui/core/IconButton";
 import CardMedia from "@material-ui/core/CardMedia";
 import CardContent from "@material-ui/core/CardContent";
-import CardActions from "@material-ui/core/CardActions";
 import { useTheme } from "@material-ui/core/styles";
 
 import { useStyles } from "./styles";
+import InstagramLight from "../../../assets/icons/light/instagram.svg";
+import InstagramDark from "../../../assets/icons/dark/instagram.svg";
+import SoundcloudLight from "../../../assets/icons/light/soundcloud.svg";
+import SoundcloudDark from "../../../assets/icons/dark/soundcloud.svg";
 
 const MuseCard = (props) => {
   const classes = useStyles(props);
   const muse = props.muse;
   const theme = useTheme();
 
-  let actionArea = null;
+  let iconItem = null;
 
-  if (muse.title === "Music") {
-    actionArea = (
-      <CardActions>
-        <Button size="large" className={classes.button}>
-          Learn More
-        </Button>
-      </CardActions>
-    );
+  const createIconItem = (imgSrc, altText, link) => (
+    <Grid
+      item
+      component={"a"}
+      href={link}
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      <IconButton disableRipple disableTouchRipple>
+        <img src={imgSrc} alt={altText} className={classes.icon} />
+      </IconButton>
+    </Grid>
+  );
+
+  if (props.mode.modeName === "light") {
+    switch (muse.title) {
+      case "My Wife, Wilma":
+        iconItem = createIconItem(
+          InstagramLight,
+          "Wilma's Instagram",
+          "https://www.instagram.com/lavishbombs/"
+        );
+        break;
+      case "Music":
+        iconItem = createIconItem(
+          SoundcloudLight,
+          "My Soundcloud",
+          "https://soundcloud.com/thatsehannah/tracks"
+        );
+        break;
+      default:
+    }
+  } else {
+    switch (muse.title) {
+      case "My Wife, Wilma":
+        iconItem = createIconItem(
+          InstagramDark,
+          "Wilma's Instagram",
+          "https://www.instagram.com/lavishbombs/"
+        );
+        break;
+      case "Music":
+        iconItem = createIconItem(
+          SoundcloudDark,
+          "My Soundcloud",
+          "https://soundcloud.com/thatsehannah/tracks"
+        );
+        break;
+      default:
+    }
   }
 
   return (
@@ -47,7 +92,6 @@ const MuseCard = (props) => {
           container
           direction="column"
           alignItems="center"
-
           className={classes.museDescriptionContainer}
         >
           <Grid item>
@@ -73,9 +117,7 @@ const MuseCard = (props) => {
               {muse.description}
             </Typography>
           </Grid>
-          <Grid item >
-            {actionArea}
-          </Grid>
+          {iconItem ? iconItem : null}
         </Grid>
       </CardContent>
     </Card>
