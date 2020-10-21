@@ -16,8 +16,8 @@ import SoundcloudDark from "../../../assets/icons/dark/soundcloud.svg";
 
 const MuseCard = (props) => {
   const classes = useStyles(props);
-  const muse = props.muse;
   const theme = useTheme();
+  const { muse } = props;
 
   let iconItem = null;
 
