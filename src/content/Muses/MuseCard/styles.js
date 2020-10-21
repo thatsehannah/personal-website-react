@@ -59,8 +59,17 @@ export const useStyles = makeStyles((theme) => ({
     },
   },
   body: {
+    marginBottom: "-0.5em",
     [theme.breakpoints.down("sm")]: {
       fontSize: "0.85em",
+    },
+  },
+  icon: {
+    height: "2em",
+    width: "2em",
+    [theme.breakpoints.down("sm")]: {
+      height: "1.5em",
+      width: "1.5em",
     },
   },
 }));

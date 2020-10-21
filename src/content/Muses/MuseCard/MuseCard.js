@@ -3,12 +3,12 @@ import React from "react";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import Card from "@material-ui/core/Card";
-import IconButton from "@material-ui/core/IconButton";
 import CardMedia from "@material-ui/core/CardMedia";
 import CardContent from "@material-ui/core/CardContent";
 import { useTheme } from "@material-ui/core/styles";
 
 import { useStyles } from "./styles";
+import { createIconItem } from "../../../utilities/createIconItem";
 import InstagramLight from "../../../assets/icons/light/instagram.svg";
 import InstagramDark from "../../../assets/icons/dark/instagram.svg";
 import SoundcloudLight from "../../../assets/icons/light/soundcloud.svg";
@@ -21,34 +21,22 @@ const MuseCard = (props) => {
 
   let iconItem = null;
 
-  const createIconItem = (imgSrc, altText, link) => (
-    <Grid
-      item
-      component={"a"}
-      href={link}
-      rel="noopener noreferrer"
-      target="_blank"
-    >
-      <IconButton disableRipple disableTouchRipple>
-        <img src={imgSrc} alt={altText} className={classes.icon} />
-      </IconButton>
-    </Grid>
-  );
-
   if (props.mode.modeName === "light") {
     switch (muse.title) {
       case "My Wife, Wilma":
         iconItem = createIconItem(
           InstagramLight,
           "Wilma's Instagram",
-          "https://www.instagram.com/lavishbombs/"
+          "https://www.instagram.com/lavishbombs/",
+          classes.icon
         );
         break;
       case "Music":
         iconItem = createIconItem(
           SoundcloudLight,
           "My Soundcloud",
-          "https://soundcloud.com/thatsehannah/tracks"
+          "https://soundcloud.com/thatsehannah/tracks",
+          classes.icon
         );
         break;
       default:
@@ -59,14 +47,16 @@ const MuseCard = (props) => {
         iconItem = createIconItem(
           InstagramDark,
           "Wilma's Instagram",
-          "https://www.instagram.com/lavishbombs/"
+          "https://www.instagram.com/lavishbombs/",
+          classes.icon
         );
         break;
       case "Music":
         iconItem = createIconItem(
           SoundcloudDark,
           "My Soundcloud",
-          "https://soundcloud.com/thatsehannah/tracks"
+          "https://soundcloud.com/thatsehannah/tracks",
+          classes.icon
         );
         break;
       default:
