@@ -8,7 +8,7 @@ import CardContent from "@material-ui/core/CardContent";
 import { useTheme } from "@material-ui/core/styles";
 
 import { useStyles } from "./styles";
-import { createIconItem } from "../../../utilities/createIconItem";
+import { createSocialsIconItem } from "../../../utilities/createSocialsIconItem";
 import InstagramLight from "../../../assets/icons/light/instagram.svg";
 import InstagramDark from "../../../assets/icons/dark/instagram.svg";
 import SoundcloudLight from "../../../assets/icons/light/soundcloud.svg";
@@ -24,7 +24,7 @@ const MuseCard = (props) => {
   if (props.mode.modeName === "light") {
     switch (muse.title) {
       case "My Wife, Wilma":
-        iconItem = createIconItem(
+        iconItem = createSocialsIconItem(
           InstagramLight,
           "Wilma's Instagram",
           "https://www.instagram.com/lavishbombs/",
@@ -32,7 +32,7 @@ const MuseCard = (props) => {
         );
         break;
       case "Music":
-        iconItem = createIconItem(
+        iconItem = createSocialsIconItem(
           SoundcloudLight,
           "My Soundcloud",
           "https://soundcloud.com/thatsehannah/tracks",
@@ -44,7 +44,7 @@ const MuseCard = (props) => {
   } else {
     switch (muse.title) {
       case "My Wife, Wilma":
-        iconItem = createIconItem(
+        iconItem = createSocialsIconItem(
           InstagramDark,
           "Wilma's Instagram",
           "https://www.instagram.com/lavishbombs/",
@@ -52,7 +52,7 @@ const MuseCard = (props) => {
         );
         break;
       case "Music":
-        iconItem = createIconItem(
+        iconItem = createSocialsIconItem(
           SoundcloudDark,
           "My Soundcloud",
           "https://soundcloud.com/thatsehannah/tracks",

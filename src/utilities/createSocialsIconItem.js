@@ -3,7 +3,7 @@ import React from "react";
 import Grid from "@material-ui/core/Grid";
 import IconButton from "@material-ui/core/IconButton";
 
-export const createIconItem = (
+export const createSocialsIconItem = (
   imgSrc,
   altText,
   link,
