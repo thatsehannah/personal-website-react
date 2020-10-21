@@ -27,14 +27,16 @@ const MuseCard = (props) => {
         InstagramLight,
         "Wilma's Instagram",
         "https://www.instagram.com/lavishbombs/",
-        classes.icon
+        classes.icon,
+        classes.button
       );
     } else {
       iconItem = createSocialsIconItem(
         InstagramDark,
         "Wilma's Instagram",
         "https://www.instagram.com/lavishbombs/",
-        classes.icon
+        classes.icon,
+        classes.button
       );
     }
   }
@@ -45,14 +47,16 @@ const MuseCard = (props) => {
         SoundcloudLight,
         "My Soundcloud",
         "https://soundcloud.com/thatsehannah/tracks",
-        classes.icon
+        classes.icon,
+        classes.button
       );
     } else {
       iconItem = createSocialsIconItem(
         SoundcloudDark,
         "My Soundcloud",
         "https://soundcloud.com/thatsehannah/tracks",
-        classes.icon
+        classes.icon,
+        classes.button
       );
     }
   }
