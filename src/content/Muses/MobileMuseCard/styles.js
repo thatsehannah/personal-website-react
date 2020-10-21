@@ -17,9 +17,9 @@ export const useStyles = makeStyles((theme) => ({
     backgroundColor: (props) =>
       props.mode.modeName === "light" ? "#fff" : theme.palette.secondary.dark,
   },
-  divider: {
+  dividers: {
     backgroundColor: (props) =>
-      props.mode.modeName === "light" ? "inherit" : "#fff",
+      props.mode.modeName === "light" ? "#888888" : "#fff",
   },
   button: {
     position: "absolute",

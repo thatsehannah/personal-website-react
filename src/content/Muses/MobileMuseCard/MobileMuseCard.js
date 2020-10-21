@@ -7,9 +7,9 @@ import CardMedia from "@material-ui/core/CardMedia";
 import Dialog from "@material-ui/core/Dialog";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import DialogContent from "@material-ui/core/DialogContent";
+import Divider from "@material-ui/core/Divider";
 import IconButton from "@material-ui/core/IconButton";
 import CloseIcon from "@material-ui/icons/Close";
-// import { useTheme } from "@material-ui/core/styles";
 
 import { useStyles } from "./styles";
 import { createSocialsIconItem } from "../../../utilities/createSocialsIconItem";
@@ -20,7 +20,6 @@ import SoundcloudDark from "../../../assets/icons/dark/soundcloud.svg";
 
 const MobileMuseCard = (props) => {
   const classes = useStyles(props);
-  // const theme = useTheme();
   const { muse } = props;
   const [openDialog, setOpenDialog] = useState(false);
 
@@ -111,7 +110,8 @@ const MobileMuseCard = (props) => {
             <CloseIcon className={classes.closeIcon} />
           </IconButton>
         </DialogTitle>
-        <DialogContent dividers classes={{ dividers: classes.dividers }}>
+        <Divider className={classes.dividers}/>
+        <DialogContent>
           <Grid container direction="column" alignItems="center">
             <Grid item style={{ width: "90%" }}>
               <Typography
