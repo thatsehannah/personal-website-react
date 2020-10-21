@@ -21,45 +21,39 @@ const MuseCard = (props) => {
 
   let iconItem = null;
 
-  if (props.mode.modeName === "light") {
-    switch (muse.title) {
-      case "My Wife, Wilma":
-        iconItem = createSocialsIconItem(
-          InstagramLight,
-          "Wilma's Instagram",
-          "https://www.instagram.com/lavishbombs/",
-          classes.icon
-        );
-        break;
-      case "Music":
-        iconItem = createSocialsIconItem(
-          SoundcloudLight,
-          "My Soundcloud",
-          "https://soundcloud.com/thatsehannah/tracks",
-          classes.icon
-        );
-        break;
-      default:
+  if (muse.title === "My Wife, Wilma") {
+    if (props.mode.modeName === "light") {
+      iconItem = createSocialsIconItem(
+        InstagramLight,
+        "Wilma's Instagram",
+        "https://www.instagram.com/lavishbombs/",
+        classes.icon
+      );
+    } else {
+      iconItem = createSocialsIconItem(
+        InstagramDark,
+        "Wilma's Instagram",
+        "https://www.instagram.com/lavishbombs/",
+        classes.icon
+      );
     }
-  } else {
-    switch (muse.title) {
-      case "My Wife, Wilma":
-        iconItem = createSocialsIconItem(
-          InstagramDark,
-          "Wilma's Instagram",
-          "https://www.instagram.com/lavishbombs/",
-          classes.icon
-        );
-        break;
-      case "Music":
-        iconItem = createSocialsIconItem(
-          SoundcloudDark,
-          "My Soundcloud",
-          "https://soundcloud.com/thatsehannah/tracks",
-          classes.icon
-        );
-        break;
-      default:
+  }
+
+  if (muse.title === "Music") {
+    if (props.mode.modeName === "light") {
+      iconItem = createSocialsIconItem(
+        SoundcloudLight,
+        "My Soundcloud",
+        "https://soundcloud.com/thatsehannah/tracks",
+        classes.icon
+      );
+    } else {
+      iconItem = createSocialsIconItem(
+        SoundcloudDark,
+        "My Soundcloud",
+        "https://soundcloud.com/thatsehannah/tracks",
+        classes.icon
+      );
     }
   }
 
