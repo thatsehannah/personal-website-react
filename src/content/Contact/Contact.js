@@ -5,7 +5,7 @@ import useMediaQuery from "@material-ui/core/useMediaQuery";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import TextField from "@material-ui/core/TextField";
-import ContactMailIcon from "@material-ui/icons/ContactMail";
+import MailOutlineIcon from "@material-ui/icons/MailOutline";
 // import Button from "@material-ui/core/Button";
 
 import { useStyles } from "./styles";
@@ -22,37 +22,48 @@ const Contact = (props) => {
           container
           direction="column"
           alignItems="center"
-          style={{ width: "50em" }}
+          style={{ width: "100%" }}
         >
-          <Grid item sm>
-            <Typography align="center" variant="h6" gutterBottom>
+          <Grid item sm style={{maxWidth: '90%'}}>
+            <Typography
+              align="center"
+              variant="h6"
+              gutterBottom
+              className={classes.statement}
+            >
               Want to say hey? Send me a message via email or this form if you'd
               like to get in contact with me. I'd love to hear from you!{" "}
             </Typography>
           </Grid>
           <Grid item sm>
-            <Grid item container></Grid>
-            <Typography
-              variant="body1"
-              align="center"
-              component={"a"}
-              href="mailto:elliotchannah@outlook.com"
-              target="_blank"
-            >
-              <ContactMailIcon style={{marginRight: '0.5em'}}/>
-              elliotchannah@outlook.com
-            </Typography>
-          </Grid>
-          <Grid item sm>
-            <Grid
-              item
-              container
-              style={{ width: "32em", marginTop: "2em" }}
-              direction="column"
-            >
+            <Grid item container style={{ marginTop: "1.3em" }}>
               <Grid item>
+                <MailOutlineIcon className={classes.mailIcon} />
+              </Grid>
+              <Grid item>
+                <Typography
+                  variant="body1"
+                  align="center"
+                  component={"a"}
+                  href="mailto:elliotchannah@outlook.com"
+                  target="_blank"
+                  className={classes.email}
+                >
+                  Elliot C. Hannah III
+                </Typography>
+              </Grid>
+            </Grid>
+          </Grid>
+          <Grid item sm style={{ width: "90%" }}>
+            <Grid
+              container
+              style={{ width: "100%", marginTop: "2em" }}
+              direction="column"
+              alignItems="center"
+            >
+              <Grid container item justify="center">
                 <TextField
-                  fullWidth
+                  fullWidth={matchesSM}
                   className={classes.textField}
                   label="Name*"
                   InputLabelProps={{
@@ -72,9 +83,9 @@ const Contact = (props) => {
                   id="name-field"
                 />
               </Grid>
-              <Grid item>
+              <Grid container item justify="center">
                 <TextField
-                  fullWidth
+                  fullWidth={matchesSM}
                   className={classes.textField}
                   label="Email*"
                   InputLabelProps={{
@@ -94,9 +105,9 @@ const Contact = (props) => {
                   id="email-field"
                 />
               </Grid>
-              <Grid item>
+              <Grid container item justify="center">
                 <TextField
-                  fullWidth
+                  fullWidth={matchesSM}
                   className={classes.textField}
                   label="Phone"
                   InputLabelProps={{
@@ -116,10 +127,15 @@ const Contact = (props) => {
                   id="phone-field"
                 />
               </Grid>
-              <Grid item>
+              <Grid
+                container
+                item
+                style={{ marginTop: "2.6em" }}
+                justify="center"
+              >
                 <TextField
-                  fullWidth
-                  className={classes.messageField}
+                  fullWidth={matchesSM}
+                  className={classes.textField}
                   label="Message*"
                   InputLabelProps={{
                     classes: {

@@ -12,8 +12,7 @@ export const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("sm")]: {
       height: "20em",
       width: "20em",
-      marginRight: 0,
-
+      margin: theme.spacing(1, 1),
       "&:hover $museImage": {
         height: "8em",
       },

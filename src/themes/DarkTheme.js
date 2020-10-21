@@ -30,12 +30,12 @@ const theme = createMuiTheme({
     h5: {
       fontFamily: "Archivo Black",
       textTransform: "uppercase",
-      fontSize: "1.75em",
+      fontSize: "1.5em",
     },
     h6: {
       fontFamily: "Rubik",
       fontWeight: 700,
-      fontSize: "1.5em",
+      fontSize: "1.3em",
     },
     subtitle1: {
       fontFamily: "Rubik",
@@ -43,7 +43,7 @@ const theme = createMuiTheme({
     },
     subtitle2: {
       fontFamily: "Rubik",
-      fontSize: "1.3em",
+      fontSize: "1.1em",
     },
     body1: {
       fontFamily: "Rubik",
