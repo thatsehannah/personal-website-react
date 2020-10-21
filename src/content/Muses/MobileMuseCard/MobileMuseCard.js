@@ -72,7 +72,7 @@ const MobileMuseCard = (props) => {
   return (
     <>
       <Card
-        variant="outlined"
+        variant={props.mode.modeName === 'light' ? "outlined" : undefined}
         onClick={handleOpenDialog}
         className={classes.museCard}
       >

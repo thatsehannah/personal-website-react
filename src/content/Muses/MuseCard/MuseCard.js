@@ -62,7 +62,10 @@ const MuseCard = (props) => {
   }
 
   return (
-    <Card variant="outlined" className={classes.museCard}>
+    <Card
+      variant={props.mode.modeName === "light" ? "outlined" : undefined}
+      className={classes.museCard}
+    >
       <CardMedia
         className={classes.museImage}
         component="img"
