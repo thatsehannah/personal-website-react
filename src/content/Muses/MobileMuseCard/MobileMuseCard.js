@@ -23,14 +23,6 @@ const MobileMuseCard = (props) => {
   const { muse } = props;
   const [openDialog, setOpenDialog] = useState(false);
 
-  const handleOpenDialog = () => {
-    setOpenDialog(true);
-  };
-
-  const handleCloseDialog = () => {
-    setOpenDialog(false);
-  };
-
   let iconItem = null;
 
   if (muse.title === "My Wife, Wilma") {
@@ -73,7 +65,7 @@ const MobileMuseCard = (props) => {
     <>
       <Card
         variant={props.mode.modeName === 'light' ? "outlined" : undefined}
-        onClick={handleOpenDialog}
+        onClick={() => setOpenDialog(true)}
         className={classes.museCard}
       >
         <CardMedia
@@ -89,7 +81,7 @@ const MobileMuseCard = (props) => {
       <Dialog
         open={openDialog}
         disableBackdropClick
-        onClose={handleCloseDialog}
+        onClose={() => setOpenDialog(false)}
         PaperProps={{ classes: { root: classes.paper } }}
       >
         <DialogTitle disableTypography>
@@ -104,7 +96,7 @@ const MobileMuseCard = (props) => {
           <IconButton
             disableRipple
             disableTouchRipple
-            onClick={handleCloseDialog}
+            onClick={() => setOpenDialog(false)}
             className={classes.button}
           >
             <CloseIcon className={classes.closeIcon} />
