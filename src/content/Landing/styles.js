@@ -2,14 +2,6 @@ import { makeStyles } from "@material-ui/core/styles";
 import landingBackgroundLight from "../../assets/backgrounds/landingBg.png";
 
 export const useStyles = makeStyles((theme) => ({
-  section: {
-    height: "80em",
-    backgroundImage: `linear-gradient(to right, ${theme.palette.common.background}, ${theme.palette.common.altBackground})`,
-  },
-  altSection: {
-    height: "80em",
-    backgroundImage: `linear-gradient(to left, ${theme.palette.common.background}, ${theme.palette.common.altBackground})`,
-  },
   landingSection: {
     height: "80em",
     backgroundImage: `url(${landingBackgroundLight})`,
@@ -28,7 +20,7 @@ export const useStyles = makeStyles((theme) => ({
     },
   },
   name_statement: {
-    width: '50%',
+    width: "50%",
     [theme.breakpoints.down("md")]: {
       width: "70%",
     },
