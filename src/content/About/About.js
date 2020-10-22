@@ -78,7 +78,7 @@ const About = (props) => {
                 component={"a"}
                 rel="noopener noreferrer"
                 target="_blank"
-                href="https://pdfhost.io/v/Ybgc1~k8P_ElliotCHannahpdf.pdf"
+                href="https://pdfhost.io/v/Ybgc1~k8P_ElliotCHannahResume.pdf"
               >
                 <GetAppIcon />
                 <span style={{ marginLeft: "0.5em" }}>Download My Résumé</span>
