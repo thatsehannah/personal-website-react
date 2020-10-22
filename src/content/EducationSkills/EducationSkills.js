@@ -21,8 +21,6 @@ const EducationSkills = (props) => {
     { type: "CSS", level: 93 },
     { type: "SQL", level: 75 },
     { type: "Java", level: 70 },
-    { type: "PHP", level: 10 },
-    { type: "Swift", level: 30 },
   ];
 
   const skillbarColors = {
