@@ -10,22 +10,22 @@ export const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("lg")]: {
       height: "60em",
     },
+    [theme.breakpoints.down("xs")]: {
+      height: "40em",
+    },
   },
   intro: {
     [theme.breakpoints.down("lg")]: {
-      marginTop: "-8em",
+      marginTop: "-10em",
     },
-    [theme.breakpoints.down("sm")]: {
-      marginTop: "-9em",
+    [theme.breakpoints.down("xs")]: {
+      marginTop: "2em",
     },
   },
   name_statement: {
-    width: "50%",
-    [theme.breakpoints.down("md")]: {
-      width: "70%",
-    },
+    width: "70%",
     [theme.breakpoints.down("sm")]: {
-      width: "95%",
+      width: "90%",
     },
   },
   name: {
@@ -34,10 +34,10 @@ export const useStyles = makeStyles((theme) => ({
       fontSize: "4.2em",
     },
     [theme.breakpoints.down("sm")]: {
-      fontSize: "3.4em",
+      fontSize: "2.9em",
     },
     [theme.breakpoints.down("xs")]: {
-      fontSize: "1.9em",
+      fontSize: "1.7em",
     },
   },
   statement: {
@@ -61,12 +61,12 @@ export const useStyles = makeStyles((theme) => ({
       width: "17em",
     },
     [theme.breakpoints.down("sm")]: {
-      height: "13em",
-      width: "13em",
+      height: "12em",
+      width: "12em",
     },
     [theme.breakpoints.down("xs")]: {
-      height: "11em",
-      width: "11em",
+      height: "10em",
+      width: "10em",
     },
   },
 }));

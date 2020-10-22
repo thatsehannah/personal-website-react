@@ -5,20 +5,21 @@ export const useStyles = makeStyles((theme) => ({
     ...theme.mixins.toolbar,
     marginBottom: "0.5em",
     [theme.breakpoints.down("lg")]: {
-      marginBottom: '-0.1em'
+      marginBottom: "-0.5em",
     },
-    
   },
   appBar: {
-    backgroundColor: props => props.mode.modeName === 'light' ? "#f5f5ff" : theme.palette.common.base,
+    height: "3.5em",
+    backgroundColor: (props) =>
+      props.mode.modeName === "light" ? "#f5f5ff" : theme.palette.common.base,
   },
   button: {
     "&:hover": {
-      backgroundColor: theme.palette.common.base,
+      backgroundColor: "transparent",
     },
   },
-  menuIcon: {
-    fontSize: "2em",
+  appBarIcon: {
+    fontSize: "1.5em",
     color: theme.palette.primary.main,
     [theme.breakpoints.down("md")]: {
       fontSize: "1.5em",
@@ -26,10 +27,6 @@ export const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("xs")]: {
       fontSize: "1.2em",
     },
-  },
-  toggleModeIcon: {
-    fontSize: "1.5em",
-    color: theme.palette.primary.main,
   },
   menu: {
     zIndex: 1305,

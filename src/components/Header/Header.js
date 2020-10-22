@@ -54,11 +54,11 @@ const Header = (props) => {
               <Grid item>
                 <IconButton
                   className={classes.button}
-                  onClick={() => setOpenMenu(!openMenu)}
+                  onClick={() => setOpenMenu(true)}
                   disableRipple
                   disableTouchRipple
                 >
-                  <MenuIcon className={classes.menuIcon} />
+                  <MenuIcon className={classes.appBarIcon} />
                 </IconButton>
               </Grid>
 
@@ -70,9 +70,9 @@ const Header = (props) => {
                   className={classes.button}
                 >
                   {isLightMode ? (
-                    <LightModeIcon className={classes.toggleModeIcon} />
+                    <LightModeIcon className={classes.appBarIcon} />
                   ) : (
-                    <DarkModeIcon className={classes.toggleModeIcon} />
+                    <DarkModeIcon className={classes.appBarIcon} />
                   )}
                 </IconButton>
               </Grid>
