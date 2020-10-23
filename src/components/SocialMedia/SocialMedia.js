@@ -17,35 +17,30 @@ const SocialMedia = (props) => {
     <Grid item container className={classes.socialContainer} justify="center">
       {createSocialsIconItem(
         SiGithub,
-        "Github Icon",
         "https:///www.github.com/thatsehannah",
         classes.icon,
         classes.button
       )}
       {createSocialsIconItem(
         SiFacebook,
-        "Facebook Icon",
         "https:///wwww.facebook.com/ehannahiii",
         classes.icon,
         classes.button
       )}
       {createSocialsIconItem(
         SiInstagram,
-        "Instagram Icon",
         "https://www.instagram.com/thatsehannah/",
         classes.icon,
         classes.button
       )}
       {createSocialsIconItem(
         SiLinkedin,
-        "Linked In Icon",
         "https://www.linkedin.com/in/elliotchannahiii/",
         classes.icon,
         classes.button
       )}
       {createSocialsIconItem(
         SiCashapp,
-        "Cash App Icon",
         "https://cash.app/$thatsehannah/",
         classes.icon,
         classes.button

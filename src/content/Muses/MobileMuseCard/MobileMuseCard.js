@@ -26,7 +26,6 @@ const MobileMuseCard = (props) => {
   if (muse.title === "My Wife, Wilma") {
     iconItem = createSocialsIconItem(
       SiInstagram,
-      "Wilma's Instagram",
       "https://www.instagram.com/lavishbombs/",
       classes.icon,
       classes.button
@@ -36,7 +35,6 @@ const MobileMuseCard = (props) => {
   if (muse.title === "Music") {
     iconItem = createSocialsIconItem(
       SiSoundcloud,
-      "My Soundcloud",
       "https://soundcloud.com/thatsehannah/tracks",
       classes.icon,
       classes.button
