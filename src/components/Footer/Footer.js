@@ -9,7 +9,6 @@ import {lightIcons, darkIcons} from '../SocialMedia/icons'
 
 const Footer = (props) => {
   const classes = useStyles(props);
-  let icons = props.mode.modeName === "light" ? lightIcons : darkIcons;
 
   return (
     <footer className={classes.footer}>
@@ -34,7 +33,7 @@ const Footer = (props) => {
             -Kobe Bryant
           </Typography>
         </Grid>
-        <SocialMedia size={[45, 45]} icons={icons} />
+        <SocialMedia size={[45, 45]} />
       </Grid>
     </footer>
   );

@@ -4,10 +4,10 @@ import Grid from "@material-ui/core/Grid";
 import IconButton from "@material-ui/core/IconButton";
 
 export const createSocialsIconItem = (
-  imgSrc,
+  Icon,
   altText,
   link,
-  imgClass,
+  componentClass,
   buttonClass
 ) => (
   <Grid
@@ -18,7 +18,7 @@ export const createSocialsIconItem = (
     target="_blank"
   >
     <IconButton disableRipple disableTouchRipple className={buttonClass}>
-      <img src={imgSrc} alt={altText} className={imgClass} />
+      <Icon className={componentClass} />
     </IconButton>
   </Grid>
 );

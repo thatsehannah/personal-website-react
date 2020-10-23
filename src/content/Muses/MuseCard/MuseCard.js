@@ -9,10 +9,8 @@ import { useTheme } from "@material-ui/core/styles";
 
 import { useStyles } from "./styles";
 import { createSocialsIconItem } from "../../../utilities/createSocialsIconItem";
-import InstagramLight from "../../../assets/icons/light/instagram.svg";
-import InstagramDark from "../../../assets/icons/dark/instagram.svg";
-import SoundcloudLight from "../../../assets/icons/light/soundcloud.svg";
-import SoundcloudDark from "../../../assets/icons/dark/soundcloud.svg";
+import { SiSoundcloud } from "react-icons/si";
+import { SiInstagram } from "react-icons/si";
 
 const MuseCard = (props) => {
   const classes = useStyles(props);
@@ -22,43 +20,23 @@ const MuseCard = (props) => {
   let iconItem = null;
 
   if (muse.title === "My Wife, Wilma") {
-    if (props.mode.modeName === "light") {
-      iconItem = createSocialsIconItem(
-        InstagramLight,
-        "Wilma's Instagram",
-        "https://www.instagram.com/lavishbombs/",
-        classes.icon,
-        classes.button
-      );
-    } else {
-      iconItem = createSocialsIconItem(
-        InstagramDark,
-        "Wilma's Instagram",
-        "https://www.instagram.com/lavishbombs/",
-        classes.icon,
-        classes.button
-      );
-    }
+    iconItem = createSocialsIconItem(
+      SiInstagram,
+      "Wilma's Instagram",
+      "https://www.instagram.com/lavishbombs/",
+      classes.icon,
+      classes.button
+    );
   }
 
   if (muse.title === "Music") {
-    if (props.mode.modeName === "light") {
-      iconItem = createSocialsIconItem(
-        SoundcloudLight,
-        "My Soundcloud",
-        "https://soundcloud.com/thatsehannah/tracks",
-        classes.icon,
-        classes.button
-      );
-    } else {
-      iconItem = createSocialsIconItem(
-        SoundcloudDark,
-        "My Soundcloud",
-        "https://soundcloud.com/thatsehannah/tracks",
-        classes.icon,
-        classes.button
-      );
-    }
+    iconItem = createSocialsIconItem(
+      SiSoundcloud,
+      "My Soundcloud",
+      "https://soundcloud.com/thatsehannah/tracks",
+      classes.icon,
+      classes.button
+    );
   }
 
   return (
