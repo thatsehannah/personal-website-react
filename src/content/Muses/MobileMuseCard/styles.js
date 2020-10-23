@@ -42,5 +42,6 @@ export const useStyles = makeStyles((theme) => ({
   icon: {
     height: "2em",
     width: "2em",
+    color: theme.palette.primary.main,
   },
 }));

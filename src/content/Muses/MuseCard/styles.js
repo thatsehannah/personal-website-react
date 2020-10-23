@@ -38,7 +38,8 @@ export const useStyles = makeStyles((theme) => ({
     marginBottom: "-0.5em",
   },
   icon: {
-    height: "2em",
-    width: "2em",
+    height: "1.7em",
+    width: "1.7em",
+    color: theme.palette.primary.main,
   },
 }));

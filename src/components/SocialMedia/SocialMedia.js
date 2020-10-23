@@ -6,7 +6,6 @@ import { SiLinkedin } from "react-icons/si";
 import { SiCashapp } from "react-icons/si";
 
 import Grid from "@material-ui/core/Grid";
-import IconButton from "@material-ui/core/IconButton";
 
 import { useStyles } from "./styles";
 import { createSocialsIconItem } from "../../utilities/createSocialsIconItem";
