@@ -2,13 +2,14 @@ import React from "react";
 
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
+import { useTheme } from "@material-ui/core/styles";
 
 import { useStyles } from "./styles";
 import SocialMedia from "../SocialMedia/SocialMedia";
-import {lightIcons, darkIcons} from '../SocialMedia/icons'
 
 const Footer = (props) => {
   const classes = useStyles(props);
+  const theme = useTheme();
 
   return (
     <footer className={classes.footer}>
@@ -33,7 +34,7 @@ const Footer = (props) => {
             -Kobe Bryant
           </Typography>
         </Grid>
-        <SocialMedia size={[45, 45]} />
+        <SocialMedia size={[45, 28]} color={theme.palette.primary.main} />
       </Grid>
     </footer>
   );

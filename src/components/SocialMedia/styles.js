@@ -16,6 +16,7 @@ export const useStyles = makeStyles((theme) => ({
     },
   },
   icon: {
+    color: props => props.color,
     height: (props) => props.size[0],
     width: (props) => props.size[0],
     [theme.breakpoints.down("sm")]: {
