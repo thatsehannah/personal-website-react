@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { useTheme } from "@material-ui/core/styles";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
@@ -16,6 +16,46 @@ const Contact = (props) => {
   const classes = useStyles(props);
   const theme = useTheme();
   const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [emailValid, setEmailValid] = useState("");
+  const [phone, setPhone] = useState("");
+  const [phoneValid, setPhoneValid] = useState("");
+  const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const onChange = (event) => {
+    let valid;
+
+    switch (event.target.id) {
+      case "email-field":
+        setEmail(event.target.value);
+        valid = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(
+          event.target.value
+        );
+
+        if (!valid) {
+          setEmailValid("Invalid email address");
+        } else {
+          setEmailValid("");
+        }
+        break;
+      case "phone-field":
+        setPhone(event.target.value);
+        valid = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/.test(
+          event.target.value
+        );
+
+        if (!valid) {
+          setPhoneValid("Invalid phone number");
+        } else {
+          setPhoneValid("");
+        }
+        break;
+      default:
+        break;
+    }
+  };
 
   return (
     <Grid container justify="center" className={classes.contactSection}>
@@ -73,6 +113,8 @@ const Contact = (props) => {
                   fullWidth={matchesSM}
                   className={classes.textField}
                   label="Name*"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
                   InputLabelProps={{
                     classes: {
                       root: classes.inputLabel,
@@ -92,9 +134,13 @@ const Contact = (props) => {
               </Grid>
               <Grid container item justify="center">
                 <TextField
+                  id="email-field"
                   fullWidth={matchesSM}
                   className={classes.textField}
                   label="Email*"
+                  helperText={emailValid}
+                  value={email}
+                  onChange={onChange}
                   InputLabelProps={{
                     classes: {
                       root: classes.inputLabel,
@@ -109,14 +155,17 @@ const Contact = (props) => {
                     },
                   }}
                   variant="outlined"
-                  id="email-field"
                 />
               </Grid>
               <Grid container item justify="center">
                 <TextField
+                  id="phone-field"
                   fullWidth={matchesSM}
                   className={classes.textField}
                   label="Phone"
+                  helperText={phoneValid}
+                  value={phone}
+                  onChange={onChange}
                   InputLabelProps={{
                     classes: {
                       root: classes.inputLabel,
@@ -131,7 +180,6 @@ const Contact = (props) => {
                     },
                   }}
                   variant="outlined"
-                  id="phone-field"
                 />
               </Grid>
               <Grid
@@ -144,6 +192,8 @@ const Contact = (props) => {
                   fullWidth={matchesSM}
                   className={classes.textField}
                   label="Message*"
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
                   InputLabelProps={{
                     classes: {
                       root: classes.inputLabel,
@@ -169,7 +219,16 @@ const Contact = (props) => {
                 justify="center"
                 style={{ marginBottom: "2em" }}
               >
-                <Button variant="contained" className={classes.button}>
+                <Button
+                  variant="contained"
+                  disabled={
+                    name.length === 0 ||
+                    email.length === 0 ||
+                    emailValid.length !== 0 ||
+                    message.length === 0
+                  }
+                  className={classes.button}
+                >
                   <span style={{ marginRight: "0.5em" }}>Send Message</span>
                   <SendIcon />
                 </Button>
