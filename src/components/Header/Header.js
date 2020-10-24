@@ -35,7 +35,7 @@ const Header = (props) => {
 
   let isLightMode = props.mode.modeName === "light";
 
-  const toggleModeWrapper = () => {
+  const toggleModeHandler = () => {
     isLightMode = !isLightMode;
     props.toggler(isLightMode);
   };
@@ -64,7 +64,7 @@ const Header = (props) => {
 
               <Grid item>
                 <IconButton
-                  onClick={toggleModeWrapper}
+                  onClick={toggleModeHandler}
                   disableRipple
                   disableTouchRipple
                   className={classes.button}
