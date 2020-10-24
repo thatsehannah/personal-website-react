@@ -24,15 +24,12 @@ const Contact = (props) => {
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const onChange = (event) => {
+  const onBlur = (event) => {
     let valid;
 
     switch (event.target.id) {
       case "email-field":
-        setEmail(event.target.value);
-        valid = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(
-          event.target.value
-        );
+        valid = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(email);
 
         if (!valid) {
           setEmailValid("Invalid email address");
@@ -41,9 +38,8 @@ const Contact = (props) => {
         }
         break;
       case "phone-field":
-        setPhone(event.target.value);
         valid = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/.test(
-          event.target.value
+          phone
         );
 
         if (!valid) {
@@ -140,7 +136,8 @@ const Contact = (props) => {
                   label="Email*"
                   helperText={emailValid}
                   value={email}
-                  onChange={onChange}
+                  onBlur={onBlur}
+                  onChange={(e) => setEmail(e.target.value)}
                   InputLabelProps={{
                     classes: {
                       root: classes.inputLabel,
@@ -165,7 +162,8 @@ const Contact = (props) => {
                   label="Phone"
                   helperText={phoneValid}
                   value={phone}
-                  onChange={onChange}
+                  onBlur={onBlur}
+                  onChange={(e) => setPhone(e.target.value)}
                   InputLabelProps={{
                     classes: {
                       root: classes.inputLabel,
