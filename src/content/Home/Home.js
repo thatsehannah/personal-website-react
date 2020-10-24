@@ -1,5 +1,4 @@
 import React from "react";
-import { connect } from "react-redux";
 
 import Grid from "@material-ui/core/Grid";
 
@@ -31,10 +30,4 @@ const Home = (props) => {
   );
 };
 
-const mapStateToProps = (state) => {
-  return {
-    mode: state.mode,
-  };
-};
-
-export default connect(mapStateToProps)(Home);
+export default Home;

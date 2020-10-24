@@ -1,20 +1,15 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { ThemeProvider } from "@material-ui/styles";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Home from "./content/Home/Home";
-import Contact from "./content/Contact/Contact";
-import About from "./content/About/About";
-import Muses from "./content/Muses/Muses";
 import * as actionTypes from "./redux/actions";
 
 class App extends Component {
   componentDidMount() {
     const hour = new Date().getHours();
-    console.log(hour);
     if (hour >= 19 || hour <= 6) {
       this.props.toggleModeHandler(false);
     } else {
@@ -25,19 +20,9 @@ class App extends Component {
   render() {
     return (
       <ThemeProvider theme={this.props.mode.theme}>
-        <BrowserRouter>
-          <Header
-            mode={this.props.mode}
-            toggler={this.props.toggleModeHandler}
-          />
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/contact" component={Contact} />
-            <Route exact path="/about" component={About} />
-            <Route exact path="/muses" component={Muses} />
-          </Switch>
-          <Footer mode={this.props.mode} />
-        </BrowserRouter>
+        <Header mode={this.props.mode} toggler={this.props.toggleModeHandler} />
+        <Home mode={this.props.mode} />
+        <Footer mode={this.props.mode} />
       </ThemeProvider>
     );
   }
