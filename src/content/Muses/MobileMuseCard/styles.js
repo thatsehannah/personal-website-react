@@ -39,9 +39,14 @@ export const useStyles = makeStyles((theme) => ({
     objectFit: "cover",
     objectPosition: "50% 5%",
   },
+  iconButton: {
+    "&:hover": {
+      backgroundColor: "transparent",
+    },
+  },
   icon: {
-    height: "2em",
-    width: "2em",
+    height: "1.5em",
+    width: "1.5em",
     color: theme.palette.primary.main,
   },
 }));

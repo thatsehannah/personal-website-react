@@ -28,7 +28,7 @@ const MobileMuseCard = (props) => {
       SiInstagram,
       "https://www.instagram.com/lavishbombs/",
       classes.icon,
-      classes.button
+      classes.iconButton
     );
   }
 
@@ -37,15 +37,14 @@ const MobileMuseCard = (props) => {
       SiSoundcloud,
       "https://soundcloud.com/thatsehannah/tracks",
       classes.icon,
-      classes.button
+      classes.iconButton
     );
   }
-
 
   return (
     <>
       <Card
-        variant={props.mode.modeName === 'light' ? "outlined" : undefined}
+        variant={props.mode.modeName === "light" ? "outlined" : undefined}
         onClick={() => setOpenDialog(true)}
         className={classes.museCard}
       >
@@ -83,7 +82,7 @@ const MobileMuseCard = (props) => {
             <CloseIcon className={classes.closeIcon} />
           </IconButton>
         </DialogTitle>
-        <Divider className={classes.dividers}/>
+        <Divider className={classes.dividers} />
         <DialogContent>
           <Grid container direction="column" alignItems="center">
             <Grid item style={{ width: "90%" }}>
@@ -98,7 +97,7 @@ const MobileMuseCard = (props) => {
                 {muse.description}
               </Typography>
             </Grid>
-            {iconItem ? iconItem : null}
+            <Grid item>{iconItem ? iconItem : null}</Grid>
           </Grid>
         </DialogContent>
       </Dialog>

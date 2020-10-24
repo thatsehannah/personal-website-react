@@ -35,7 +35,7 @@ export const useStyles = makeStyles((theme) => ({
     },
   },
   body: {
-    marginBottom: "-0.5em",
+    marginBottom: "-0.1em",
   },
   icon: {
     height: "1.7em",

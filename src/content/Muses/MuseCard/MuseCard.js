@@ -84,7 +84,7 @@ const MuseCard = (props) => {
               {muse.description}
             </Typography>
           </Grid>
-          {iconItem ? iconItem : null}
+          <Grid item>{iconItem ? iconItem : null}</Grid>
         </Grid>
       </CardContent>
     </Card>
