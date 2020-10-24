@@ -15,9 +15,6 @@ const transporter = nodemailer.createTransport({
 
 let mailOptions = {
   from: "E. Hannah",
-  to: "echannah631@gmail.com",
-  subject: "Testing nodemailer",
-  text: "Test successful",
 };
 
 // // Create and Deploy Your First Cloud Functions
@@ -27,6 +24,20 @@ let mailOptions = {
 exports.sendMail = functions.https.onRequest((request, response) => {
   functions.logger.info("Hello logs!", { structuredData: true });
   cors(request, response, () => {
+    const { name, email, phone, message } = request.query;
+    const firstName = /\s/g.test(name) ? name.split(" ")[0] : name;
+
+    mailOptions = {
+      ...mailOptions,
+      to: "echannah631@gmail.com",
+      subject: "Bro, somebody sent you a message from your website!",
+      html: `<p style="font-size: 16px">From: ${name}</p>
+             <p style="font-size: 16px">Email: ${email}</p>
+             <p style="font-size: 16px">Phone Number: ${phone}</p>
+             <p style="font-size: 16px">Message: ${message}</p>
+            `,
+    };
+
     transporter.sendMail(mailOptions, (error) => {
       if (error) {
         response.send(error);
@@ -34,5 +45,18 @@ exports.sendMail = functions.https.onRequest((request, response) => {
         response.send("Message sent successfully!");
       }
     });
+
+    mailOptions = {
+      ...mailOptions,
+      to: email,
+      subject: `Thanks ${firstName} for your message!`,
+      html: `<p style="font-size: 16px">Hey ${firstName},</p>
+             <p style="font-size: 16px">Thank you for visiting my site! I worked hard on every aspect of it to showcase my true talents and passions. I hope you were impressed with everything and were able to learn something about me. This was a personal goal of mine and achieving this goal is a huge milestone for me. If you are a recruiter or hiring manager, I hope my site serves as insight to my coding abilities and propels me to becoming a potential team member to your organization.</p>
+             <p style="font-size: 16px">I appreciate your message and will respond at my earliest convenience. If you would like to get in contact with me, my email is <a href="mailto:elliotchannah@outlook.com">elliotchannah@outlook.com</a>. Again, thank you, please continue to stay safe, and I hope you have a blessed day!</p>
+             <p style="font-size: 16px">Regards,</p>
+             <p style="font-size: 16px">Elliot Hannah</p>
+            `,
+    };
+    transporter.sendMail(mailOptions);
   });
 });

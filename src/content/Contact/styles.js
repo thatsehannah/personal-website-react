@@ -23,10 +23,9 @@ export const useStyles = makeStyles((theme) => ({
     "&.shrink": {
       color: (props) => (props.mode.modeName === "light" ? "inherit" : "#fff"),
     },
-    
   },
   fieldset: {
-    color: props => props.mode.modeName === 'light' ? "inherit" : "#fff",
+    color: (props) => (props.mode.modeName === "light" ? "inherit" : "#fff"),
     fontWeight: 600,
     "&:hover $notchedOutline": {
       borderColor: `${theme.palette.primary.light}`,
@@ -56,7 +55,6 @@ export const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("md")]: {
       fontSize: "1.25em",
     },
-    
   },
   mailIcon: {
     fontSize: "2.1em",
@@ -65,7 +63,6 @@ export const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("md")]: {
       fontSize: "1.9em",
     },
-    
   },
   contactBg: {
     height: "100%",
@@ -77,7 +74,7 @@ export const useStyles = makeStyles((theme) => ({
   },
   button: {
     marginTop: "0.5em",
-    width: '25em',
+    width: "25em",
     color: (props) => (props.mode.modeName === "light" ? "#fff" : "#000"),
     backgroundColor: theme.palette.primary.main,
     height: "4em",
@@ -86,7 +83,11 @@ export const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.down("sm")]: {
       height: "4em",
-      width: '15em',
+      width: "15em",
     },
+  },
+  circularProgress: {
+    color: (props) => (props.mode.modeName === "light" ? "#fff" : "#000"),
+    fontSize: "2.5em",
   },
 }));

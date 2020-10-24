@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 
 import { useTheme } from "@material-ui/core/styles";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
@@ -8,6 +9,8 @@ import TextField from "@material-ui/core/TextField";
 import MailOutlineIcon from "@material-ui/icons/MailOutline";
 import Hidden from "@material-ui/core/Hidden";
 import Button from "@material-ui/core/Button";
+import CircularProgress from "@material-ui/core/CircularProgress";
+import Snackbar from "@material-ui/core/Snackbar";
 import SendIcon from "@material-ui/icons/Send";
 
 import { useStyles } from "./styles";
@@ -16,6 +19,7 @@ const Contact = (props) => {
   const classes = useStyles(props);
   const theme = useTheme();
   const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [emailValid, setEmailValid] = useState("");
@@ -23,6 +27,11 @@ const Contact = (props) => {
   const [phoneValid, setPhoneValid] = useState("");
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
+  const [snackBar, setSnackBar] = useState({
+    open: false,
+    message: "",
+    backgroundColor: "",
+  });
 
   const onBlur = (event) => {
     let valid;
@@ -38,12 +47,16 @@ const Contact = (props) => {
         }
         break;
       case "phone-field":
-        valid = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/.test(
-          phone
-        );
+        if (phone.length > 0) {
+          valid = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/.test(
+            phone
+          );
 
-        if (!valid) {
-          setPhoneValid("Invalid phone number");
+          if (!valid) {
+            setPhoneValid("Invalid phone number");
+          } else {
+            setPhoneValid("");
+          }
         } else {
           setPhoneValid("");
         }
@@ -52,6 +65,54 @@ const Contact = (props) => {
         break;
     }
   };
+
+  const clearFormItems = () => {
+    setName("");
+    setEmail("");
+    setPhone("");
+    setMessage("");
+  };
+
+  const onSendMessage = () => {
+    setLoading(true);
+    axios
+      .get(
+        "https://us-central1-personal-website-ehannah.cloudfunctions.net/sendMail",
+        {
+          params: {
+            name: name.trimEnd(),
+            email: email.trimEnd(),
+            phone: phone ? phone.trimEnd() : "No phone number provided.",
+            message: message.trimEnd(),
+          },
+        }
+      )
+      .then((res) => {
+        setLoading(false);
+        clearFormItems();
+        setSnackBar({
+          open: true,
+          message: res.data,
+          backgroundColor: "#4bb548",
+        });
+      })
+      .catch((err) => {
+        setLoading(false);
+        clearFormItems();
+        setSnackBar({
+          open: true,
+          message: "Something went wrong, please try again!",
+          backgroundColor: "#ff3232",
+        });
+      });
+  };
+
+  const sendButtonContent = (
+    <>
+      <span style={{ marginRight: "0.5em" }}>Send Message</span>
+      <SendIcon />
+    </>
+  );
 
   return (
     <Grid container justify="center" className={classes.contactSection}>
@@ -223,12 +284,17 @@ const Contact = (props) => {
                     name.length === 0 ||
                     email.length === 0 ||
                     emailValid.length !== 0 ||
+                    phoneValid.length !== 0 ||
                     message.length === 0
                   }
                   className={classes.button}
+                  onClick={onSendMessage}
                 >
-                  <span style={{ marginRight: "0.5em" }}>Send Message</span>
-                  <SendIcon />
+                  {loading ? (
+                    <CircularProgress className={classes.circularProgress} />
+                  ) : (
+                    sendButtonContent
+                  )}
                 </Button>
               </Grid>
             </Grid>
@@ -240,6 +306,14 @@ const Contact = (props) => {
           <Grid container className={classes.contactBg} />
         </Grid>
       </Hidden>
+      <Snackbar
+        open={snackBar.open}
+        message={snackBar.message}
+        ContentProps={{ style: { backgroundColor: snackBar.backgroundColor } }}
+        anchorOrigin={{ vertical: "top", horizontal: "center" }}
+        onClose={() => setSnackBar({ ...snackBar, open: false })}
+        autoHideDuration={4500}
+      />
     </Grid>
   );
 };
