@@ -18,9 +18,8 @@ const Muses = (props) => {
   return (
     <Grid container direction="column" className={classes.musesSection}>
       <Grid item sm>
-        <Typography align="center" variant="subtitle1" gutterBottom>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        <Typography align="center" variant="h2" gutterBottom className={classes.text}>
+          MUSES 
         </Typography>
       </Grid>
       <Grid item sm>
