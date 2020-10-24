@@ -7,6 +7,7 @@ import { useTheme } from "@material-ui/core/styles";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 import { useStyles } from "./styles";
+import { education, work } from "./eduWorkData";
 import SkillBar from "react-skillbars";
 
 const EducationSkills = (props) => {
@@ -62,120 +63,44 @@ const EducationSkills = (props) => {
                         marginTop: matchesSM ? "1em" : undefined,
                       }}
                     >
-                      <Grid item>
-                        <Grid
-                          item
-                          className={classes.item}
-                          container
-                          direction="column"
-                        >
-                          <Grid item>
-                            <Typography
-                              variant="h6"
-                              gutterBottom
-                              className={classes.header}
-                            >
-                              Kennesaw State University
-                            </Typography>
-                          </Grid>
-                          <Grid item>
-                            <Typography
-                              variant="subtitle2"
-                              gutterBottom
-                              className={classes.subtext}
-                            >
-                              Master's of Information Technology{" "}
-                              <span
-                                style={{ color: theme.palette.primary.main }}
+                      {education.map((school) => (
+                        <Grid item>
+                          <Grid
+                            item
+                            className={classes.item}
+                            container
+                            direction="column"
+                          >
+                            <Grid item>
+                              <Typography
+                                variant="h6"
+                                gutterBottom
+                                className={classes.header}
                               >
-                                |
-                              </span>{" "}
-                              May 2019
-                            </Typography>
-                          </Grid>
-                          <Grid item>
-                            <Typography
-                              variant="body2"
-                              gutterBottom
-                              className={classes.description}
-                            >
-                              Lorem ipsum dolor sit amet, consectetur adipiscing
-                              elit, sed do eiusmod tempor incididunt ut labore
-                              et dolore magna aliqua. Quis imperdiet massa
-                              tincidunt nunc. Molestie at elementum eu facilisis
-                              sed odio morbi quis. Nisi scelerisque eu ultrices
-                              vitae auctor eu augue. Eget nunc scelerisque
-                              viverra mauris in aliquam sem fringilla ut. Ut eu
-                              sem integer vitae justo eget. Quam quisque id diam
-                              vel quam elementum pulvinar etiam non. Aliquam
-                              purus sit amet luctus venenatis lectus magna
-                              fringilla. In pellentesque massa placerat duis
-                              ultricies lacus. Felis imperdiet proin fermentum
-                              leo vel. Vulputate dignissim suspendisse in est
-                              ante in. Purus gravida quis blandit turpis cursus.
-                              Elementum facilisis leo vel fringilla. Urna cursus
-                              eget nunc scelerisque viverra mauris.
-                            </Typography>
+                                {school.header}
+                              </Typography>
+                            </Grid>
+                            <Grid item>
+                              <Typography
+                                variant="subtitle2"
+                                gutterBottom
+                                className={classes.subtext}
+                              >
+                                {school.subText}<span style={{ color: theme.palette.primary.main }}> | </span>{school.date}
+                              </Typography>
+                            </Grid>
+                            <Grid item>
+                              <Typography
+                                variant="body2"
+                                gutterBottom
+                                className={classes.description}
+                              >
+                                {school.description}
+                              </Typography>
+                            </Grid>
                           </Grid>
                         </Grid>
-                      </Grid>
-                      <Grid item>
-                        <Grid
-                          item
-                          className={classes.item}
-                          container
-                          direction="column"
-                        >
-                          <Grid item>
-                            <Typography
-                              variant="h6"
-                              gutterBottom
-                              className={classes.header}
-                            >
-                              Georgia State University
-                            </Typography>
-                          </Grid>
-                          <Grid item>
-                            <Typography
-                              variant="subtitle2"
-                              gutterBottom
-                              className={classes.subtext}
-                            >
-                              Bachelor's of Computer Science{" "}
-                              <span
-                                style={{ color: theme.palette.primary.main }}
-                              >
-                                |
-                              </span>{" "}
-                              May 2017
-                            </Typography>
-                          </Grid>
-                          <Grid item>
-                            <Typography
-                              variant="body2"
-                              gutterBottom
-                              className={classes.description}
-                            >
-                              Lorem ipsum dolor sit amet, consectetur adipiscing
-                              elit, sed do eiusmod tempor incididunt ut labore
-                              et dolore magna aliqua. Quis imperdiet massa
-                              tincidunt nunc. Molestie at elementum eu facilisis
-                              sed odio morbi quis. Nisi scelerisque eu ultrices
-                              vitae auctor eu augue. Eget nunc scelerisque
-                              viverra mauris in aliquam sem fringilla ut. Ut eu
-                              sem integer vitae justo eget. Quam quisque id diam
-                              vel quam elementum pulvinar etiam non. Aliquam
-                              purus sit amet luctus venenatis lectus magna
-                              fringilla. In pellentesque massa placerat duis
-                              ultricies lacus. Felis imperdiet proin fermentum
-                              leo vel. Vulputate dignissim suspendisse in est
-                              ante in. Purus gravida quis blandit turpis cursus.
-                              Elementum facilisis leo vel fringilla. Urna cursus
-                              eget nunc scelerisque viverra mauris.
-                            </Typography>
-                          </Grid>
-                        </Grid>
-                      </Grid>
+                      ))}
                     </Grid>
                   </Grid>
                 </Grid>
@@ -197,120 +122,44 @@ const EducationSkills = (props) => {
                         marginTop: matchesSM ? "1em" : undefined,
                       }}
                     >
-                      <Grid item>
-                        <Grid
-                          item
-                          className={classes.item}
-                          container
-                          direction="column"
-                        >
-                          <Grid item>
-                            <Typography
-                              variant="h6"
-                              gutterBottom
-                              className={classes.header}
-                            >
-                              Rapattoni Corporation
-                            </Typography>
-                          </Grid>
-                          <Grid item>
-                            <Typography
-                              variant="subtitle2"
-                              gutterBottom
-                              className={classes.subtext}
-                            >
-                              Programmer{" "}
-                              <span
-                                style={{ color: theme.palette.primary.main }}
+                      {work.map((job) => (
+                        <Grid item>
+                          <Grid
+                            item
+                            className={classes.item}
+                            container
+                            direction="column"
+                          >
+                            <Grid item>
+                              <Typography
+                                variant="h6"
+                                gutterBottom
+                                className={classes.header}
                               >
-                                |
-                              </span>{" "}
-                              March 2019 - July 2020
-                            </Typography>
-                          </Grid>
-                          <Grid item>
-                            <Typography
-                              variant="body2"
-                              gutterBottom
-                              className={classes.description}
-                            >
-                              Lorem ipsum dolor sit amet, consectetur adipiscing
-                              elit, sed do eiusmod tempor incididunt ut labore
-                              et dolore magna aliqua. Quis imperdiet massa
-                              tincidunt nunc. Molestie at elementum eu facilisis
-                              sed odio morbi quis. Nisi scelerisque eu ultrices
-                              vitae auctor eu augue. Eget nunc scelerisque
-                              viverra mauris in aliquam sem fringilla ut. Ut eu
-                              sem integer vitae justo eget. Quam quisque id diam
-                              vel quam elementum pulvinar etiam non. Aliquam
-                              purus sit amet luctus venenatis lectus magna
-                              fringilla. In pellentesque massa placerat duis
-                              ultricies lacus. Felis imperdiet proin fermentum
-                              leo vel. Vulputate dignissim suspendisse in est
-                              ante in. Purus gravida quis blandit turpis cursus.
-                              Elementum facilisis leo vel fringilla. Urna cursus
-                              eget nunc scelerisque viverra mauris.
-                            </Typography>
+                                {job.header}
+                              </Typography>
+                            </Grid>
+                            <Grid item>
+                              <Typography
+                                variant="subtitle2"
+                                gutterBottom
+                                className={classes.subtext}
+                              >
+                                {job.subText}<span style={{ color: theme.palette.primary.main }}> | </span>{job.date}
+                              </Typography>
+                            </Grid>
+                            <Grid item>
+                              <Typography
+                                variant="body2"
+                                gutterBottom
+                                className={classes.description}
+                              >
+                                {job.description}
+                              </Typography>
+                            </Grid>
                           </Grid>
                         </Grid>
-                      </Grid>
-                      <Grid item>
-                        <Grid
-                          item
-                          className={classes.item}
-                          container
-                          direction="column"
-                        >
-                          <Grid item>
-                            <Typography
-                              variant="h6"
-                              gutterBottom
-                              className={classes.header}
-                            >
-                              Infosys
-                            </Typography>
-                          </Grid>
-                          <Grid item>
-                            <Typography
-                              variant="subtitle2"
-                              gutterBottom
-                              className={classes.subtext}
-                            >
-                              Associate{" "}
-                              <span
-                                style={{ color: theme.palette.primary.main }}
-                              >
-                                |
-                              </span>{" "}
-                              April 2018 - March 2019
-                            </Typography>
-                          </Grid>
-                          <Grid item>
-                            <Typography
-                              variant="body2"
-                              gutterBottom
-                              className={classes.description}
-                            >
-                              Lorem ipsum dolor sit amet, consectetur adipiscing
-                              elit, sed do eiusmod tempor incididunt ut labore
-                              et dolore magna aliqua. Quis imperdiet massa
-                              tincidunt nunc. Molestie at elementum eu facilisis
-                              sed odio morbi quis. Nisi scelerisque eu ultrices
-                              vitae auctor eu augue. Eget nunc scelerisque
-                              viverra mauris in aliquam sem fringilla ut. Ut eu
-                              sem integer vitae justo eget. Quam quisque id diam
-                              vel quam elementum pulvinar etiam non. Aliquam
-                              purus sit amet luctus venenatis lectus magna
-                              fringilla. In pellentesque massa placerat duis
-                              ultricies lacus. Felis imperdiet proin fermentum
-                              leo vel. Vulputate dignissim suspendisse in est
-                              ante in. Purus gravida quis blandit turpis cursus.
-                              Elementum facilisis leo vel fringilla. Urna cursus
-                              eget nunc scelerisque viverra mauris.
-                            </Typography>
-                          </Grid>
-                        </Grid>
-                      </Grid>
+                      ))}
                     </Grid>
                   </Grid>
                 </Grid>
