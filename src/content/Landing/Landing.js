@@ -33,25 +33,29 @@ const Landing = (props) => {
           <Grid item>
             <Avatar src={ehannah} className={classes.avatar} />
           </Grid>
-          <Grid item className={classes.name_statement}>
-            <Typography variant="h1" align="center" className={classes.name}>
+          <Grid item>
+            <Typography
+              variant="h1"
+              align="center"
+              gutterBottom
+              className={classes.name}
+            >
               Elliot C. Hannah III
             </Typography>
+          </Grid>
+          <Grid item>
             <Typography
-              variant="subtitle1"
+              variant="h3"
               align="center"
               gutterBottom
               className={classes.statement}
             >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              Volutpat ac tincidunt vitae semper quis lectus nulla at. Non arcu
-              risus quis varius quam. Mattis pellentesque id nibh tortor id
-              aliquet lectus.
+              Full Stack Developer <span className={classes.bulletPt}>•</span>{" "}
+              Beat Maker <span className={classes.bulletPt}>•</span> Sneakerhead
             </Typography>
           </Grid>
-          <Grid item>
-            <SocialMedia size={[61, 35]} color={'#fff'}/>
+          <Grid item style={{ marginTop: !matchesSM ? "1em" : undefined }}>
+            <SocialMedia size={[61, 35]} color={"#fff"} />
           </Grid>
         </Grid>
       </Grid>

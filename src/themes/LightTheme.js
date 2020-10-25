@@ -27,6 +27,9 @@ const theme = createMuiTheme({
       fontFamily: "Archivo Black",
       textTransform: "uppercase",
     },
+    h3: {
+      fontFamily: "Rubik"
+    },
     h4: {
       fontFamily: "Archivo Black",
       textTransform: "uppercase",

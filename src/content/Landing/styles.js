@@ -22,12 +22,7 @@ export const useStyles = makeStyles((theme) => ({
       marginTop: "2em",
     },
   },
-  name_statement: {
-    width: "70%",
-    [theme.breakpoints.down("sm")]: {
-      width: "90%",
-    },
-  },
+  
   name: {
     color: "#fff",
     [theme.breakpoints.down("lg")]: {
@@ -39,6 +34,10 @@ export const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("xs")]: {
       fontSize: "1.7em",
     },
+  },
+  bulletPt: {
+    color: theme.palette.primary.main,
+    
   },
   statement: {
     color: "#fff",
