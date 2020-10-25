@@ -4,7 +4,7 @@ import aboutBackgroundDark from "../../assets/backgrounds/aboutBgDark.jpg";
 
 export const useStyles = makeStyles((theme) => ({
   aboutSection: {
-    height: "50em",
+    height: "90em",
     backgroundImage: (props) =>
       `url(${
         props.mode.modeName === "light"
@@ -61,6 +61,9 @@ export const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("sm")]: {
       color: (props) => (props.mode.modeName === "light" ? "#fff" : null),
     },
+  },
+  aboutMeText: {
+    marginBottom: '1.5em'
   },
   email: {
     textDecoration: "none",

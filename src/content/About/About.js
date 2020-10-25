@@ -38,37 +38,89 @@ const About = (props) => {
       <Grid item>
         <Grid container direction="column" className={classes.textColumn}>
           <Grid item>
-            <Typography variant="h5" gutterBottom className={classes.text}>
-              About Me
-            </Typography>
-            <Typography variant="body1" gutterBottom className={classes.text}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur.
-            </Typography>
-            <br />
-            <Typography variant="h5" gutterBottom className={classes.text}>
-              Contact Info
-            </Typography>
-            <Typography variant="body1" gutterBottom className={classes.text}>
-              Elliot C. Hannah III
-            </Typography>
-            <Typography variant="body1" gutterBottom className={classes.text}>
-              Los Angeles, California 90028
-            </Typography>
-            <Typography
-              variant="body1"
-              gutterBottom
-              component={"a"}
-              href="mailto:elliotchannah@outlook.com"
-              target="_blank"
-              className={classes.email}
-            >
-              elliotchannah@outlook.com
-            </Typography>
+            <Grid container direction="column">
+              <Grid item>
+                <Typography variant="h5" gutterBottom className={classes.text}>
+                  About Me
+                </Typography>
+              </Grid>
+              <Grid item>
+                <Typography
+                  variant="body1"
+                  gutterBottom
+                  className={[classes.text, classes.aboutMeText].join(" ")}
+                >
+                  Born and raised in Augusta, GA, I was the only child to
+                  Cristal and Elliot Hannah Jr. I've always had an affinity for
+                  computers since I was about 11 years old. I enjoyed playing
+                  computer games, learning new information, setting up new
+                  software, customizing my MySpace page, and I could type really
+                  fast. Seeing how fascinated I was with computers definitely
+                  made me want to pursue a career working with them, so here I
+                  am today!
+                </Typography>
+                <Typography
+                  variant="body1"
+                  gutterBottom
+                  className={[classes.text, classes.aboutMeText].join(" ")}
+                >
+                  I attended Georgia State University for Bachelor's and after
+                  graduating, I went straight into my Master's program at
+                  Kennesaw State Unviersity. During my first semester, I decided
+                  to attend a coding bootcamp in Reston, VA for 3 months to
+                  enhance my coding skills. This led me to relocate to
+                  Bentonville, Arkansas where I first got a taste of being a
+                  software developer. After a brief stint in Bentonville, I was
+                  relocated to Los Angeles for a different project, and I've
+                  been here ever since (and I love it here, by the way!).
+                </Typography>
+                <Typography
+                  variant="body1"
+                  gutterBottom
+                  className={classes.text}
+                >
+                  In my spare time, you can catch me doing a variety of
+                  activities, such as making beats, playing NBA2K with my
+                  friends (PSN: e__hannah), or exploring the city. I'm a big NBA
+                  fan and I love playing basketball as well.
+                </Typography>
+              </Grid>
+            </Grid>
+          </Grid>
+          <Grid item style={{ marginTop: "1.5em" }}>
+            <Grid container direction="column">
+              <Grid item>
+                <Typography variant="h5" gutterBottom className={classes.text}>
+                  Contact Info
+                </Typography>
+              </Grid>
+              <Grid item>
+                <Typography
+                  variant="body1"
+                  gutterBottom
+                  className={classes.text}
+                >
+                  Elliot C. Hannah III
+                </Typography>
+                <Typography
+                  variant="body1"
+                  gutterBottom
+                  className={classes.text}
+                >
+                  Los Angeles, California 90028
+                </Typography>
+                <Typography
+                  variant="body1"
+                  gutterBottom
+                  component={"a"}
+                  href="mailto:elliotchannah@outlook.com"
+                  target="_blank"
+                  className={classes.email}
+                >
+                  elliotchannah@outlook.com
+                </Typography>
+              </Grid>
+            </Grid>
           </Grid>
           <Grid item>
             <Grid container justify={matchesSM ? "center" : undefined}>
