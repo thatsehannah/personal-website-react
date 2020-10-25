@@ -7,7 +7,7 @@ import { useTheme } from "@material-ui/core/styles";
 
 import { useStyles } from "./styles";
 import { muses } from "./musesData";
-import MuseCard from "./MuseCard/MuseCard";
+import DesktopMuseCard from "./DesktopMuseCard/DesktopMuseCard";
 import MobileMuseCard from "./MobileMuseCard/MobileMuseCard";
 
 const Muses = (props) => {
@@ -29,7 +29,7 @@ const Muses = (props) => {
               {matchesSM ? (
                 <MobileMuseCard mode={props.mode} muse={muse} />
               ) : (
-                <MuseCard mode={props.mode} muse={muse} />
+                <DesktopMuseCard mode={props.mode} muse={muse} />
               )}
             </Grid>
           ))}
