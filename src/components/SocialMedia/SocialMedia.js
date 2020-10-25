@@ -13,37 +13,38 @@ import { createSocialsIconItem } from "../../utilities/createSocialsIconItem";
 const SocialMedia = (props) => {
   const classes = useStyles(props);
 
+  const socials = [
+    {
+      icon: SiLinkedin,
+      link: "https://www.linkedin.com/in/elliotchannahiii/",
+    },
+    {
+      icon: SiGithub,
+      link: "https:///www.github.com/thatsehannah",
+    },
+    {
+      icon: SiFacebook,
+      link: "https:///wwww.facebook.com/ehannahiii",
+    },
+    {
+      icon: SiInstagram,
+      link: "https://www.instagram.com/thatsehannah/",
+    },
+    {
+      icon: SiCashapp,
+      link: "https://cash.app/$thatsehannah/",
+    },
+  ];
+
   return (
     <Grid item container className={classes.socialContainer} justify="center">
-      {createSocialsIconItem(
-        SiGithub,
-        "https:///www.github.com/thatsehannah",
-        classes.icon,
-        classes.button
-      )}
-      {createSocialsIconItem(
-        SiFacebook,
-        "https:///wwww.facebook.com/ehannahiii",
-        classes.icon,
-        classes.button
-      )}
-      {createSocialsIconItem(
-        SiInstagram,
-        "https://www.instagram.com/thatsehannah/",
-        classes.icon,
-        classes.button
-      )}
-      {createSocialsIconItem(
-        SiLinkedin,
-        "https://www.linkedin.com/in/elliotchannahiii/",
-        classes.icon,
-        classes.button
-      )}
-      {createSocialsIconItem(
-        SiCashapp,
-        "https://cash.app/$thatsehannah/",
-        classes.icon,
-        classes.button
+      {socials.map((social) =>
+        createSocialsIconItem(
+          social.icon,
+          social.link,
+          classes.icon,
+          classes.button
+        )
       )}
     </Grid>
   );
