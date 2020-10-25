@@ -19,7 +19,7 @@ export const useStyles = makeStyles((theme) => ({
       marginTop: "-10em",
     },
     [theme.breakpoints.down("xs")]: {
-      marginTop: "2em",
+      marginTop: "-4em",
     },
   },
   

@@ -4,6 +4,7 @@ import { SiFacebook } from "react-icons/si";
 import { SiInstagram } from "react-icons/si";
 import { SiLinkedin } from "react-icons/si";
 import { SiCashapp } from "react-icons/si";
+import { SiSoundcloud } from "react-icons/si";
 
 import Grid from "@material-ui/core/Grid";
 
@@ -33,6 +34,10 @@ const SocialMedia = (props) => {
     {
       icon: SiCashapp,
       link: "https://cash.app/$thatsehannah/",
+    },
+    {
+      icon: SiSoundcloud,
+      link: "https://soundcloud.com/thatsehannah/tracks",
     },
   ];
 
