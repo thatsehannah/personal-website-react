@@ -81,8 +81,9 @@ const About = (props) => {
                 >
                   In my spare time, you can catch me doing a variety of
                   activities, such as making beats, playing NBA2K with my
-                  friends (PSN: e__hannah), or exploring the city. I'm a big NBA
-                  fan and I love playing basketball as well.
+                  friends (PSN: e__hannah), or exploring the city with my
+                  fiancée. I'm a big NBA fan and I love playing basketball as
+                  well.
                 </Typography>
               </Grid>
             </Grid>
