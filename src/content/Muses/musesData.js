@@ -4,6 +4,7 @@ import fam from "../../assets/images/fam.jpeg";
 import kobemjbron from "../../assets/images/kobemjbron.jpg";
 import music from "../../assets/images/music.jpeg";
 import nipsey from "../../assets/images/nip.jpeg";
+import technology from '../../assets/images/technology.jpg'
 
 import { SiSoundcloud } from "react-icons/si";
 import { SiInstagram } from "react-icons/si";
@@ -24,6 +25,11 @@ export const muses = [
     pic: { url: fam, title: "Elliot's parents" },
     description:
       "Making my family proud is my biggest motivator in life. They've been my biggest supporters and have always been there for me no matter what. Every move I make, I make sure to seek their advice and counsel. They've molded me to who I am today and they are the best parents I could ever ask for. Even though they're on the other side of the country, I think of them every single day. I am so grateful for them and love them so much.",
+  },
+  {
+      title: "Technology",
+      pic: { url: technology, title: 'Graphic of different technologies'},
+      description: "One of the biggest reasons why I'm a developer now is because of the ever-evolving capabilities of technology. Technology is without a doubt one of the biggest entities in our modern lives. I've always been attracted to how things work, such as computers, phones, websites, etc. "
   },
   {
     title: "I ♥️ LA",
