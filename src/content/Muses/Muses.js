@@ -34,7 +34,7 @@ const Muses = (props) => {
           gutterBottom
           className={classes.text}
         >
-          These are a few things that I find in inspiration in on the daily:
+          These are a few things that I find inspiration in on the daily:
         </Typography>
       </Grid>
       <Grid item>
