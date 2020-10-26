@@ -9,9 +9,9 @@ export const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("sm")]: {
       padding: "3em",
     },
-    [theme.breakpoints.down('xs')]: {
-      padding: '1em'
-    }
+    [theme.breakpoints.down("xs")]: {
+      padding: "1em",
+    },
   },
   paper: {
     width: "75%",
@@ -36,8 +36,10 @@ export const useStyles = makeStyles((theme) => ({
     paddingBottom: "0.2em",
     color: (props) => (props.mode.modeName === "dark" ? "#fff" : "inherit"),
     [theme.breakpoints.down("sm")]: {
+      fontSize: "1.1em",
+    },
+    [theme.breakpoints.down("xs")]: {
       border: "none",
-      fontSize: "1em",
       paddingBottom: 0,
     },
   },

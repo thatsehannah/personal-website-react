@@ -49,4 +49,15 @@ export const useStyles = makeStyles((theme) => ({
     width: "1.5em",
     color: theme.palette.primary.main,
   },
+  description: {
+    color: (props) => (props.mode.modeName === "light" ? "inherit" : "#fff"),
+    fontSize: "1.1em",
+  },
+  title: {
+    color: (props) => (props.mode.modeName === "light" ? "inherit" : "#fff"),
+    
+  },
+  dialogContent: {
+    padding: 0,
+  },
 }));

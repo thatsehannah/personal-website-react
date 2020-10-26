@@ -12,7 +12,7 @@ import GetAppIcon from "@material-ui/icons/GetApp";
 import { useStyles } from "./styles";
 import MobileAbout from "./MobileAbout/MobileAbout";
 import DesktopAbout from "./DesktopAbout/DesktopAbout";
-import Me from "../../assets/images/Me.jpeg";
+import aboutAvatar from "../../assets/images/aboutAvatar.jpeg";
 
 const About = (props) => {
   const classes = useStyles(props);
@@ -32,7 +32,11 @@ const About = (props) => {
     >
       <Hidden smDown>
         <Grid item>
-          <Avatar className={classes.avatar} variant="rounded" src={Me} />
+          <Avatar
+            className={classes.avatar}
+            variant="rounded"
+            src={aboutAvatar}
+          />
         </Grid>
       </Hidden>
       <Grid item>
@@ -40,7 +44,7 @@ const About = (props) => {
           <Grid item>
             <Grid container direction="column">
               <Grid item>
-                <Typography variant="h5" gutterBottom className={classes.text}>
+                <Typography variant="h5" gutterBottom className={classes.title}>
                   About Me
                 </Typography>
               </Grid>
@@ -48,7 +52,7 @@ const About = (props) => {
                 <Typography
                   variant="body1"
                   gutterBottom
-                  className={[classes.text, classes.aboutMeText].join(" ")}
+                  className={classes.aboutMeText}
                 >
                   Born and raised in Augusta, GA, I was the only child to
                   Cristal and Elliot Hannah Jr. I've always had an affinity for
@@ -62,10 +66,10 @@ const About = (props) => {
                 <Typography
                   variant="body1"
                   gutterBottom
-                  className={[classes.text, classes.aboutMeText].join(" ")}
+                  className={classes.aboutMeText}
                 >
-                  I attended Georgia State University for Bachelor's and after
-                  graduating, I went straight into my Master's program at
+                  I attended Georgia State University for my Bachelor's and
+                  after graduating, I went straight into my Master's program at
                   Kennesaw State Unviersity. During my first semester, I decided
                   to attend a coding bootcamp in Reston, VA for 3 months to
                   enhance my coding skills. This led me to relocate to
@@ -77,13 +81,12 @@ const About = (props) => {
                 <Typography
                   variant="body1"
                   gutterBottom
-                  className={classes.text}
+                  className={classes.aboutMeText}
                 >
                   In my spare time, you can catch me doing a variety of
                   activities, such as making beats, playing NBA2K with my
                   friends (PSN: e__hannah), or exploring the city with my
-                  fiancée. I'm a big NBA fan and I love playing basketball as
-                  well.
+                  fiancée and pup Coco.
                 </Typography>
               </Grid>
             </Grid>
@@ -91,7 +94,7 @@ const About = (props) => {
           <Grid item style={{ marginTop: "1.5em" }}>
             <Grid container direction="column">
               <Grid item>
-                <Typography variant="h5" gutterBottom className={classes.text}>
+                <Typography variant="h5" gutterBottom className={classes.title}>
                   Contact Info
                 </Typography>
               </Grid>

@@ -7,7 +7,7 @@ export const useStyles = makeStyles((theme) => ({
     marginRight: "2em",
     marginBottom: "2em",
     "&:hover $museImage": {
-      height: "10em",
+      height: "8em",
     },
   },
   cardContent: {
@@ -26,7 +26,7 @@ export const useStyles = makeStyles((theme) => ({
   },
   museDescriptionContainer: {
     padding: "0.5em 1em",
-    height: "20em",
+    height: "25em",
     transition: "all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1)",
   },
   button: {

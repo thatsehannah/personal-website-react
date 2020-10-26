@@ -12,9 +12,17 @@ export const useStyles = makeStyles((theme) => ({
       padding: "0.5em",
     },
   },
+  title: {
+    color: (props) => (props.mode.modeName === "light" ? "#000" : "#fff"),
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "2.4em",
+    },
+  },
   text: {
     color: (props) => (props.mode.modeName === "light" ? "#000" : "#fff"),
-    [theme.breakpoints.down("sm")]: {},
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "1.2em",
+    },
   },
   lastChild: {
     "&:last-child": {

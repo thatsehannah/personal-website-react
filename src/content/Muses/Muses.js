@@ -17,12 +17,27 @@ const Muses = (props) => {
 
   return (
     <Grid container direction="column" className={classes.musesSection}>
-      <Grid item sm>
-        <Typography align="center" variant="h2" gutterBottom className={classes.text}>
-          MUSES 
+      <Grid item>
+        <Typography
+          align="center"
+          variant="h2"
+          gutterBottom
+          className={classes.title}
+        >
+          MUSES
         </Typography>
       </Grid>
-      <Grid item sm>
+      <Grid item style={{ marginBottom: "1em" }}>
+        <Typography
+          align="center"
+          variant="subtitle1"
+          gutterBottom
+          className={classes.text}
+        >
+          These are a few things that I find in inspiration in on the daily:
+        </Typography>
+      </Grid>
+      <Grid item>
         <Grid container justify="center" alignItems="center">
           {muses.map((muse) => (
             <Grid item key={muse.title}>

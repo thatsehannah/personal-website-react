@@ -43,12 +43,7 @@ const MobileMuseCard = (props) => {
         PaperProps={{ classes: { root: classes.paper } }}
       >
         <DialogTitle disableTypography>
-          <Typography
-            variant="h6"
-            style={{
-              color: props.mode.modeName === "dark" ? "#fff" : "inherit",
-            }}
-          >
+          <Typography variant="h6" className={classes.title}>
             {muse.title}
           </Typography>
           <IconButton
@@ -61,16 +56,19 @@ const MobileMuseCard = (props) => {
           </IconButton>
         </DialogTitle>
         <Divider className={classes.dividers} />
-        <DialogContent>
-          <Grid container direction="column" alignItems="center">
-            <Grid item style={{ width: "90%" }}>
+        <DialogContent className={classes.dialogContent}>
+          <Grid
+            container
+            direction="column"
+            alignItems="center"
+            style={{ margin: "1em 0" }}
+          >
+            <Grid item style={{ width: "95%" }}>
               <Typography
                 variant="body2"
                 align="center"
                 gutterBottom
-                style={{
-                  color: props.mode.modeName === "dark" ? "#fff" : "inherit",
-                }}
+                className={classes.description}
               >
                 {muse.description}
               </Typography>
@@ -81,7 +79,7 @@ const MobileMuseCard = (props) => {
                   muse.socialMedia.icon,
                   muse.socialMedia.link,
                   classes.icon,
-                  classes.button
+                  classes.iconButton
                 )}
               </Grid>
             ) : null}

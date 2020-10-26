@@ -62,8 +62,19 @@ export const useStyles = makeStyles((theme) => ({
       color: (props) => (props.mode.modeName === "light" ? "#fff" : null),
     },
   },
+  title: {
+    color: (props) => (props.mode.modeName === "light" ? "#000" : "#fff"),
+    [theme.breakpoints.down("sm")]: {
+      color: (props) => (props.mode.modeName === "light" ? "#fff" : null),
+      fontSize: "1.8em",
+    },
+  },
   aboutMeText: {
-    marginBottom: '1.5em'
+    marginBottom: "1.5em",
+    color: (props) => (props.mode.modeName === "light" ? "#000" : "#fff"),
+    [theme.breakpoints.down("sm")]: {
+      color: (props) => (props.mode.modeName === "light" ? "#fff" : null),
+    },
   },
   email: {
     textDecoration: "none",
