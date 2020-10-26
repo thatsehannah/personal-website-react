@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, animateScroll as scroll } from "react-scroll";
+import smoothScroll from "smoothscroll-polyfill";
 
 import useScrollTrigger from "@material-ui/core/useScrollTrigger";
 import AppBar from "@material-ui/core/AppBar";
@@ -38,6 +38,22 @@ const Header = (props) => {
   const toggleModeHandler = () => {
     isLightMode = !isLightMode;
     props.toggler(isLightMode);
+  };
+
+  const scrollIntoView = (id) => {
+    smoothScroll.polyfill();
+    const yOffset = -56;
+    const element = document.querySelector(id);
+    const y =
+      element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+    setTimeout(() => {
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }, 300);
+  };
+
+  const scrollToTop = () => {
+    smoothScroll.polyfill();
+    window.scroll({ top: 0, left: 0, behavior: "smooth" });
   };
 
   return (
@@ -100,13 +116,8 @@ const Header = (props) => {
                   button
                   onClick={() => {
                     setOpenMenu(false);
-                    scroll.scrollToTop();
+                    scrollToTop();
                   }}
-                  component={Link}
-                  spy={true}
-                  smooth={true}
-                  duration={1200}
-                  delay={500}
                 >
                   <ListItemText disableTypography className={classes.listItem}>
                     Home
@@ -114,14 +125,10 @@ const Header = (props) => {
                 </ListItem>
                 <ListItem
                   button
-                  onClick={() => setOpenMenu(false)}
-                  component={Link}
-                  to="about"
-                  value="about"
-                  spy={true}
-                  smooth={true}
-                  duration={1200}
-                  delay={300}
+                  onClick={() => {
+                    setOpenMenu(false);
+                    scrollIntoView("#about");
+                  }}
                 >
                   <ListItemText disableTypography className={classes.listItem}>
                     About Me
@@ -129,13 +136,10 @@ const Header = (props) => {
                 </ListItem>
                 <ListItem
                   button
-                  onClick={() => setOpenMenu(false)}
-                  component={Link}
-                  to="education"
-                  spy={true}
-                  smooth={true}
-                  duration={1200}
-                  delay={300}
+                  onClick={() => {
+                    setOpenMenu(false);
+                    scrollIntoView("#education");
+                  }}
                 >
                   <ListItemText disableTypography className={classes.listItem}>
                     Education & Skills
@@ -143,13 +147,10 @@ const Header = (props) => {
                 </ListItem>
                 <ListItem
                   button
-                  onClick={() => setOpenMenu(false)}
-                  component={Link}
-                  to="muses"
-                  spy={true}
-                  smooth={true}
-                  duration={1200}
-                  delay={300}
+                  onClick={() => {
+                    setOpenMenu(false);
+                    scrollIntoView("#muses");
+                  }}
                 >
                   <ListItemText disableTypography className={classes.listItem}>
                     Muses
@@ -157,13 +158,10 @@ const Header = (props) => {
                 </ListItem>
                 <ListItem
                   button
-                  onClick={() => setOpenMenu(false)}
-                  component={Link}
-                  to="contact"
-                  spy={true}
-                  smooth={true}
-                  duration={1200}
-                  delay={300}
+                  onClick={() => {
+                    setOpenMenu(false);
+                    scrollIntoView("#contact");
+                  }}
                 >
                   <ListItemText disableTypography className={classes.listItem}>
                     Contact Me
