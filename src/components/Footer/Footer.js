@@ -15,26 +15,31 @@ const Footer = (props) => {
     <footer className={classes.footer}>
       <Grid
         container
-        style={{ height: "100%" }}
+        style={{ height: "100%", padding: '0 1em' }}
         direction="column"
         justify="center"
         alignItems="center"
       >
-        <Grid item container direction="column" style={{ marginBottom: "3em" }}>
+        <Grid item>
+          <Typography align="center" className={classes.text} gutterBottom>
+            "The moment you give up is the moment you let someone else win."
+          </Typography>
           <Typography
             align="center"
-            variant="body1"
             className={classes.text}
-            gutterBottom
+            style={{ textTransform: "uppercase" }}
           >
-            "Everything negative - pressure, challenges - is all an opportunity
-            for me to rise"
-          </Typography>
-          <Typography align="center" variant="body1" className={classes.text}>
-            -Kobe Bryant
+            Kobe Bryant
           </Typography>
         </Grid>
-        <SocialMedia size={[45, 28]} color={theme.palette.primary.main} />
+        <Grid item style={{ margin: "1.5em 0" }}>
+          <SocialMedia size={[30, 23]} color={theme.palette.primary.main} />
+        </Grid>
+        <Grid item>
+          <Typography align="center" gutterBottom className={classes.copyright}>
+            Developed by E. Hannah - Full Stack Developer
+          </Typography>
+        </Grid>
       </Grid>
     </footer>
   );
