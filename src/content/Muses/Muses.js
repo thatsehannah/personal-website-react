@@ -17,7 +17,7 @@ const Muses = (props) => {
 
   return (
     <Grid container direction="column" className={classes.musesSection}>
-      <Grid item>
+      <Grid item style={{ marginTop: "1em" }}>
         <Typography
           align="center"
           variant="h2"

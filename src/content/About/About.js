@@ -158,7 +158,7 @@ const About = (props) => {
     <Grid
       container
       justify="center"
-      alignItems="center"
+      
       className={classes.aboutSection}
     >
       <Grid item>{aboutMe}</Grid>

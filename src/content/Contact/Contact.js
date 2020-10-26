@@ -116,12 +116,7 @@ const Contact = (props) => {
 
   return (
     <Grid container justify="center" className={classes.contactSection}>
-      <Grid
-        item
-        xl={5}
-        lg={5}
-        style={{ marginTop: matchesSM ? "1.5em" : "2.5em" }}
-      >
+      <Grid item xl={5} lg={5} style={{ marginTop: "1em" }}>
         <Grid
           container
           direction="column"

@@ -4,7 +4,7 @@ import aboutBackgroundDark from "../../assets/backgrounds/aboutBgDark.jpg";
 
 export const useStyles = makeStyles((theme) => ({
   aboutSection: {
-    height: "90em",
+    height: "70em",
     backgroundImage: (props) =>
       `url(${
         props.mode.modeName === "light"
@@ -22,7 +22,7 @@ export const useStyles = makeStyles((theme) => ({
       padding: "3em",
     },
     [theme.breakpoints.down("xs")]: {
-      padding: "0.5em",
+      padding: "1em",
     },
   },
   textColumn: {

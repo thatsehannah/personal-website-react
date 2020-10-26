@@ -13,7 +13,6 @@ const MobileAbout = (props) => {
       container
       direction="column"
       alignItems="center"
-      style={{ marginTop: "2em" }}
     >
       <Paper className={classes.paper}>{props.children}</Paper>
     </Grid>
