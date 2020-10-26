@@ -13,33 +13,11 @@ import CloseIcon from "@material-ui/icons/Close";
 
 import { useStyles } from "./styles";
 import { createSocialsIconItem } from "../../../utilities/createSocialsIconItem";
-import { SiSoundcloud } from "react-icons/si";
-import { SiInstagram } from "react-icons/si";
 
 const MobileMuseCard = (props) => {
   const classes = useStyles(props);
   const { muse } = props;
   const [openDialog, setOpenDialog] = useState(false);
-
-  let iconItem = null;
-
-  if (muse.title === "My Wife, Wilma") {
-    iconItem = createSocialsIconItem(
-      SiInstagram,
-      "https://www.instagram.com/lavishbombs/",
-      classes.icon,
-      classes.iconButton
-    );
-  }
-
-  if (muse.title === "Music") {
-    iconItem = createSocialsIconItem(
-      SiSoundcloud,
-      "https://soundcloud.com/thatsehannah/tracks",
-      classes.icon,
-      classes.iconButton
-    );
-  }
 
   return (
     <>
@@ -97,7 +75,16 @@ const MobileMuseCard = (props) => {
                 {muse.description}
               </Typography>
             </Grid>
-            <Grid item>{iconItem ? iconItem : null}</Grid>
+            {muse.socialMedia ? (
+              <Grid item>
+                {createSocialsIconItem(
+                  muse.socialMedia.icon,
+                  muse.socialMedia.link,
+                  classes.icon,
+                  classes.button
+                )}
+              </Grid>
+            ) : null}
           </Grid>
         </DialogContent>
       </Dialog>

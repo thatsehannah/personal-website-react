@@ -9,33 +9,11 @@ import { useTheme } from "@material-ui/core/styles";
 
 import { useStyles } from "./styles";
 import { createSocialsIconItem } from "../../../utilities/createSocialsIconItem";
-import { SiSoundcloud } from "react-icons/si";
-import { SiInstagram } from "react-icons/si";
 
 const MuseCard = (props) => {
   const classes = useStyles(props);
   const theme = useTheme();
   const { muse } = props;
-
-  let iconItem = null;
-
-  if (muse.title === "My Wife, Wilma") {
-    iconItem = createSocialsIconItem(
-      SiInstagram,
-      "https://www.instagram.com/lavishbombs/",
-      classes.icon,
-      classes.button
-    );
-  }
-
-  if (muse.title === "Music") {
-    iconItem = createSocialsIconItem(
-      SiSoundcloud,
-      "https://soundcloud.com/thatsehannah/tracks",
-      classes.icon,
-      classes.button
-    );
-  }
 
   return (
     <Card
@@ -84,7 +62,16 @@ const MuseCard = (props) => {
               {muse.description}
             </Typography>
           </Grid>
-          <Grid item>{iconItem ? iconItem : null}</Grid>
+          {muse.socialMedia ? (
+            <Grid item>
+              {createSocialsIconItem(
+                muse.socialMedia.icon,
+                muse.socialMedia.link,
+                classes.icon,
+                classes.button
+              )}
+            </Grid>
+          ) : null}
         </Grid>
       </CardContent>
     </Card>
