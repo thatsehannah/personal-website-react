@@ -2,11 +2,11 @@ import * as actionTypes from "./actions";
 import LightTheme from "../themes/LightTheme";
 import DarkTheme from "../themes/DarkTheme";
 
-const hour = new Date().getHours();
+const currentHour = new Date().getHours();
 
 const initialState = {
   mode:
-    hour >= 19 || hour <= 6
+  currentHour >= 19 || currentHour <= 6
       ? { modeName: "dark", theme: DarkTheme }
       : { modeName: "light", theme: LightTheme },
 };
