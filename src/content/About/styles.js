@@ -1,18 +1,11 @@
 import { makeStyles } from "@material-ui/core/styles";
-import aboutBackgroundLight from "../../assets/backgrounds/aboutBgLight.jpg";
-import aboutBackgroundDark from "../../assets/backgrounds/aboutBgDark.jpg";
+import aboutBackgroundLight from "../../assets/backgrounds/aboutBg.jpg";
 
 export const useStyles = makeStyles((theme) => ({
   aboutSection: {
     height: "70em",
-    backgroundImage: (props) =>
-      `url(${
-        props.mode.modeName === "light"
-          ? aboutBackgroundLight
-          : aboutBackgroundDark
-      })`,
-    backgroundAttachment: "fixed",
-    willChange: 'transform',
+    backgroundImage: `url(${aboutBackgroundLight})`,
+
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",

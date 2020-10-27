@@ -1,10 +1,16 @@
 import { makeStyles } from "@material-ui/core/styles";
-import landingBackgroundLight from "../../assets/backgrounds/landingBg.png";
+import landingBackgroundLight from "../../assets/backgrounds/landingBgLight.jpg";
+import landingBackgroundDark from "../../assets/backgrounds/landingBgDark.jpg";
 
 export const useStyles = makeStyles((theme) => ({
   landingSection: {
     height: "80em",
-    backgroundImage: `url(${landingBackgroundLight})`,
+    backgroundImage: (props) =>
+      props.mode.modeName === "light"
+        ? `url(${landingBackgroundLight})`
+        : `url(${landingBackgroundDark})`,
+    backgroundAttachment: "fixed",
+    willChange: "transform",
     backgroundPosition: "center",
     backgroundSize: "cover",
     [theme.breakpoints.down("lg")]: {
