@@ -7,7 +7,7 @@ import { useTheme } from "@material-ui/core/styles";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 import { useStyles } from "./styles";
-import { education, work } from "./eduWorkData";
+import { education, work, skills } from "./eduWorkData";
 import SkillBar from "react-skillbars";
 
 const EducationSkills = (props) => {
@@ -15,14 +15,7 @@ const EducationSkills = (props) => {
   const classes = useStyles(props);
   const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
 
-  const skills = [
-    { type: "C#", level: 90 },
-    { type: "JavaScript", level: 80 },
-    { type: "ReactJS", level: 93 },
-    { type: "CSS", level: 93 },
-    { type: "SQL", level: 75 },
-    { type: "Java", level: 70 },
-  ];
+  
 
   const skillbarColors = {
     bar: theme.palette.primary.main,

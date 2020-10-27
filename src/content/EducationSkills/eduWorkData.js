@@ -45,3 +45,13 @@ export const work = [
       "Obtained enterprise-level skills revolving around .NET technologies. Created reactive representations of data using Angular 2, SQL Server, and the .NET Framework. Met with end users to discuss project requirements and cooperated with a small team to implement those requirements. Collaborated with other teams to ensure seamless API consumption. Explored DevOps using Docker, Jenkins, VSTS, and other CI/CD technologies.",
   },
 ];
+
+export const skills = [
+  { type: "C#/.NET", level: 90 },
+  { type: "SQL", level: 75 },
+  { type: "ReactJS", level: 93 },
+  { type: "JavaScript", level: 85 },
+  { type: "Java", level: 75 },
+  { type: "HTML5/CSS", level: 83 },
+  
+];
