@@ -12,7 +12,7 @@ import GetAppIcon from "@material-ui/icons/GetApp";
 import { useStyles } from "./styles";
 import MobileAbout from "./MobileAbout/MobileAbout";
 import DesktopAbout from "./DesktopAbout/DesktopAbout";
-import aboutAvatar from "../../assets/images/aboutAvatar.jpeg";
+import aboutAvatar from "../../assets/images/avatar.jpeg";
 
 const About = (props) => {
   const classes = useStyles(props);
@@ -155,12 +155,7 @@ const About = (props) => {
   }
 
   return (
-    <Grid
-      container
-      justify="center"
-      
-      className={classes.aboutSection}
-    >
+    <Grid container justify="center" className={classes.aboutSection}>
       <Grid item>{aboutMe}</Grid>
     </Grid>
   );

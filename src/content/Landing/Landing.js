@@ -7,7 +7,7 @@ import { useTheme } from "@material-ui/core/styles";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 import { useStyles } from "./styles";
-import ehannah from "../../assets/images/avatar.jpeg";
+import ehannah from "../../assets/images/wedding.jpeg";
 import SocialMedia from "../../components/SocialMedia/SocialMedia";
 
 const Landing = (props) => {
@@ -31,7 +31,7 @@ const Landing = (props) => {
           className={classes.intro}
         >
           <Grid item>
-            <Avatar src={ehannah} className={classes.avatar} />
+            <Avatar src={ehannah} classes={{img: classes.image}} className={classes.avatar} />
           </Grid>
           <Grid item>
             <Typography

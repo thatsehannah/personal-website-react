@@ -22,7 +22,7 @@ export const useStyles = makeStyles((theme) => ({
       marginTop: "-4em",
     },
   },
-  
+
   name: {
     color: "#fff",
     [theme.breakpoints.down("lg")]: {
@@ -37,7 +37,6 @@ export const useStyles = makeStyles((theme) => ({
   },
   bulletPt: {
     color: theme.palette.primary.main,
-    
   },
   statement: {
     color: "#fff",
@@ -67,5 +66,8 @@ export const useStyles = makeStyles((theme) => ({
       height: "10em",
       width: "10em",
     },
+  },
+  image: {
+    objectPosition: "100% 0",
   },
 }));
