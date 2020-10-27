@@ -36,7 +36,7 @@ export const muses = [
     title: "I ♥️ LA",
     pic: { url: overlook, title: "Overlook of Los Angeles" },
     description:
-      "Besides the nice weather, the Lakers, landscape, etc., the main thing I love about L.A. is that it helped me culminate a new definition of \"success\". I have a different outlook on it since I've been living here and I am more determined to be successful in my career. Even though it is a bit expensive to live in L.A., it is definitely a place I can see myself my settling and raising a family.",
+      "Besides the nice weather, the Lakers, landscape, etc., the main thing I love about L.A. is that it helped me culminate a new definition of \"success\". I have developed a different outlook on it since moving here and I am more determined to be successful in my career. Even though it is a bit expensive to live in L.A., it is definitely a place I can see myself my settling and raising a family.",
   },
   {
     title: "Nipsey Hussle",
