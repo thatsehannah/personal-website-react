@@ -12,6 +12,7 @@ export const useStyles = makeStyles((theme) => ({
           : aboutBackgroundDark
       })`,
     backgroundAttachment: "fixed",
+    willChange: 'transform',
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
