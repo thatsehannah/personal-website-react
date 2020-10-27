@@ -15,8 +15,6 @@ const EducationSkills = (props) => {
   const classes = useStyles(props);
   const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
 
-  
-
   const skillbarColors = {
     bar: theme.palette.primary.main,
     title: {
@@ -57,7 +55,7 @@ const EducationSkills = (props) => {
                       }}
                     >
                       {education.map((school) => (
-                        <Grid item>
+                        <Grid key={school.subText} item>
                           <Grid
                             item
                             className={classes.item}
@@ -79,7 +77,14 @@ const EducationSkills = (props) => {
                                 gutterBottom
                                 className={classes.subtext}
                               >
-                                {school.subText}<span style={{ color: theme.palette.primary.main }}> | </span>{school.date}
+                                {school.subText}
+                                <span
+                                  style={{ color: theme.palette.primary.main }}
+                                >
+                                  {" "}
+                                  |{" "}
+                                </span>
+                                {school.date}
                               </Typography>
                             </Grid>
                             <Grid item>
@@ -116,7 +121,7 @@ const EducationSkills = (props) => {
                       }}
                     >
                       {work.map((job) => (
-                        <Grid item>
+                        <Grid key={job.subText} item>
                           <Grid
                             item
                             className={classes.item}
@@ -138,7 +143,14 @@ const EducationSkills = (props) => {
                                 gutterBottom
                                 className={classes.subtext}
                               >
-                                {job.subText}<span style={{ color: theme.palette.primary.main }}> | </span>{job.date}
+                                {job.subText}
+                                <span
+                                  style={{ color: theme.palette.primary.main }}
+                                >
+                                  {" "}
+                                  |{" "}
+                                </span>
+                                {job.date}
                               </Typography>
                             </Grid>
                             <Grid item>

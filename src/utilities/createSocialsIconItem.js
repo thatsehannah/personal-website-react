@@ -10,6 +10,7 @@ export const createSocialsIconItem = (
   buttonClass
 ) => (
   <Grid
+    key={link}
     item
     component={"a"}
     href={link}
