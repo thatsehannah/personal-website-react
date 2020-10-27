@@ -11,9 +11,10 @@ export const useStyles = makeStyles((theme) => ({
   textField: {
     marginBottom: "2em",
     width: "70%",
-    [theme.breakpoints.down("sm")]: {
-      width: "90%",
+    [theme.breakpoints.down("lg")]: {
+      width: '90%'
     },
+    
   },
   inputLabel: {
     color: (props) => (props.mode.modeName === "light" ? "inherit" : "#fff"),
