@@ -19,9 +19,13 @@ export const useStyles = makeStyles((theme) => ({
     color: props => props.color,
     height: (props) => props.size[0],
     width: (props) => props.size[0],
+    [theme.breakpoints.down('lg')]: {
+      height: props => props.size[1],
+      width: props => props.size[1]
+    },
     [theme.breakpoints.down("sm")]: {
-      height: (props) => props.size[1],
-      width: (props) => props.size[1],
+      height: (props) => props.size[2],
+      width: (props) => props.size[2],
     },
   },
 }));

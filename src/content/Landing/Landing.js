@@ -55,7 +55,7 @@ const Landing = (props) => {
             </Typography>
           </Grid>
           <Grid item style={{ marginTop: !matchesSM ? "1em" : undefined }}>
-            <SocialMedia size={[61, 23]} color={"#fff"} />
+            <SocialMedia size={[61, 36, 23]} color={"#fff"} />
           </Grid>
         </Grid>
       </Grid>

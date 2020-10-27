@@ -15,7 +15,7 @@ const Footer = (props) => {
     <footer className={classes.footer}>
       <Grid
         container
-        style={{ height: "100%", padding: '0 1em' }}
+        style={{ height: "100%", padding: "0 1em" }}
         direction="column"
         justify="center"
         alignItems="center"
@@ -33,7 +33,7 @@ const Footer = (props) => {
           </Typography>
         </Grid>
         <Grid item style={{ margin: "1.5em 0" }}>
-          <SocialMedia size={[30, 23]} color={theme.palette.primary.main} />
+          <SocialMedia size={[30, 23, 23]} color={theme.palette.primary.main} />
         </Grid>
         <Grid item>
           <Typography align="center" gutterBottom className={classes.copyright}>
