@@ -12,17 +12,15 @@ const App = (props) => {
   const mode = useSelector((state) => state.mode);
   const toggler = useDispatch();
 
+  const togglerHandler = (isLightMode) =>
+    toggler({
+      type: actionTypes.TOGGLE_MODE,
+      payload: { isLight: isLightMode },
+    });
+
   return (
     <ThemeProvider theme={theme}>
-      <Header
-        mode={mode}
-        toggler={(isLightMode) =>
-          toggler({
-            type: actionTypes.TOGGLE_MODE,
-            payload: { isLight: isLightMode },
-          })
-        }
-      />
+      <Header mode={mode} toggler={togglerHandler} />
       <Home mode={mode} />
       <Footer mode={mode} />
     </ThemeProvider>
