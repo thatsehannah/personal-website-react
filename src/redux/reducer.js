@@ -2,11 +2,13 @@ import * as actionTypes from "./actions";
 import LightTheme from "../themes/LightTheme";
 import DarkTheme from "../themes/DarkTheme";
 
+const hour = new Date().getHours();
+
 const initialState = {
-  mode: {
-    modeName: "light",
-    theme: LightTheme,
-  },
+  mode:
+    hour >= 19 || hour <= 6
+      ? { modeName: "dark", theme: DarkTheme }
+      : { modeName: "light", theme: LightTheme },
 };
 
 const reducer = (state = initialState, action) => {
