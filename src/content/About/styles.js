@@ -5,13 +5,9 @@ export const useStyles = makeStyles((theme) => ({
   aboutSection: {
     height: "70em",
     backgroundImage: `url(${aboutBackgroundLight})`,
-
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
-    [theme.breakpoints.down("md")]: {
-      backgroundAttachment: "scroll",
-    },
     [theme.breakpoints.down("sm")]: {
       padding: "3em",
     },
