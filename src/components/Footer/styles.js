@@ -2,8 +2,7 @@ import { makeStyles } from "@material-ui/core/styles";
 
 export const useStyles = makeStyles((theme) => ({
   footer: {
-    backgroundColor: (props) =>
-      props.mode.modeName === "light" ? "#f5f5ff" : theme.palette.common.base,
+    backgroundColor: theme.palette.common.nav.footer,
     height: "20em",
     width: "100%",
     position: "relative",

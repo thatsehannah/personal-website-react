@@ -7,8 +7,7 @@ export const useStyles = makeStyles((theme) => ({
   },
   appBar: {
     height: "3.5em",
-    backgroundColor: (props) =>
-      props.mode.modeName === "light" ? "#f5f5ff" : theme.palette.common.base,
+    backgroundColor: theme.palette.common.nav.appBar,
   },
   button: {
     "&:hover": {

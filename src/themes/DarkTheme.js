@@ -8,8 +8,13 @@ import { createMuiTheme } from "@material-ui/core/styles";
 
 const theme = createMuiTheme({
   palette: {
+    type: "dark",
     common: {
       base: "#303030",
+      nav: {
+        appBar: "#303030",
+        footer: "#303030",
+      },
     },
     primary: {
       main: "#d4af37",

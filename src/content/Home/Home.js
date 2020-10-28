@@ -12,19 +12,19 @@ const Home = (props) => {
   return (
     <Grid container direction="column">
       <Grid item id="landing">
-        <Landing mode={props.mode} />
+        <Landing />
       </Grid>
       <Grid item id="about">
-        <About mode={props.mode} />
+        <About />
       </Grid>
       <Grid item id="education">
-        <EducationSkills mode={props.mode} />
+        <EducationSkills />
       </Grid>
       <Grid item id="muses">
-        <Muses mode={props.mode} />
+        <Muses />
       </Grid>
       <Grid item id="contact">
-        <Contact mode={props.mode} />
+        <Contact />
       </Grid>
     </Grid>
   );

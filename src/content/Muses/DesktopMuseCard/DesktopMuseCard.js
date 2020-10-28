@@ -11,15 +11,12 @@ import { useStyles } from "./styles";
 import { createSocialsIconItem } from "../../../utilities/createSocialsIconItem";
 
 const MuseCard = (props) => {
-  const classes = useStyles(props);
+  const classes = useStyles();
   const theme = useTheme();
   const { muse } = props;
 
   return (
-    <Card
-      variant={props.mode.modeName === "light" ? "outlined" : undefined}
-      className={classes.museCard}
-    >
+    <Card className={classes.museCard}>
       <CardMedia
         className={classes.museImage}
         component="img"
@@ -43,9 +40,7 @@ const MuseCard = (props) => {
             <Typography
               align="center"
               variant="h6"
-              style={{
-                color: props.mode.modeName === "dark" ? "#fff" : "inherit",
-              }}
+              className={classes.museText}
             >
               {muse.title}
             </Typography>
@@ -54,10 +49,7 @@ const MuseCard = (props) => {
             <Typography
               align="center"
               variant="body2"
-              className={classes.body}
-              style={{
-                color: props.mode.modeName === "dark" ? "#fff" : "inherit",
-              }}
+              className={classes.museText}
             >
               {muse.description}
             </Typography>

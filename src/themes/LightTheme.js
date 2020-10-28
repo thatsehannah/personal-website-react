@@ -8,8 +8,13 @@ import { createMuiTheme } from "@material-ui/core/styles";
 
 const theme = createMuiTheme({
   palette: {
+    type: "light",
     common: {
       base: "#fff",
+      nav: {
+        appBar: "#f5f5ff",
+        footer: "#f5f5ff",
+      },
     },
     primary: {
       main: "#2f6f2f",
@@ -28,7 +33,7 @@ const theme = createMuiTheme({
       textTransform: "uppercase",
     },
     h3: {
-      fontFamily: "Rubik"
+      fontFamily: "Rubik",
     },
     h4: {
       fontFamily: "Archivo Black",

@@ -5,8 +5,9 @@ import landingBackgroundDark from "../../assets/backgrounds/landingBgDark.jpg";
 export const useStyles = makeStyles((theme) => ({
   landingSection: {
     height: "80em",
-    backgroundImage: (props) =>
-      props.mode.modeName === "light"
+    backgroundColor: theme.palette.background.default,
+    backgroundImage:
+      theme.palette.type === "light"
         ? `url(${landingBackgroundLight})`
         : `url(${landingBackgroundDark})`,
     backgroundAttachment: "fixed",

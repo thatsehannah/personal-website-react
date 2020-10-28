@@ -13,10 +13,12 @@ import Grid from "@material-ui/core/Grid";
 import LightModeIcon from "@material-ui/icons/Brightness4";
 import DarkModeIcon from "@material-ui/icons/Brightness7";
 import MenuIcon from "@material-ui/icons/Menu";
+import {useTheme} from '@material-ui/core/styles'
 
 import { useStyles } from "./styles";
 
 const ElevationScroll = (props) => {
+  
   const { children } = props;
 
   const trigger = useScrollTrigger({
@@ -31,13 +33,11 @@ const ElevationScroll = (props) => {
 
 const Header = (props) => {
   const [openMenu, setOpenMenu] = useState(false);
-  const classes = useStyles(props);
-
-  let isLightMode = props.mode.modeName === "light";
+  const theme = useTheme();
+  const classes = useStyles();
 
   const toggleModeHandler = () => {
-    isLightMode = !isLightMode;
-    props.toggler(isLightMode);
+    props.toggler(theme.palette.type);
   };
 
   const scrollIntoView = (id) => {
@@ -87,7 +87,7 @@ const Header = (props) => {
                   disableTouchRipple
                   className={classes.button}
                 >
-                  {isLightMode ? (
+                  {props.theme === "light" ? (
                     <LightModeIcon className={classes.appBarIcon} />
                   ) : (
                     <DarkModeIcon className={classes.appBarIcon} />

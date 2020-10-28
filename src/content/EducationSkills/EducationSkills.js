@@ -12,7 +12,7 @@ import SkillBar from "react-skillbars";
 
 const EducationSkills = (props) => {
   const theme = useTheme();
-  const classes = useStyles(props);
+  const classes = useStyles();
   const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
 
   const skillbarColors = {

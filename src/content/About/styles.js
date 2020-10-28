@@ -40,7 +40,7 @@ export const useStyles = makeStyles((theme) => ({
   },
   button: {
     marginTop: "2em",
-    color: (props) => (props.mode.modeName === "light" ? "#fff" : "#000"),
+    color: theme.palette.type === "light" ? "#fff" : "#000",
     backgroundColor: theme.palette.primary.main,
     height: "4em",
     "&:hover": {
@@ -51,34 +51,34 @@ export const useStyles = makeStyles((theme) => ({
     },
   },
   text: {
-    color: (props) => (props.mode.modeName === "light" ? "#000" : "#fff"),
+    color: theme.palette.type === "light" ? "#000" : "#fff",
     [theme.breakpoints.down("sm")]: {
-      color: (props) => (props.mode.modeName === "light" ? "#fff" : null),
+      color: theme.palette.type === "light" ? "#fff" : null,
     },
   },
   title: {
-    color: (props) => (props.mode.modeName === "light" ? "#000" : "#fff"),
+    color: theme.palette.type === "light" ? "#000" : "#fff",
     [theme.breakpoints.down("sm")]: {
-      color: (props) => (props.mode.modeName === "light" ? "#fff" : null),
+      color: theme.palette.type === "light" ? "#fff" : null,
       fontSize: "1.8em",
     },
   },
   aboutMeText: {
     marginBottom: "1.5em",
-    color: (props) => (props.mode.modeName === "light" ? "#000" : "#fff"),
+    color: theme.palette.type === "light" ? "#000" : "#fff",
     [theme.breakpoints.down("sm")]: {
-      color: (props) => (props.mode.modeName === "light" ? "#fff" : null),
+      color: theme.palette.type === "light" ? "#fff" : null,
     },
   },
   email: {
     textDecoration: "none",
     fontWeight: 700,
-    color: (props) => (props.mode.modeName === "light" ? "#000" : "#fff"),
+    color: theme.palette.type === "light" ? "#000" : "#fff",
     "&:hover": {
       color: theme.palette.primary.light,
     },
     [theme.breakpoints.down("sm")]: {
-      color: (props) => (props.mode.modeName === "light" ? "#fff" : null),
+      color: theme.palette.type === "light" ? "#fff" : null,
     },
   },
 }));

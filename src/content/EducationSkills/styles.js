@@ -16,8 +16,8 @@ export const useStyles = makeStyles((theme) => ({
   paper: {
     width: "75%",
     padding: "1.7em",
-    backgroundColor: (props) =>
-      props.mode.modeName === "light" ? "#fff" : theme.palette.secondary.dark,
+    backgroundColor:
+      theme.palette.type === "light" ? "#fff" : theme.palette.secondary.dark,
     [theme.breakpoints.down("lg")]: {
       width: "auto",
     },
@@ -34,7 +34,7 @@ export const useStyles = makeStyles((theme) => ({
   title: {
     borderBottom: `3px solid ${theme.palette.primary.main}`,
     paddingBottom: "0.2em",
-    color: (props) => (props.mode.modeName === "dark" ? "#fff" : "inherit"),
+    color: theme.palette.type === "dark" ? "#fff" : "#000",
     [theme.breakpoints.down("sm")]: {
       fontSize: "1.1em",
     },
@@ -44,13 +44,13 @@ export const useStyles = makeStyles((theme) => ({
     },
   },
   header: {
-    color: (props) => (props.mode.modeName === "dark" ? "#fff" : "inherit"),
+    color: theme.palette.type === "dark" ? "#fff" : "#000",
   },
   subtext: {
-    color: (props) => (props.mode.modeName === "dark" ? "#fff" : "#696969"),
+    color: theme.palette.type === "dark" ? "#fff" : "#696969",
   },
   description: {
     fontSize: "1em",
-    color: (props) => (props.mode.modeName === "dark" ? "#fff" : "#696969"),
+    color: theme.palette.type === "dark" ? "#fff" : "#696969",
   },
 }));

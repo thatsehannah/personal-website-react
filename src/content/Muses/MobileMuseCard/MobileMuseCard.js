@@ -15,14 +15,13 @@ import { useStyles } from "./styles";
 import { createSocialsIconItem } from "../../../utilities/createSocialsIconItem";
 
 const MobileMuseCard = (props) => {
-  const classes = useStyles(props);
+  const classes = useStyles();
   const { muse } = props;
   const [openDialog, setOpenDialog] = useState(false);
 
   return (
     <>
       <Card
-        variant={props.mode.modeName === "light" ? "outlined" : undefined}
         onClick={() => setOpenDialog(true)}
         className={classes.museCard}
       >

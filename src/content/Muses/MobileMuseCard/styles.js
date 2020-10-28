@@ -14,12 +14,11 @@ export const useStyles = makeStyles((theme) => ({
     },
   },
   paper: {
-    backgroundColor: (props) =>
-      props.mode.modeName === "light" ? "#fff" : theme.palette.secondary.dark,
+    backgroundColor:
+      theme.palette.type === "light" ? "#fff" : theme.palette.secondary.dark,
   },
   dividers: {
-    backgroundColor: (props) =>
-      props.mode.modeName === "light" ? "#888888" : "#fff",
+    backgroundColor: theme.palette.type === "light" ? "#888888" : "#fff",
   },
   button: {
     position: "absolute",
@@ -30,7 +29,7 @@ export const useStyles = makeStyles((theme) => ({
     },
   },
   closeIcon: {
-    color: (props) => (props.mode.modeName === "light" ? "inherit" : "#fff"),
+    color: theme.palette.type === "light" ? "#000" : "#fff",
   },
   museImage: {
     height: "100%",
@@ -50,12 +49,11 @@ export const useStyles = makeStyles((theme) => ({
     color: theme.palette.primary.main,
   },
   description: {
-    color: (props) => (props.mode.modeName === "light" ? "inherit" : "#fff"),
+    color: theme.palette.type === "light" ? "#000" : "#fff",
     fontSize: "1.1em",
   },
   title: {
-    color: (props) => (props.mode.modeName === "light" ? "inherit" : "#fff"),
-    
+    color: theme.palette.type === "light" ? "#000" : "#fff",
   },
   dialogContent: {
     padding: 0,

@@ -12,21 +12,20 @@ export const useStyles = makeStyles((theme) => ({
     marginBottom: "2em",
     width: "70%",
     [theme.breakpoints.down("lg")]: {
-      width: '90%'
+      width: "90%",
     },
-    
   },
   inputLabel: {
-    color: (props) => (props.mode.modeName === "light" ? "inherit" : "#fff"),
+    color: theme.palette.type === "light" ? "#000" : "#fff",
     "&.focused": {
-      color: (props) => (props.mode.modeName === "light" ? "#505050" : "#fff"),
+      color: theme.palette.type === "light" ? "#505050" : "#fff",
     },
     "&.shrink": {
-      color: (props) => (props.mode.modeName === "light" ? "inherit" : "#fff"),
+      color: theme.palette.type === "light" ? "#000" : "#fff",
     },
   },
   fieldset: {
-    color: (props) => (props.mode.modeName === "light" ? "inherit" : "#fff"),
+    color: theme.palette.type === "light" ? "#000" : "#fff",
     fontWeight: 600,
     "&:hover $notchedOutline": {
       borderColor: `${theme.palette.primary.light}`,
@@ -37,7 +36,7 @@ export const useStyles = makeStyles((theme) => ({
   },
   statement: {
     fontSize: "2em",
-    color: (props) => (props.mode.modeName === "light" ? "inherit" : "#fff"),
+    color: theme.palette.type === "light" ? "#000" : "#fff",
     [theme.breakpoints.down("lg")]: {
       fontSize: "1.8em",
     },
@@ -49,7 +48,7 @@ export const useStyles = makeStyles((theme) => ({
     textDecoration: "none",
     fontWeight: 400,
     fontSize: "1.5em",
-    color: (props) => (props.mode.modeName === "light" ? "inherit" : "#fff"),
+    color: theme.palette.type === "light" ? "#000" : "#fff",
     "&:hover": {
       color: theme.palette.primary.light,
     },
@@ -76,7 +75,7 @@ export const useStyles = makeStyles((theme) => ({
   button: {
     marginTop: "0.5em",
     width: "25em",
-    color: (props) => (props.mode.modeName === "light" ? "#fff" : "#000"),
+    color: theme.palette.type === "light" ? "#fff" : "#000",
     backgroundColor: theme.palette.primary.main,
     height: "4em",
     "&:hover": {
@@ -88,7 +87,7 @@ export const useStyles = makeStyles((theme) => ({
     },
   },
   circularProgress: {
-    color: (props) => (props.mode.modeName === "light" ? "#fff" : "#000"),
+    color: theme.palette.type === "light" ? "#fff" : "#000",
     fontSize: "2.5em",
   },
 }));

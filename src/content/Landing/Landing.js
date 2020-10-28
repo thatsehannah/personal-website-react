@@ -10,9 +10,9 @@ import { useStyles } from "./styles";
 import ehannah from "../../assets/images/wedding.jpeg";
 import SocialMedia from "../../components/SocialMedia/SocialMedia";
 
-const Landing = (props) => {
+const Landing = () => {
   const theme = useTheme();
-  const classes = useStyles(props);
+  const classes = useStyles();
   const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
 
   return (
@@ -31,7 +31,11 @@ const Landing = (props) => {
           className={classes.intro}
         >
           <Grid item>
-            <Avatar src={ehannah} classes={{img: classes.image}} className={classes.avatar} />
+            <Avatar
+              src={ehannah}
+              classes={{ img: classes.image }}
+              className={classes.avatar}
+            />
           </Grid>
           <Grid item>
             <Typography

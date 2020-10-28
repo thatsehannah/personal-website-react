@@ -34,12 +34,12 @@ export const useStyles = makeStyles((theme) => ({
       backgroundColor: "transparent",
     },
   },
-  body: {
-    // marginBottom: "-0.1em",
-  },
   icon: {
     height: "1.7em",
     width: "1.7em",
     color: theme.palette.primary.main,
+  },
+  museText: {
+    color: theme.palette.type === "light" ? "#000" : "#fff",
   },
 }));

@@ -7,7 +7,7 @@ import CardContent from "@material-ui/core/CardContent";
 import { useStyles } from "./styles";
 
 const DesktopAbout = (props) => {
-  const classes = useStyles(props);
+  const classes = useStyles();
 
   return (
     <Grid container>
