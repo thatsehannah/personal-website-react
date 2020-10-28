@@ -1,15 +1,9 @@
 import { makeStyles } from "@material-ui/core/styles";
-import landingBackgroundLight from "../../assets/backgrounds/landingBgLight.jpg";
-import landingBackgroundDark from "../../assets/backgrounds/landingBgDark.jpg";
 
 export const useStyles = makeStyles((theme) => ({
   landingSection: {
     height: "80em",
-    backgroundColor: theme.palette.background.default,
-    backgroundImage:
-      theme.palette.type === "light"
-        ? `url(${landingBackgroundLight})`
-        : `url(${landingBackgroundDark})`,
+    backgroundImage: `url(${theme.palette.background.landing})`,
     backgroundAttachment: "fixed",
     willChange: "transform",
     backgroundPosition: "center",
