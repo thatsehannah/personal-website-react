@@ -18,7 +18,7 @@ export const useStyles = makeStyles((theme) => ({
   textColumn: {
     width: "45em",
     [theme.breakpoints.down("md")]: {
-      width: "25em",
+      width: "35em",
     },
     [theme.breakpoints.down("sm")]: {
       width: "100%",
@@ -29,10 +29,7 @@ export const useStyles = makeStyles((theme) => ({
     width: "15em",
     marginRight: "4em",
     marginTop: "-2em",
-    [theme.breakpoints.down("md")]: {
-      height: "11em",
-      width: "11em",
-    },
+    
   },
   button: {
     marginTop: "2em",

@@ -13,7 +13,7 @@ import MobileMuseCard from "./MobileMuseCard/MobileMuseCard";
 const Muses = (props) => {
   const classes = useStyles();
   const theme = useTheme();
-  const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
+  const matchesMD = useMediaQuery(theme.breakpoints.down("md"));
 
   return (
     <Grid container direction="column" className={classes.musesSection}>
@@ -41,7 +41,7 @@ const Muses = (props) => {
         <Grid container justify="center" alignItems="center">
           {muses.map((muse) => (
             <Grid item key={muse.title}>
-              {matchesSM ? (
+              {matchesMD ? (
                 <MobileMuseCard muse={muse} />
               ) : (
                 <DesktopMuseCard muse={muse} />

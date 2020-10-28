@@ -39,7 +39,7 @@ export const useStyles = makeStyles((theme) => ({
       fontSize: "4.2em",
     },
     [theme.breakpoints.down("sm")]: {
-      fontSize: "2.9em",
+      fontSize: "3.5em",
     },
     [theme.breakpoints.down("xs")]: {
       fontSize: "1.7em",
@@ -53,9 +53,6 @@ export const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("lg")]: {
       fontSize: "1.5em",
     },
-    [theme.breakpoints.down("sm")]: {
-      fontSize: "1.3em",
-    },
     [theme.breakpoints.down("xs")]: {
       fontSize: "1em",
     },
@@ -68,13 +65,9 @@ export const useStyles = makeStyles((theme) => ({
       height: "17em",
       width: "17em",
     },
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.down("xs")]: {
       height: "12em",
       width: "12em",
-    },
-    [theme.breakpoints.down("xs")]: {
-      height: "10em",
-      width: "10em",
     },
   },
   image: {

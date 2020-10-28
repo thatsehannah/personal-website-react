@@ -107,7 +107,7 @@ const EducationSkills = (props) => {
                 <Grid container direction={matchesSM ? "column" : "row"}>
                   <Grid item sm={matchesSM ? undefined : 4}>
                     <Typography variant="h5">
-                      <span className={classes.title}>Work Experience</span>
+                      <span className={classes.title}>Experience</span>
                     </Typography>
                   </Grid>
                   <Grid item sm>
