@@ -58,10 +58,10 @@ const About = (props) => {
                   Cristal and Elliot Hannah Jr. I've always had an affinity for
                   computers since I was about 11 years old. I enjoyed playing
                   computer games, learning new information, setting up new
-                  software, customizing my MySpace page, and I could type really
-                  fast. Seeing how fascinated I was with computers definitely
-                  made me want to pursue a career working with them, so here I
-                  am today!
+                  software for my parents, customizing my MySpace page, and I
+                  could type really fast. Seeing how fascinated I was with
+                  computers definitely made me want to pursue a career working
+                  with them, so here I am today!
                 </Typography>
                 <Typography
                   variant="body1"
@@ -74,8 +74,8 @@ const About = (props) => {
                   to attend a coding bootcamp in Reston, VA for 3 months to
                   enhance my coding skills. This led me to relocate to
                   Bentonville, Arkansas where I first got a taste of being a
-                  software developer. After a brief stint in Bentonville, I was
-                  relocated to Los Angeles for a different project, and I've
+                  full stack developer. After a brief stint in Bentonville, I
+                  was relocated to Los Angeles for a different project, and I've
                   been here ever since (and I love it here, by the way!).
                 </Typography>
                 <Typography
@@ -85,8 +85,8 @@ const About = (props) => {
                 >
                   In my spare time, you can catch me doing a variety of
                   activities, such as making beats, playing NBA2K with my
-                  friends (PSN: e__hannah), or exploring the city with my
-                  fiancée and pup Coco.
+                  friends, attending Dodgers or Lakers games (prior to
+                  COVID-19), or exploring the city with my fiancée and pup Coco.
                 </Typography>
               </Grid>
             </Grid>
