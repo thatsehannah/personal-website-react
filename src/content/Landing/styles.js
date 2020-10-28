@@ -17,7 +17,7 @@ export const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("lg")]: {
       height: "60em",
     },
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.down("md")]: {
       backgroundAttachment: "scroll",
     },
     [theme.breakpoints.down("xs")]: {
