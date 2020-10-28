@@ -8,7 +8,7 @@ import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 import { useStyles } from "./styles";
 import ehannah from "../../assets/images/wedding.jpeg";
-import SocialMedia from "../../components/SocialMedia/SocialMedia";
+import SocialMedia from "../../containers/SocialMedia/SocialMedia";
 
 const Landing = () => {
   const theme = useTheme();

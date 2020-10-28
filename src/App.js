@@ -5,13 +5,13 @@ import { ThemeProvider } from "@material-ui/styles";
 
 import LightTheme from "./themes/LightTheme";
 import DarkTheme from "./themes/DarkTheme";
-import Header from "./components/Header/Header";
-import Landing from "./content/Landing/Landing";
-import About from "./content/About/About";
-import EducationSkills from "./content/EducationSkills/EducationSkills";
-import Muses from "./content/Muses/Muses";
-import Contact from "./content/Contact/Contact";
-import Footer from "./components/Footer/Footer";
+import Header from "./containers/Header/Header";
+import Landing from "./components/Landing/Landing";
+import About from "./components/About/About";
+import EducationSkills from "./components/EducationSkills/EducationSkills";
+import Muses from "./components/Muses/Muses";
+import Contact from "./components/Contact/Contact";
+import Footer from "./containers/Footer/Footer";
 
 const App = () => {
   const [theme, setTheme] = useState("light");
