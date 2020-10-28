@@ -31,6 +31,17 @@ const App = () => {
     localTheme && setTheme(localTheme);
   }, []);
 
+  useEffect(() => {
+    const currentHour = new Date().getHours();
+    if (currentHour >= 19 || currentHour <= 6) {
+      localStorage.setItem("theme", "dark");
+      setTheme("dark");
+    } else {
+      localStorage.setItem("theme", "light");
+      setTheme("light");
+    }
+  }, []);
+
   return (
     <ThemeProvider theme={theme === "light" ? LightTheme : DarkTheme}>
       <Header toggler={toggleTheme} />
