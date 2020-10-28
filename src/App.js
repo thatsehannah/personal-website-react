@@ -28,17 +28,18 @@ const App = () => {
 
   useEffect(() => {
     const localTheme = localStorage.getItem("theme");
-    localTheme && setTheme(localTheme);
-  }, []);
 
-  useEffect(() => {
-    const currentHour = new Date().getHours();
-    if (currentHour >= 19 || currentHour <= 6) {
-      localStorage.setItem("theme", "dark");
-      setTheme("dark");
+    if (!localTheme) {
+      const currentHour = new Date().getHours();
+      if (currentHour >= 19 || currentHour <= 6) {
+        localStorage.setItem("theme", "dark");
+        setTheme("dark");
+      } else {
+        localStorage.setItem("theme", "light");
+        setTheme("light");
+      }
     } else {
-      localStorage.setItem("theme", "light");
-      setTheme("light");
+      setTheme(localTheme);
     }
   }, []);
 
