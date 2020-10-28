@@ -87,7 +87,7 @@ const Header = (props) => {
                   disableTouchRipple
                   className={classes.button}
                 >
-                  {props.theme === "light" ? (
+                  {theme.palette.type === "light" ? (
                     <LightModeIcon className={classes.appBarIcon} />
                   ) : (
                     <DarkModeIcon className={classes.appBarIcon} />
