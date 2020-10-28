@@ -73,9 +73,9 @@ const About = (props) => {
                   Kennesaw State Unviersity. During my first semester, I decided
                   to attend a coding bootcamp in Reston, VA for 3 months to
                   enhance my coding skills. This led me to relocate to
-                  Bentonville, Arkansas where I first got a taste of being a
-                  full stack developer. After a brief stint in Bentonville, I
-                  was relocated to Los Angeles for a different project, and I've
+                  Bentonville, AR where I first got a taste of being a full
+                  stack developer. After a brief stint in Bentonville, I was
+                  relocated to Los Angeles for a different project, and I've
                   been here ever since (and I love it here, by the way!).
                 </Typography>
                 <Typography

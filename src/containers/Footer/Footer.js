@@ -8,7 +8,7 @@ import { useStyles } from "./styles";
 import SocialMedia from "../SocialMedia/SocialMedia";
 
 const Footer = (props) => {
-  const classes = useStyles(props);
+  const classes = useStyles();
   const theme = useTheme();
 
   return (

@@ -7,12 +7,6 @@ export const useStyles = makeStyles((theme) => ({
     width: "100%",
     position: "relative",
   },
-  // socialContainer: {
-  //   right: "1.5em",
-  // },
-  icon: {
-    color: "#ffffff",
-  },
   text: {
     fontSize: 17,
     color: theme.palette.primary.main,

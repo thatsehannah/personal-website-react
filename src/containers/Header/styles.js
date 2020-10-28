@@ -30,6 +30,9 @@ export const useStyles = makeStyles((theme) => ({
   },
   listItem: {
     color: "#fff",
+    "&:hover": {
+      color: theme.palette.primary.light,
+    },
     fontSize: "2rem",
     fontWeight: "600",
     fontFamily: "Roboto",
