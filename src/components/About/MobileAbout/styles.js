@@ -2,9 +2,10 @@ import { makeStyles } from "@material-ui/core/styles";
 
 export const useStyles = makeStyles(() => ({
   paper: {
-    borderRadius: "2em",
+    borderRadius: "3em",
     backgroundColor: "rgba(0,0,0,0.74)",
-    marginTop: "1em",
-    padding: "1em",
+    marginTop: '2em',
+    marginBottom: '2em',
+    padding: "2.2em",
   },
 }));

@@ -5,7 +5,6 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
 import ArrowDropUpIcon from "@material-ui/icons/ArrowDropUp";
-import { IoIosArrowDropup as ScrollUpIcon } from "react-icons/io";
 import { useTheme } from "@material-ui/core/styles";
 
 import { useStyles } from "./styles";

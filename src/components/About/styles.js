@@ -3,13 +3,13 @@ import aboutBackgroundLight from "../../assets/backgrounds/aboutBg.jpg";
 
 export const useStyles = makeStyles((theme) => ({
   aboutSection: {
-    height: "70em",
     backgroundImage: `url(${aboutBackgroundLight})`,
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
+    padding: "2em",
     [theme.breakpoints.down("sm")]: {
-      padding: "3em",
+      padding: "1.5em",
     },
     [theme.breakpoints.down("xs")]: {
       padding: "1em",

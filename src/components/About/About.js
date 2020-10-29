@@ -21,16 +21,8 @@ const About = (props) => {
   const matchesMD = useMediaQuery(theme.breakpoints.down("md"));
 
   const aboutMeContent = (
-    <Grid
-      container
-      alignItems="center"
-      justify="center"
-      style={{
-        padding: matchesMD ? 0 : "0 2em",
-        margin: matchesMD ? 0 : "2em 0",
-      }}
-    >
-      <Hidden smDown>
+    <Grid container alignItems="center" justify="center">
+      <Hidden mdDown>
         <Grid item>
           <Avatar
             className={classes.avatar}
@@ -151,7 +143,7 @@ const About = (props) => {
   if (matchesSM) {
     aboutMe = <MobileAbout>{aboutMeContent}</MobileAbout>;
   } else {
-    aboutMe = <DesktopAbout mode={props.mode}>{aboutMeContent}</DesktopAbout>;
+    aboutMe = <DesktopAbout>{aboutMeContent}</DesktopAbout>;
   }
 
   return (

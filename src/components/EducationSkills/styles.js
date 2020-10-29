@@ -4,10 +4,9 @@ export const useStyles = makeStyles((theme) => ({
   educationSkillsSection: {
     backgroundColor: theme.palette.secondary.main,
     width: "100%",
-    padding: "5em",
-
+    padding: "2em",
     [theme.breakpoints.down("sm")]: {
-      padding: "3em",
+      padding: "1.5em",
     },
     [theme.breakpoints.down("xs")]: {
       padding: "1em",
@@ -15,14 +14,13 @@ export const useStyles = makeStyles((theme) => ({
   },
   paper: {
     width: "75%",
-    padding: "1.7em",
+    marginTop: "2em",
+    marginBottom: "2em",
+    padding: "2em",
     backgroundColor:
       theme.palette.type === "light" ? "#fff" : theme.palette.secondary.dark,
     [theme.breakpoints.down("lg")]: {
       width: "auto",
-    },
-    [theme.breakpoints.down("sm")]: {
-      padding: "1em",
     },
   },
   section: {
