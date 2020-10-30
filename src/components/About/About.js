@@ -79,7 +79,7 @@ const About = (props) => {
                         className={classes.aboutMeText}
                         gutterBottom
                       >
-                        Born and raised in Augusta, GA, I was the only child to
+                        <span className={classes.bornWord}>Born</span> and raised in Augusta, GA, I was the only child to
                         Cristal and Elliot Hannah Jr. I've always had an
                         affinity for computers since I was about 11 years old.
                         Seeing how fascinated I was with computers definitely

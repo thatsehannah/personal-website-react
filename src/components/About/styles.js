@@ -68,6 +68,16 @@ export const useStyles = makeStyles((theme) => ({
     color: theme.palette.type === "light" ? "#000" : "#fff",
     [theme.breakpoints.down("lg")]: {
       color: "#fff",
+      
+    },
+  },
+  bornWord: {
+    color: theme.palette.primary.main,
+    fontFamily: 'Archivo Black',
+    textTransform: 'uppercase',
+    fontSize: '1.5em',
+    [theme.breakpoints.down("lg")]: {
+      color: "#d2be99",
     },
   },
   email: {
