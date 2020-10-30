@@ -4,10 +4,6 @@ import smoothScroll from "smoothscroll-polyfill";
 import useScrollTrigger from "@material-ui/core/useScrollTrigger";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
-import Backdrop from "@material-ui/core/Backdrop";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemText from "@material-ui/core/ListItemText";
 import IconButton from "@material-ui/core/IconButton";
 import Grid from "@material-ui/core/Grid";
 import LightModeIcon from "@material-ui/icons/Brightness4";
@@ -16,6 +12,7 @@ import MenuIcon from "@material-ui/icons/Menu";
 import { useTheme } from "@material-ui/core/styles";
 
 import { useStyles } from "./styles";
+import Menu from "./Menu/Menu";
 
 const ElevationScroll = (props) => {
   const { children } = props;
@@ -98,84 +95,12 @@ const Header = (props) => {
         </AppBar>
       </ElevationScroll>
       <div className={classes.toolbarMargin} />
-      <Backdrop
-        open={openMenu}
-        className={classes.menu}
-        onClick={() => setOpenMenu(false)}
-      >
-        <Grid
-          container
-          direction="column"
-          justify="center"
-          style={{ height: "100%" }}
-        >
-          <Grid item></Grid>
-          <Grid item>
-            <List disablePadding>
-              <ListItem
-                button
-                className={classes.button}
-                onClick={() => {
-                  setOpenMenu(false);
-                  scrollToTop();
-                }}
-              >
-                <ListItemText disableTypography className={classes.listItem}>
-                  Home
-                </ListItemText>
-              </ListItem>
-              <ListItem
-                button
-                className={classes.button}
-                onClick={() => {
-                  setOpenMenu(false);
-                  scrollIntoView("#about");
-                }}
-              >
-                <ListItemText disableTypography className={classes.listItem}>
-                  About Me
-                </ListItemText>
-              </ListItem>
-              <ListItem
-                button
-                className={classes.button}
-                onClick={() => {
-                  setOpenMenu(false);
-                  scrollIntoView("#education");
-                }}
-              >
-                <ListItemText disableTypography className={classes.listItem}>
-                  Education & Skills
-                </ListItemText>
-              </ListItem>
-              <ListItem
-                button
-                className={classes.button}
-                onClick={() => {
-                  setOpenMenu(false);
-                  scrollIntoView("#muses");
-                }}
-              >
-                <ListItemText disableTypography className={classes.listItem}>
-                  Muses
-                </ListItemText>
-              </ListItem>
-              <ListItem
-                button
-                className={classes.button}
-                onClick={() => {
-                  setOpenMenu(false);
-                  scrollIntoView("#contact");
-                }}
-              >
-                <ListItemText disableTypography className={classes.listItem}>
-                  Contact Me
-                </ListItemText>
-              </ListItem>
-            </List>
-          </Grid>
-        </Grid>
-      </Backdrop>
+      <Menu
+        openMenu={openMenu}
+        setOpenMenu={setOpenMenu}
+        scrollToTop={scrollToTop}
+        scrollIntoView={scrollIntoView}
+      />
     </>
   );
 };

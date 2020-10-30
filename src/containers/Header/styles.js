@@ -24,22 +24,5 @@ export const useStyles = makeStyles((theme) => ({
       fontSize: "1.2em",
     },
   },
-  menu: {
-    zIndex: 1305,
-    background: "rgba(0,0,0,0.9)",
-  },
-  listItem: {
-    color: "#fff",
-    "&:hover": {
-      color: theme.palette.primary.light,
-    },
-    fontSize: "2rem",
-    fontWeight: "600",
-    fontFamily: "Roboto",
-    textTransform: "uppercase",
-    textAlign: "center",
-    [theme.breakpoints.down("sm")]: {
-      fontSize: "1.4em",
-    },
-  },
+  
 }));
