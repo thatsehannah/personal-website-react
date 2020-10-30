@@ -49,7 +49,7 @@ const App = () => {
       <Grid item id="landing">
         <Landing />
       </Grid>
-      <Grid item id="about">
+      <Grid item >
         <About />
       </Grid>
       <Grid item id="education">

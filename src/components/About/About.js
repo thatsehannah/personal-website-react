@@ -31,7 +31,7 @@ const About = (props) => {
     >
       <Grid item>
         <Grid container justify="center">
-          <Paper className={classes.paper}>
+          <Paper className={classes.paper} id="about">
             <Grid container direction="column" alignItems="center">
               <Grid item>
                 <Typography
@@ -181,7 +181,10 @@ const About = (props) => {
                                     component={"a"}
                                     href="mailto:elliotchannah@outlook.com"
                                     target="_blank"
-                                    className={[classes.contactText, classes.email].join(' ')}
+                                    className={[
+                                      classes.contactText,
+                                      classes.email,
+                                    ].join(" ")}
                                   >
                                     elliotchannah@outlook.com
                                   </Typography>
@@ -217,7 +220,11 @@ const About = (props) => {
                           <Grid container direction="column">
                             <SocialMedia
                               size={[35, 40, 30]}
-                              color={matchesLG ? "#d2be99" : theme.palette.primary.main}
+                              color={
+                                matchesLG
+                                  ? "#d2be99"
+                                  : theme.palette.primary.main
+                              }
                             />
                           </Grid>
                         </Grid>
