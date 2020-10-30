@@ -26,7 +26,19 @@ export const useStyles = makeStyles((theme) => ({
       marginTop: "-4em",
     },
   },
-
+  button: {
+    marginTop: "2em",
+    color: theme.palette.type === "light" ? "#fff" : "#000",
+    backgroundColor: theme.palette.primary.main,
+    height: "5em",
+    width: "20em",
+    "&:hover": {
+      backgroundColor: theme.palette.primary.light,
+    },
+    [theme.breakpoints.down("sm")]: {
+      height: "4em",
+    },
+  },
   name: {
     color: "#fff",
     [theme.breakpoints.down("lg")]: {

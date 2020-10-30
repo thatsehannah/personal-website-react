@@ -28,25 +28,23 @@ export const useStyles = makeStyles((theme) => ({
     borderRadius: "50%",
     height: "2em",
     width: "2em",
-    [theme.breakpoints.down("sm")]: {
-      height: "1.3em",
-      width: "1.3em",
-    },
   },
   scrollUpItem: {
     position: "relative",
-    top: -74,
+    top: -70,
+    [theme.breakpoints.down("lg")]: {
+      top: -74,
+    },
     [theme.breakpoints.down("sm")]: {
-      top: -77,
+      top: -78,
+    },
+    [theme.breakpoints.down("xs")]: {
+      top: -40,
     },
   },
   scrollUpIcon: {
     height: "2em",
     width: "2em",
     color: theme.palette.type === "light" ? "#fff" : "#000",
-    [theme.breakpoints.down("sm")]: {
-      height: "1.3em",
-      width: "1.3em",
-    },
   },
 }));

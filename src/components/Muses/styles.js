@@ -5,7 +5,7 @@ export const useStyles = makeStyles((theme) => ({
     padding: "2em",
     width: "100%",
     backgroundColor:
-      theme.palette.type === "light" ? "#ded7cc" : theme.palette.secondary.dark,
+      theme.palette.type === "light" ? "#fff" : theme.palette.secondary.dark,
     [theme.breakpoints.down("sm")]: {
       padding: "1.5em",
     },
@@ -14,14 +14,13 @@ export const useStyles = makeStyles((theme) => ({
     },
   },
   container: {
-    marginTop: "2em",
-    marginBottom: "2em",
-    border: "1px solid #4f4218",
+    marginTop: "1em",
+    marginBottom: "1em",
   },
   title: {
     color: theme.palette.type === "light" ? "#000" : "#fff",
-    [theme.breakpoints.down("sm")]: {
-      fontSize: "2.4em",
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "2.8em",
     },
   },
   text: {

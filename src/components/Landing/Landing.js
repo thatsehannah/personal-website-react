@@ -1,14 +1,15 @@
 import React from "react";
 
 import Grid from "@material-ui/core/Grid";
+import Button from "@material-ui/core/Button";
+import DownloadIcon from "@material-ui/icons/GetApp";
 import Typography from "@material-ui/core/Typography";
 import Avatar from "@material-ui/core/Avatar";
 import { useTheme } from "@material-ui/core/styles";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 import { useStyles } from "./styles";
-import ehannah from "../../assets/images/wedding.jpeg";
-import SocialMedia from "../../containers/SocialMedia/SocialMedia";
+import ehannah from "../../assets/images/resumePhoto.jpg";
 
 const Landing = () => {
   const theme = useTheme();
@@ -58,9 +59,24 @@ const Landing = () => {
               Beat Maker <span className={classes.bulletPt}>•</span> Sneakerhead
             </Typography>
           </Grid>
-          <Grid item style={{ marginTop: !matchesSM ? "1em" : undefined }}>
-            <SocialMedia size={[61, 36, 23]} color={"#fff"} />
+          <Grid item>
+          <Grid container justify={matchesSM ? "center" : undefined}>
+              <Button
+                variant="contained"
+                className={classes.button}
+                component={"a"}
+                rel="noopener noreferrer"
+                target="_blank"
+                href="https://pdfhost.io/v/Ybgc1~k8P_ElliotCHannahResume.pdf"
+              >
+                <DownloadIcon />
+                <span style={{ marginLeft: "0.5em" }}>Download My Résumé</span>
+              </Button>
+            </Grid>
           </Grid>
+          {/* <Grid item style={{ marginTop: !matchesSM ? "1em" : undefined }}>
+            <SocialMedia size={[61, 36, 23]} color={"#fff"} />
+          </Grid> */}
         </Grid>
       </Grid>
     </Grid>

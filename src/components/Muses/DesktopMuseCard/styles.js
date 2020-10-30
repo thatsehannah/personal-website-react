@@ -11,6 +11,7 @@ export const useStyles = makeStyles((theme) => ({
     },
   },
   cardContent: {
+    backgroundColor: theme.palette.type === 'light' ? theme.palette.secondary.main : theme.palette.common.base,
     padding: 0,
     "&:last-child": {
       paddingBottom: 0,

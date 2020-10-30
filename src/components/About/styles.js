@@ -4,10 +4,14 @@ import aboutBackgroundLight from "../../assets/backgrounds/aboutBg.jpg";
 export const useStyles = makeStyles((theme) => ({
   aboutSection: {
     backgroundImage: `url(${aboutBackgroundLight})`,
+    height: "80em",
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
     padding: "2em",
+    [theme.breakpoints.down("md")]: {
+      height: "auto",
+    },
     [theme.breakpoints.down("sm")]: {
       padding: "1.5em",
     },
@@ -15,63 +19,62 @@ export const useStyles = makeStyles((theme) => ({
       padding: "1em",
     },
   },
-  textColumn: {
-    width: "45em",
-    [theme.breakpoints.down("md")]: {
-      width: "35em",
+  paper: {
+    width: "65%",
+    padding: "2em",
+    marginTop: "1em",
+    marginBottom: "1em",
+    borderRadius: "1em",
+    backgroundColor:
+      theme.palette.type === "light" ? "#fff" : theme.palette.secondary.dark,
+    [theme.breakpoints.down("lg")]: {
+      width: "auto",
+      backgroundColor: "rgba(0,0,0,0.74)",
     },
     [theme.breakpoints.down("sm")]: {
-      width: "100%",
+      padding: "1em",
+    },
+  },
+  sectionTitle: {
+    color: theme.palette.type === "light" ? "#000" : "#fff",
+    [theme.breakpoints.down("lg")]: {
+      color: "#fff",
+    },
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "2.8em",
     },
   },
   avatar: {
-    height: "15em",
+    height: "25em",
     width: "15em",
-    marginRight: "4em",
-    marginTop: "-2em",
-    
-  },
-  button: {
-    marginTop: "2em",
-    color: theme.palette.type === "light" ? "#fff" : "#000",
-    backgroundColor: theme.palette.primary.main,
-    height: "4em",
-    "&:hover": {
-      backgroundColor: theme.palette.primary.light,
-    },
-    [theme.breakpoints.down("sm")]: {
-      height: "4em",
-    },
-  },
-  text: {
-    color: theme.palette.type === "light" ? "#000" : "#fff",
-    [theme.breakpoints.down("sm")]: {
-      color: theme.palette.type === "light" ? "#fff" : null,
-    },
-  },
-  title: {
-    color: theme.palette.type === "light" ? "#000" : "#fff",
-    [theme.breakpoints.down("sm")]: {
-      color: theme.palette.type === "light" ? "#fff" : null,
-      fontSize: "1.8em",
+    [theme.breakpoints.down("xs")]: {
+      height: "20em",
+      width: "12em",
     },
   },
   aboutMeText: {
-    marginBottom: "1.5em",
     color: theme.palette.type === "light" ? "#000" : "#fff",
-    [theme.breakpoints.down("sm")]: {
-      color: theme.palette.type === "light" ? "#fff" : null,
+    [theme.breakpoints.down("lg")]: {
+      color: "#fff",
+    },
+  },
+  contactIcon: {
+    color: theme.palette.primary.main,
+    [theme.breakpoints.down("lg")]: {
+      color: "#d2be99",
+    },
+  },
+  contactText: {
+    color: theme.palette.type === "light" ? "#000" : "#fff",
+    [theme.breakpoints.down("lg")]: {
+      color: "#fff",
     },
   },
   email: {
     textDecoration: "none",
-    fontWeight: 700,
-    color: theme.palette.type === "light" ? "#000" : "#fff",
     "&:hover": {
       color: theme.palette.primary.light,
-    },
-    [theme.breakpoints.down("sm")]: {
-      color: theme.palette.type === "light" ? "#fff" : null,
+      textDecoration: "underline",
     },
   },
 }));

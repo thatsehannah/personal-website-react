@@ -36,7 +36,7 @@ const EducationSkills = (props) => {
               <Grid item>
                 <Grid
                   container
-                  className={classes.section}
+                  style={{ marginTop: "1em" }}
                   direction={matchesSM ? "column" : "row"}
                 >
                   <Grid item sm={matchesSM ? undefined : 4}>
@@ -104,7 +104,11 @@ const EducationSkills = (props) => {
                 </Grid>
               </Grid>
               <Grid item>
-                <Grid container direction={matchesSM ? "column" : "row"}>
+                <Grid
+                  container
+                  style={{ marginTop: "2em" }}
+                  direction={matchesSM ? "column" : "row"}
+                >
                   <Grid item sm={matchesSM ? undefined : 4}>
                     <Typography variant="h5">
                       <span className={classes.title}>Experience</span>
@@ -172,7 +176,7 @@ const EducationSkills = (props) => {
               <Grid item>
                 <Grid
                   container
-                  className={classes.section}
+                  style={{ marginTop: "2em" }}
                   direction={matchesSM ? "column" : "row"}
                 >
                   <Grid item sm={matchesSM ? undefined : 4}>

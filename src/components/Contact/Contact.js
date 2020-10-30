@@ -19,6 +19,7 @@ const Contact = (props) => {
   const classes = useStyles(props);
   const theme = useTheme();
   const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
+  const matchesMD = useMediaQuery(theme.breakpoints.down("md"));
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -116,7 +117,15 @@ const Contact = (props) => {
 
   return (
     <Grid container justify="center" className={classes.contactSection}>
-      <Grid item xl={5} lg={5} style={{ marginTop: "1em" }}>
+      <Grid
+        item
+        xl={5}
+        lg={5}
+        style={{
+          marginTop: "1em",
+          marginBottom: matchesMD ? "2.5em" : undefined,
+        }}
+      >
         <Grid
           container
           direction="column"
@@ -141,7 +150,7 @@ const Contact = (props) => {
               </Grid>
               <Grid item>
                 <Typography
-                  variant="body1"
+                  variant="body2"
                   align="center"
                   component={"a"}
                   href="mailto:elliotchannah@outlook.com"

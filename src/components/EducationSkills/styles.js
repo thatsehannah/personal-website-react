@@ -3,7 +3,6 @@ import { makeStyles } from "@material-ui/core/styles";
 export const useStyles = makeStyles((theme) => ({
   educationSkillsSection: {
     backgroundColor: theme.palette.secondary.main,
-    width: "100%",
     padding: "2em",
     [theme.breakpoints.down("sm")]: {
       padding: "1.5em",
@@ -14,17 +13,20 @@ export const useStyles = makeStyles((theme) => ({
   },
   paper: {
     width: "75%",
-    marginTop: "2em",
-    marginBottom: "2em",
+    marginTop: "1em",
+    marginBottom: "1em",
     padding: "2em",
     backgroundColor:
       theme.palette.type === "light" ? "#fff" : theme.palette.secondary.dark,
     [theme.breakpoints.down("lg")]: {
       width: "auto",
     },
+    [theme.breakpoints.down("xs")]: {
+      padding: "1em",
+    },
   },
   section: {
-    marginTop: "2em",
+    marginTop: "1em",
   },
   item: {
     marginBottom: "1em",
