@@ -24,15 +24,28 @@ export const useStyles = makeStyles((theme) => ({
       color: theme.palette.type === "light" ? "#000" : "#fff",
     },
   },
+  inputLabelError: {
+    "&.focused": {
+      color: "#f44336",
+    },
+    "&.shrink": {
+      color: "#f44336",
+    },
+  },
   fieldset: {
     color: theme.palette.type === "light" ? "#000" : "#fff",
     fontWeight: 600,
     "&:hover $notchedOutline": {
-      borderColor: `${theme.palette.primary.light}`,
+      borderColor: theme.palette.primary.light,
     },
   },
   notchedOutline: {
     border: `2.5px solid ${theme.palette.primary.main}`,
+  },
+  fieldsetError: {
+    "&:hover $notchedOutline": {
+      borderColor: "#f44336",
+    },
   },
   statement: {
     fontSize: "2em",

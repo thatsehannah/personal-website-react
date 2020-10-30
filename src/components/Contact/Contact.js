@@ -199,6 +199,7 @@ const Contact = (props) => {
                   fullWidth={matchesSM}
                   className={classes.textField}
                   label="Email*"
+                  error={emailValid.length !== 0}
                   helperText={emailValid}
                   value={email}
                   onBlur={onBlur}
@@ -206,6 +207,7 @@ const Contact = (props) => {
                   InputLabelProps={{
                     classes: {
                       root: classes.inputLabel,
+                      error: classes.inputLabelError,
                       focused: "focused",
                       shrink: "shrink",
                     },
@@ -214,6 +216,7 @@ const Contact = (props) => {
                     classes: {
                       root: classes.fieldset,
                       notchedOutline: classes.notchedOutline,
+                      error: classes.fieldsetError,
                     },
                   }}
                   variant="outlined"
@@ -225,6 +228,7 @@ const Contact = (props) => {
                   fullWidth={matchesSM}
                   className={classes.textField}
                   label="Phone"
+                  error={phoneValid.length !== 0}
                   helperText={phoneValid}
                   value={phone}
                   onBlur={onBlur}
@@ -232,6 +236,7 @@ const Contact = (props) => {
                   InputLabelProps={{
                     classes: {
                       root: classes.inputLabel,
+                      error: classes.inputLabelError,
                       focused: "focused",
                       shrink: "shrink",
                     },
@@ -240,6 +245,7 @@ const Contact = (props) => {
                     classes: {
                       root: classes.fieldset,
                       notchedOutline: classes.notchedOutline,
+                      error: classes.fieldsetError,
                     },
                   }}
                   variant="outlined"
