@@ -23,4 +23,14 @@ export const useStyles = makeStyles((theme) => ({
       fontSize: "1.4em",
     },
   },
+  closeIcon: {
+    color: "#fff",
+    "&:hover": {
+      color: theme.palette.primary.light,
+    },
+    fontSize: "2rem",
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "1.4em",
+    },
+  },
 }));
