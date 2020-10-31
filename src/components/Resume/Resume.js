@@ -7,7 +7,7 @@ import { useTheme } from "@material-ui/core/styles";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 import { useStyles } from "./styles";
-import { education, work, skills } from "./eduWorkData";
+import { education, work, skills } from "./resumeData";
 import SkillBar from "react-skillbars";
 
 const EducationSkills = (props) => {

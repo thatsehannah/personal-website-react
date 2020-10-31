@@ -9,9 +9,11 @@ import IconButton from "@material-ui/core/IconButton";
 import CloseIcon from "@material-ui/icons/Close";
 
 import { useStyles } from "./styles";
+import logo from "../../../assets/logo.png";
 
 const Menu = (props) => {
   const classes = useStyles();
+
   return (
     <Modal
       open={props.openMenu}
@@ -34,20 +36,23 @@ const Menu = (props) => {
           alignItems="center"
           style={{ height: "100%", outline: "none" }}
         >
-          <Grid item>
-            <List disablePadding>
-              <ListItem
-                button
-                className={classes.button}
+          <Grid item style={{ marginTop: "-8em", marginBottom: "2em" }}>
+            <IconButton className={classes.logoIcon}>
+              <Grid
+                item
+                component={"img"}
+                src={logo}
+                className={classes.logo}
+                alt="logo"
                 onClick={() => {
                   props.setOpenMenu(false);
                   props.scrollToTop();
                 }}
-              >
-                <ListItemText disableTypography className={classes.listItem}>
-                  Home
-                </ListItemText>
-              </ListItem>
+              />
+            </IconButton>
+          </Grid>
+          <Grid item>
+            <List disablePadding>
               <ListItem
                 button
                 className={classes.button}
@@ -69,7 +74,7 @@ const Menu = (props) => {
                 }}
               >
                 <ListItemText disableTypography className={classes.listItem}>
-                  Education & Skills
+                  Résumé
                 </ListItemText>
               </ListItem>
               <ListItem

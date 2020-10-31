@@ -8,11 +8,11 @@ import DarkTheme from "./themes/DarkTheme";
 import Header from "./containers/Header/Header";
 import Landing from "./components/Landing/Landing";
 import About from "./components/About/About";
-import EducationSkills from "./components/EducationSkills/EducationSkills";
+import Resume from "./components/Resume/Resume";
 import Muses from "./components/Muses/Muses";
 import Contact from "./components/Contact/Contact";
 import Footer from "./containers/Footer/Footer";
-import ScrollUpButton from './containers/ScrollUpButton/ScrollUpButton'
+import ScrollUpButton from "./containers/ScrollUpButton/ScrollUpButton";
 
 const App = () => {
   const [theme, setTheme] = useState("light");
@@ -51,11 +51,11 @@ const App = () => {
       <Grid item id="landing">
         <Landing />
       </Grid>
-      <Grid item >
+      <Grid item>
         <About />
       </Grid>
       <Grid item id="education">
-        <EducationSkills />
+        <Resume />
       </Grid>
       <Grid item id="muses">
         <Muses />

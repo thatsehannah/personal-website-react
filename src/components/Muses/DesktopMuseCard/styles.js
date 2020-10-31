@@ -11,7 +11,10 @@ export const useStyles = makeStyles((theme) => ({
     },
   },
   cardContent: {
-    backgroundColor: theme.palette.type === 'light' ? theme.palette.secondary.main : theme.palette.common.base,
+    backgroundColor:
+      theme.palette.type === "light"
+        ? theme.palette.secondary.light
+        : theme.palette.common.base,
     padding: 0,
     "&:last-child": {
       paddingBottom: 0,
@@ -39,6 +42,9 @@ export const useStyles = makeStyles((theme) => ({
     height: "1.7em",
     width: "1.7em",
     color: theme.palette.primary.main,
+    "&:hover": {
+      color: theme.palette.primary.dark,
+    },
   },
   museText: {
     color: theme.palette.type === "light" ? "#000" : "#fff",

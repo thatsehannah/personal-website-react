@@ -8,6 +8,9 @@ export const useStyles = makeStyles((theme) => ({
   },
   circle: {
     backgroundColor: theme.palette.primary.main,
+    "&:hover": {
+      backgroundColor: theme.palette.primary.dark,
+    },
     borderRadius: "50%",
     height: "2em",
     width: "2em",

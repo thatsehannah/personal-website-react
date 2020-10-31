@@ -6,11 +6,17 @@ export const useStyles = makeStyles((theme) => ({
     "&:hover": {
       backgroundColor: "transparent",
     },
+    [theme.breakpoints.down('xs')]: {
+      marginRight: '0.2em'
+    }
   },
   icon: {
     color: (props) => props.color,
     height: (props) => props.size[0],
     width: (props) => props.size[0],
+    "&:hover": {
+      color: theme.palette.primary.dark,
+    },
     [theme.breakpoints.down("lg")]: {
       height: (props) => props.size[1],
       width: (props) => props.size[1],

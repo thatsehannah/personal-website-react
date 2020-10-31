@@ -33,7 +33,7 @@ export const useStyles = makeStyles((theme) => ({
     height: "5em",
     width: "20em",
     "&:hover": {
-      backgroundColor: theme.palette.primary.light,
+      backgroundColor: theme.palette.primary.dark,
     },
     [theme.breakpoints.down("sm")]: {
       height: "4em",

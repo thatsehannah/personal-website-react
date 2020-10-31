@@ -15,7 +15,9 @@ export const useStyles = makeStyles((theme) => ({
   },
   paper: {
     backgroundColor:
-      theme.palette.type === "light" ? theme.palette.secondary.main : theme.palette.secondary.dark,
+      theme.palette.type === "light"
+        ? theme.palette.secondary.main
+        : theme.palette.secondary.dark,
   },
   dividers: {
     backgroundColor: theme.palette.type === "light" ? "#888888" : "#fff",
@@ -47,6 +49,9 @@ export const useStyles = makeStyles((theme) => ({
     height: "1.5em",
     width: "1.5em",
     color: theme.palette.primary.main,
+    "&:hover": {
+      color: theme.palette.primary.dark,
+    },
   },
   description: {
     color: theme.palette.type === "light" ? "#000" : "#fff",

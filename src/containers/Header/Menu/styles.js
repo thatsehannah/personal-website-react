@@ -23,6 +23,15 @@ export const useStyles = makeStyles((theme) => ({
       fontSize: "1.4em",
     },
   },
+  logoIcon: {
+    "&:hover": {
+      backgroundColor: "transparent",
+    },
+  },
+  logo: {
+    height: "3em",
+    width: "3em",
+  },
   closeIcon: {
     color: "#fff",
     "&:hover": {
