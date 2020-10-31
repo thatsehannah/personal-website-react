@@ -67,16 +67,13 @@ const Landing = () => {
                 component={"a"}
                 rel="noopener noreferrer"
                 target="_blank"
-                href="https://pdfhost.io/v/Ybgc1~k8P_ElliotCHannahResume.pdf"
+                href="https://pdfhost.io/v/qam2LVSpS_ElliotCHannahResume.pdf"
               >
                 <DownloadIcon />
                 <span style={{ marginLeft: "0.5em" }}>Download My Résumé</span>
               </Button>
             </Grid>
           </Grid>
-          {/* <Grid item style={{ marginTop: !matchesSM ? "1em" : undefined }}>
-            <SocialMedia size={[61, 36, 23]} color={"#fff"} />
-          </Grid> */}
         </Grid>
       </Grid>
     </Grid>
