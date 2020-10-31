@@ -12,6 +12,7 @@ import EducationSkills from "./components/EducationSkills/EducationSkills";
 import Muses from "./components/Muses/Muses";
 import Contact from "./components/Contact/Contact";
 import Footer from "./containers/Footer/Footer";
+import ScrollUpButton from './containers/ScrollUpButton/ScrollUpButton'
 
 const App = () => {
   const [theme, setTheme] = useState("light");
@@ -45,6 +46,7 @@ const App = () => {
 
   return (
     <ThemeProvider theme={theme === "light" ? LightTheme : DarkTheme}>
+      <ScrollUpButton />
       <Header toggler={toggleTheme} />
       <Grid item id="landing">
         <Landing />

@@ -1,25 +1,15 @@
 import React from "react";
-import smoothScroll from "smoothscroll-polyfill";
 
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
-import IconButton from "@material-ui/core/IconButton";
-import ArrowDropUpIcon from "@material-ui/icons/ArrowDropUp";
 import { useTheme } from "@material-ui/core/styles";
 
 import { useStyles } from "./styles";
 import SocialMedia from "../SocialMedia/SocialMedia";
 
-const Footer = (props) => {
+const Footer = () => {
   const classes = useStyles();
   const theme = useTheme();
-
-  const scrollToTop = () => {
-    smoothScroll.polyfill();
-    setTimeout(() => {
-      window.scroll({ top: 0, left: 0, behavior: "smooth" });
-    }, 300);
-  };
 
   return (
     <footer className={classes.footer}>
@@ -30,18 +20,6 @@ const Footer = (props) => {
         justify="center"
         alignItems="center"
       >
-        <Grid item className={classes.scrollUpItem}>
-          <IconButton
-            disableRipple
-            disableTouchRipple
-            onClick={scrollToTop}
-            className={classes.iconButton}
-          >
-            <Grid item className={classes.circle}>
-              <ArrowDropUpIcon className={classes.scrollUpIcon} />
-            </Grid>
-          </IconButton>
-        </Grid>
         <Grid item>
           <Grid container direction="column">
             <Grid item>
