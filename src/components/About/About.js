@@ -28,7 +28,10 @@ const About = (props) => {
   const matchesLG = useMediaQuery(theme.breakpoints.down("lg"));
 
   const checkAboutScrollInView = () => {
-    
+    if (window.pageYOffset === 0) {
+      setInView(false);
+    }
+
     if (matchesXS) {
       if (!inView && window.pageYOffset > 200) {
         setInView(true);

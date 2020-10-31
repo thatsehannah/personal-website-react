@@ -16,7 +16,7 @@ export const useStyles = makeStyles((theme) => ({
   paper: {
     backgroundColor:
       theme.palette.type === "light"
-        ? theme.palette.secondary.main
+        ? theme.palette.secondary.light
         : theme.palette.secondary.dark,
   },
   dividers: {

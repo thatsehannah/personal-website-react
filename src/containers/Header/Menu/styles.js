@@ -12,7 +12,7 @@ export const useStyles = makeStyles((theme) => ({
   listItem: {
     color: "#fff",
     "&:hover": {
-      color: theme.palette.primary.light,
+      color: theme.palette.primary.dark,
     },
     fontSize: "2rem",
     fontWeight: "600",
@@ -32,10 +32,15 @@ export const useStyles = makeStyles((theme) => ({
     height: "3em",
     width: "3em",
   },
+  closeIconButton: {
+    "&:hover": {
+      backgroundColor: "transparent",
+    },
+  },
   closeIcon: {
     color: "#fff",
     "&:hover": {
-      color: theme.palette.primary.light,
+      color: theme.palette.primary.dark,
     },
     fontSize: "2rem",
     [theme.breakpoints.down("sm")]: {

@@ -30,10 +30,10 @@ export const muses = [
     title: "Technology",
     pic: { url: technology, title: "Apple products" },
     description:
-      "One of the biggest reasons why I wanted to become a developer is because of the ever-evolving capabilities of technology. Technology is without a doubt one of the most significant entities in our modern lives. I've always been attracted to how the IoT, such as computers, mobile phones, work behind the scenes. That solely drove me to learn how to code and want to continue to be hands-on with the growing world of tech.",
+      "One of the biggest reasons why I wanted to become a developer is because of the ever-evolving capabilities of technology. Technology is without a doubt one of the most significant entities in our modern lives. I've always been attracted to how the IoT, such as computers and mobile phones, work behind the scenes. That solely drove me to learn how to code and want to continue to be hands-on with the growing world of tech.",
   },
   {
-    title: "I ♥️ LA",
+    title: "I ♥️ L.A.",
     pic: { url: overlook, title: "Overlook of Los Angeles" },
     description:
       "Besides the nice weather, the Lakers, landscape, etc., the main thing I love about L.A. is that it helped me culminate a new definition of \"success\". I have developed a different outlook on it since moving here and I am more determined to be successful in my career. Even though it is a bit expensive to live in L.A., it is definitely a place I can see myself my settling and raising a family.",
@@ -42,7 +42,7 @@ export const muses = [
     title: "Nipsey Hussle",
     pic: { url: nipsey, title: "Nipsey Hussle" },
     description:
-      "I started listening to Nipsey's music when my fiancée and I moved to L.A in Fall 2018. It helped ease my anxiety of moving here in the fashion we did and also helped me become more comfortable to call this place \"home\". Nipsey helped me see L.A. in a different light from what I saw on television. He also inspired me to stay dedicated to reach my goals and to keep striving because my hard work WILL pay off in the long run. Thank you Nipsey, The Marathon Continues. Gone too soon.",
+      "I became a fan of Nipsey Hussle when my fiancée and I moved to L.A in Fall 2018. His music helped ease my anxiety of moving here in the fashion we did and also helped me become more comfortable to call this place \"home\". Nipsey helped me see L.A. in a different light from what I saw on television. He also inspired me to stay dedicated to reach my goals and to keep striving because my hard work WILL pay off in the long run. Thank you Nipsey, The Marathon Continues 🕊.",
   },
   {
     title: "Music",

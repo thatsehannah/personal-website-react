@@ -24,7 +24,7 @@ const Menu = (props) => {
       <>
         <Grid container>
           <Grid item>
-            <IconButton onClick={() => props.setOpenMenu(false)}>
+            <IconButton className={classes.closeIconButton} onClick={() => props.setOpenMenu(false)}>
               <CloseIcon className={classes.closeIcon} />
             </IconButton>
           </Grid>
