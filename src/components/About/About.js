@@ -131,7 +131,7 @@ const About = (props) => {
                           first got a taste of being a full stack developer.
                           After a brief stint in Bentonville, I was relocated to
                           Los Angeles for a different project, and I've been
-                          here ever since (and I love it here, by the way!).
+                          here ever since!.
                         </Typography>
                         <Typography
                           align="center"
