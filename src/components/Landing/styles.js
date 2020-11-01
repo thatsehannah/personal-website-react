@@ -30,14 +30,15 @@ export const useStyles = makeStyles((theme) => ({
     marginTop: "2em",
     color: theme.palette.type === "light" ? "#fff" : "#000",
     backgroundColor: theme.palette.primary.main,
-    height: "5em",
+    height: "4em",
     width: "20em",
     "&:hover": {
       backgroundColor: theme.palette.primary.dark,
     },
-    [theme.breakpoints.down("sm")]: {
-      height: "4em",
-    },
+    [theme.breakpoints.down('xs')]: {
+      fontSize: '0.65em',
+      height: '5em'
+    }
   },
   name: {
     color: "#fff",

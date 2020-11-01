@@ -97,7 +97,7 @@ const About = (props) => {
                       <Grid
                         item
                         style={{
-                          width: matchesMD ? "auto" : "75%",
+                          width: matchesXS ? "auto" : matchesMD ? "90%" : "75%",
                         }}
                       >
                         <Typography
@@ -252,7 +252,7 @@ const About = (props) => {
                           <Grid item>
                             <Grid container direction="column">
                               <SocialMedia
-                                size={[35, 40, 30]}
+                                size={[35, 40, 25]}
                                 color={
                                   matchesLG
                                     ? "#d2be99"

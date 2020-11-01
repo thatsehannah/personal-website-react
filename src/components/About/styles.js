@@ -20,7 +20,7 @@ export const useStyles = makeStyles((theme) => ({
     },
   },
   paper: {
-    width: "65%",
+    width: "70%",
     padding: "2em",
     marginTop: "1em",
     marginBottom: "1em",
