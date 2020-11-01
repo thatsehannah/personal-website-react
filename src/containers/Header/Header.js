@@ -3,6 +3,7 @@ import smoothScroll from "smoothscroll-polyfill";
 
 import useScrollTrigger from "@material-ui/core/useScrollTrigger";
 import AppBar from "@material-ui/core/AppBar";
+import Tooltip from "@material-ui/core/Tooltip";
 import Toolbar from "@material-ui/core/Toolbar";
 import IconButton from "@material-ui/core/IconButton";
 import Grid from "@material-ui/core/Grid";
@@ -66,29 +67,32 @@ const Header = (props) => {
               justify="space-between"
             >
               <Grid item>
-                <IconButton
-                  className={classes.button}
-                  onClick={() => setOpenMenu(true)}
-                  disableRipple
-                  disableTouchRipple
-                >
-                  <MenuIcon className={classes.appBarIcon} />
-                </IconButton>
+                <Tooltip title="Menu">
+                  <IconButton
+                    className={classes.button}
+                    onClick={() => setOpenMenu(true)}
+                    disableRipple
+                    disableTouchRipple
+                  >
+                    <MenuIcon className={classes.appBarIcon} />
+                  </IconButton>
+                </Tooltip>
               </Grid>
-
               <Grid item>
-                <IconButton
-                  onClick={toggleModeHandler}
-                  disableRipple
-                  disableTouchRipple
-                  className={classes.button}
-                >
-                  {theme.palette.type === "light" ? (
-                    <LightModeIcon className={classes.appBarIcon} />
-                  ) : (
-                    <DarkModeIcon className={classes.appBarIcon} />
-                  )}
-                </IconButton>
+                <Tooltip title="Toggle light/dark mode">
+                  <IconButton
+                    onClick={toggleModeHandler}
+                    disableRipple
+                    disableTouchRipple
+                    className={classes.button}
+                  >
+                    {theme.palette.type === "light" ? (
+                      <LightModeIcon className={classes.appBarIcon} />
+                    ) : (
+                      <DarkModeIcon className={classes.appBarIcon} />
+                    )}
+                  </IconButton>
+                </Tooltip>
               </Grid>
             </Grid>
           </Toolbar>

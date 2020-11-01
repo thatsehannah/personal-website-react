@@ -41,7 +41,7 @@ const About = (props) => {
         setInView(true);
       }
     } else {
-      if (!inView && window.pageYOffset > 700) {
+      if (!inView && window.pageYOffset > 600) {
         setInView(true);
       }
     }

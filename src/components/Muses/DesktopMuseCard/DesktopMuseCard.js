@@ -5,6 +5,7 @@ import Typography from "@material-ui/core/Typography";
 import Card from "@material-ui/core/Card";
 import CardMedia from "@material-ui/core/CardMedia";
 import CardContent from "@material-ui/core/CardContent";
+import Tooltip from "@material-ui/core/Tooltip";
 
 import { useStyles } from "./styles";
 import { createSocialsIconItem } from "../../../utilities/createSocialsIconItem";
@@ -24,9 +25,7 @@ const MuseCard = (props) => {
         image={muse.pic.url}
         title={muse.pic.title}
       />
-      <CardContent
-        classes={{ root: classes.cardContent }}
-      >
+      <CardContent classes={{ root: classes.cardContent }}>
         <Grid
           container
           direction="column"
@@ -53,12 +52,14 @@ const MuseCard = (props) => {
           </Grid>
           {muse.socialMedia ? (
             <Grid item>
-              {createSocialsIconItem(
-                muse.socialMedia.icon,
-                muse.socialMedia.link,
-                classes.icon,
-                classes.button
-              )}
+              <Tooltip title={muse.socialMedia.tooltip}>
+                {createSocialsIconItem(
+                  muse.socialMedia.icon,
+                  muse.socialMedia.link,
+                  classes.icon,
+                  classes.button
+                )}
+              </Tooltip>
             </Grid>
           ) : null}
         </Grid>
