@@ -23,10 +23,10 @@ const SocialMedia = (props) => {
       icon: SiGithub,
       link: "https:///www.github.com/thatsehannah",
     },
-    // {
-    //   icon: SiSoundcloud,
-    //   link: "https://soundcloud.com/thatsehannah/tracks",
-    // },
+    {
+      icon: SiSoundcloud,
+      link: "https://soundcloud.com/thatsehannah/tracks",
+    },
     {
       icon: SiFacebook,
       link: "https:///wwww.facebook.com/ehannahiii",
