@@ -55,6 +55,9 @@ exports.sendMail = functions.https.onRequest((request, response) => {
              <p style="font-size: 16px">I appreciate your message and will respond at my earliest convenience. If you would like to get in contact with me, my email is <a href="mailto:elliotchannah@outlook.com">elliotchannah@outlook.com</a>. Again, thank you, please continue to stay safe, and I hope you have a blessed day!</p>
              <p style="font-size: 16px">Regards,</p>
              <p style="font-size: 16px">Elliot Hannah</p>
+             <p style="font-size: 12px">Full Stack Developer</p>
+             <hr />
+             <p style="font-size: 12px">Phone: <a href="tel:7066317005">(706) 631-7005</a></p>
             `,
     };
     transporter.sendMail(mailOptions);
