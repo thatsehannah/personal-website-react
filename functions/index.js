@@ -53,11 +53,13 @@ exports.sendMail = functions.https.onRequest((request, response) => {
       html: `<p style="font-size: 16px">Hey ${firstName},</p>
              <p style="font-size: 16px">Thank you for visiting my site! I worked hard on every aspect of it to showcase my true talents and passions. I hope you were impressed with everything and were able to learn something about me. This was a personal goal of mine and achieving this goal is a huge milestone for me. If you are a recruiter or hiring manager, I hope my site serves as insight to my coding abilities and propels me to becoming a potential team member to your organization.</p>
              <p style="font-size: 16px">I appreciate your message and will respond at my earliest convenience. If you would like to get in contact with me, my email is <a href="mailto:elliotchannah@outlook.com">elliotchannah@outlook.com</a>. Again, thank you, please continue to stay safe, and I hope you have a blessed day!</p>
-             <p style="font-size: 16px">Regards,</p>
-             <p style="font-size: 16px">Elliot Hannah</p>
-             <p style="font-size: 12px">Full Stack Developer</p>
+             <p style="font-size: 16px;">Regards,</p>
+             <br/>
+             <p style="font-size: 16px;">Elliot C. Hannah</p>
+             <p style="font-size: 12px; margin-top: -10px;">Full Stack Developer</p>
              <hr />
-             <p style="font-size: 12px">Phone: <a href="tel:7066317005">(706) 631-7005</a></p>
+             <p style="font-size: 12px;"><strong>Phone: </strong><a href="tel:7066317005">(706) 631-7005</a></p>
+             <p style="font-size: 12px; margin-top: -5px;"><strong>Email: </strong><a href="mailto:elliotchannah@outlook.com">elliotchannah@outlook.com</a></p>
             `,
     };
     transporter.sendMail(mailOptions);
