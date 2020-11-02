@@ -17,11 +17,11 @@ const Landing = () => {
   const classes = useStyles();
   const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
 
-  const [inView, setInView] = useState(false);
+  const [isPageLoaded, setIsPageLoaded] = useState(false);
 
   useEffect(() => {
     if (window.pageYOffset >= 0) {
-      setInView(true);
+      setIsPageLoaded(true);
     }
   }, []);
 
@@ -32,15 +32,15 @@ const Landing = () => {
       alignItems="center"
       className={classes.landingSection}
     >
-      <Fade in={inView} timeout={2000}>
-        <Grid item>
-          <Grid
-            container
-            alignItems="center"
-            justify={matchesSM ? "center" : undefined}
-            direction="column"
-            className={classes.intro}
-          >
+      <Grid item>
+        <Grid
+          container
+          alignItems="center"
+          justify={matchesSM ? "center" : undefined}
+          direction="column"
+          className={classes.intro}
+        >
+          <Fade in={isPageLoaded} timeout={1000}>
             <Grid item>
               <Avatar
                 src={ehannah}
@@ -48,48 +48,46 @@ const Landing = () => {
                 className={classes.avatar}
               />
             </Grid>
-            <Grid item>
-              <Typography
-                variant="h1"
-                align="center"
-                gutterBottom
-                className={classes.name}
+          </Fade>
+
+          <Grid item>
+            <Typography
+              variant="h1"
+              align="center"
+              gutterBottom
+              className={classes.name}
+            >
+              Elliot C. Hannah III
+            </Typography>
+          </Grid>
+          <Grid item>
+            <Typography
+              variant="h3"
+              align="center"
+              gutterBottom
+              className={classes.statement}
+            >
+              Full Stack Developer <span className={classes.bulletPt}>•</span>{" "}
+              Beat Maker <span className={classes.bulletPt}>•</span> Sneakerhead
+            </Typography>
+          </Grid>
+          <Grid item>
+            <Grid container justify={matchesSM ? "center" : undefined}>
+              <Button
+                variant="contained"
+                className={classes.button}
+                component={"a"}
+                rel="noopener noreferrer"
+                target="_blank"
+                href="https://pdfhost.io/v/qam2LVSpS_ElliotCHannahResume.pdf"
               >
-                Elliot C. Hannah III
-              </Typography>
-            </Grid>
-            <Grid item>
-              <Typography
-                variant="h3"
-                align="center"
-                gutterBottom
-                className={classes.statement}
-              >
-                Full Stack Developer <span className={classes.bulletPt}>•</span>{" "}
-                Beat Maker <span className={classes.bulletPt}>•</span>{" "}
-                Sneakerhead
-              </Typography>
-            </Grid>
-            <Grid item>
-              <Grid container justify={matchesSM ? "center" : undefined}>
-                <Button
-                  variant="contained"
-                  className={classes.button}
-                  component={"a"}
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  href="https://pdfhost.io/v/qam2LVSpS_ElliotCHannahResume.pdf"
-                >
-                  <DownloadIcon />
-                  <span style={{ marginLeft: "0.5em" }}>
-                    Download My Résumé
-                  </span>
-                </Button>
-              </Grid>
+                <DownloadIcon />
+                <span style={{ marginLeft: "0.5em" }}>Download My Résumé</span>
+              </Button>
             </Grid>
           </Grid>
         </Grid>
-      </Fade>
+      </Grid>
     </Grid>
   );
 };

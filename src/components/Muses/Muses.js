@@ -1,4 +1,5 @@
 import React from "react";
+import LazyLoad from "react-lazyload";
 
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
@@ -16,43 +17,45 @@ const Muses = (props) => {
   const matchesMD = useMediaQuery(theme.breakpoints.down("md"));
 
   return (
-    <Grid container className={classes.musesSection}>
-      <Grid item container direction="column" className={classes.container}>
-        <Grid item>
-          <Typography
-            align="center"
-            variant="h2"
-            gutterBottom
-            className={classes.title}
-          >
-            MUSES
-          </Typography>
-        </Grid>
-        <Grid item style={{ marginBottom: "1em" }}>
-          <Typography
-            align="center"
-            variant="subtitle1"
-            gutterBottom
-            className={classes.text}
-          >
-            These are a few things that I find inspiration in on the daily:
-          </Typography>
-        </Grid>
-        <Grid item>
-          <Grid container justify="center" alignItems="center">
-            {muses.map((muse) => (
-              <Grid item key={muse.title}>
-                {matchesMD ? (
-                  <MobileMuseCard muse={muse} />
-                ) : (
-                  <DesktopMuseCard muse={muse} />
-                )}
-              </Grid>
-            ))}
+    <LazyLoad offset={150}>
+      <Grid container className={classes.musesSection}>
+        <Grid item container direction="column" className={classes.container}>
+          <Grid item>
+            <Typography
+              align="center"
+              variant="h2"
+              gutterBottom
+              className={classes.title}
+            >
+              MUSES
+            </Typography>
+          </Grid>
+          <Grid item style={{ marginBottom: "1em" }}>
+            <Typography
+              align="center"
+              variant="subtitle1"
+              gutterBottom
+              className={classes.text}
+            >
+              These are a few things that I find inspiration in on the daily:
+            </Typography>
+          </Grid>
+          <Grid item>
+            <Grid container justify="center" alignItems="center">
+              {muses.map((muse) => (
+                <Grid item key={muse.title}>
+                  {matchesMD ? (
+                    <MobileMuseCard muse={muse} />
+                  ) : (
+                    <DesktopMuseCard muse={muse} />
+                  )}
+                </Grid>
+              ))}
+            </Grid>
           </Grid>
         </Grid>
       </Grid>
-    </Grid>
+    </LazyLoad>
   );
 };
 

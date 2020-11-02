@@ -51,7 +51,7 @@ const App = () => {
       <Grid item id="landing">
         <Landing />
       </Grid>
-      <Grid item>
+      <Grid item id="about">
         <About />
       </Grid>
       <Grid item id="education">

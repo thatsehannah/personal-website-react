@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import LazyLoad from "react-lazyload";
 import axios from "axios";
 
 import { useTheme } from "@material-ui/core/styles";
@@ -116,215 +117,219 @@ const Contact = (props) => {
   );
 
   return (
-    <Grid container justify="center" className={classes.contactSection}>
-      <Grid
-        item
-        xl={5}
-        lg={5}
-        style={{
-          marginTop: "1em",
-          marginBottom: matchesMD ? "2.5em" : undefined,
-        }}
-      >
+    <LazyLoad offset={150}>
+      <Grid container justify="center" className={classes.contactSection}>
         <Grid
-          container
-          direction="column"
-          alignItems="center"
-          style={{ width: matchesSM ? "100%" : "auto" }}
+          item
+          xl={5}
+          lg={5}
+          style={{
+            marginTop: "1em",
+            marginBottom: matchesMD ? "2.5em" : undefined,
+          }}
         >
-          <Grid item style={{ width: "90%" }}>
-            <Typography
-              align="center"
-              variant="h6"
-              gutterBottom
-              className={classes.statement}
-            >
-              Want to say hey? Send me a message via email or this form if you'd
-              like to get in contact with me. I'd love to hear from you!{" "}
-            </Typography>
-          </Grid>
-          <Grid item>
-            <Grid item container style={{ marginTop: "1.3em" }}>
-              <Grid item>
-                <MailOutlineIcon className={classes.mailIcon} />
-              </Grid>
-              <Grid item>
-                <Typography
-                  variant="body2"
-                  align="center"
-                  component={"a"}
-                  href="mailto:elliotchannah@outlook.com"
-                  target="_blank"
-                  className={classes.email}
-                >
-                  elliotchannah@outlook.com
-                </Typography>
+          <Grid
+            container
+            direction="column"
+            alignItems="center"
+            style={{ width: matchesSM ? "100%" : "auto" }}
+          >
+            <Grid item style={{ width: "90%" }}>
+              <Typography
+                align="center"
+                variant="h6"
+                gutterBottom
+                className={classes.statement}
+              >
+                Want to say hey? Send me a message via email or this form if
+                you'd like to get in contact with me. I'd love to hear from you!{" "}
+              </Typography>
+            </Grid>
+            <Grid item>
+              <Grid item container style={{ marginTop: "1.3em" }}>
+                <Grid item>
+                  <MailOutlineIcon className={classes.mailIcon} />
+                </Grid>
+                <Grid item>
+                  <Typography
+                    variant="body2"
+                    align="center"
+                    component={"a"}
+                    href="mailto:elliotchannah@outlook.com"
+                    target="_blank"
+                    className={classes.email}
+                  >
+                    elliotchannah@outlook.com
+                  </Typography>
+                </Grid>
               </Grid>
             </Grid>
-          </Grid>
-          <Grid item style={{ width: "90%" }}>
-            <Grid
-              container
-              style={{ width: "100%", marginTop: "2em" }}
-              direction="column"
-              alignItems="center"
-            >
-              <Grid container item justify="center">
-                <TextField
-                  fullWidth={matchesSM}
-                  className={classes.textField}
-                  label="Name*"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  InputLabelProps={{
-                    classes: {
-                      root: classes.inputLabel,
-                      focused: "focused",
-                      shrink: "shrink",
-                    },
-                  }}
-                  InputProps={{
-                    classes: {
-                      root: classes.fieldset,
-                      notchedOutline: classes.notchedOutline,
-                    },
-                  }}
-                  variant="outlined"
-                  id="name-field"
-                />
-              </Grid>
-              <Grid container item justify="center">
-                <TextField
-                  id="email-field"
-                  fullWidth={matchesSM}
-                  className={classes.textField}
-                  label="Email*"
-                  error={emailValid.length !== 0}
-                  helperText={emailValid}
-                  value={email}
-                  onBlur={onBlur}
-                  onChange={(e) => setEmail(e.target.value)}
-                  InputLabelProps={{
-                    classes: {
-                      root: classes.inputLabel,
-                      error: classes.inputLabelError,
-                      focused: "focused",
-                      shrink: "shrink",
-                    },
-                  }}
-                  InputProps={{
-                    classes: {
-                      root: classes.fieldset,
-                      notchedOutline: classes.notchedOutline,
-                      error: classes.fieldsetError,
-                    },
-                  }}
-                  variant="outlined"
-                />
-              </Grid>
-              <Grid container item justify="center">
-                <TextField
-                  id="phone-field"
-                  fullWidth={matchesSM}
-                  className={classes.textField}
-                  label="Phone"
-                  error={phoneValid.length !== 0}
-                  helperText={phoneValid}
-                  value={phone}
-                  onBlur={onBlur}
-                  onChange={(e) => setPhone(e.target.value)}
-                  InputLabelProps={{
-                    classes: {
-                      root: classes.inputLabel,
-                      error: classes.inputLabelError,
-                      focused: "focused",
-                      shrink: "shrink",
-                    },
-                  }}
-                  InputProps={{
-                    classes: {
-                      root: classes.fieldset,
-                      notchedOutline: classes.notchedOutline,
-                      error: classes.fieldsetError,
-                    },
-                  }}
-                  variant="outlined"
-                />
-              </Grid>
+            <Grid item style={{ width: "90%" }}>
               <Grid
                 container
-                item
-                style={{ marginTop: "2.6em" }}
-                justify="center"
+                style={{ width: "100%", marginTop: "2em" }}
+                direction="column"
+                alignItems="center"
               >
-                <TextField
-                  fullWidth={matchesSM}
-                  className={classes.textField}
-                  label="Message*"
-                  value={message}
-                  onChange={(e) => setMessage(e.target.value)}
-                  InputLabelProps={{
-                    classes: {
-                      root: classes.inputLabel,
-                      focused: "focused",
-                      shrink: "shrink",
-                    },
-                  }}
-                  InputProps={{
-                    classes: {
-                      root: classes.fieldset,
-                      notchedOutline: classes.notchedOutline,
-                    },
-                  }}
-                  multiline
-                  rows={12}
-                  variant="outlined"
-                  id="message-field"
-                />
-              </Grid>
-              <Grid
-                item
-                container
-                justify="center"
-                style={{ marginBottom: "2em" }}
-              >
-                <Button
-                  variant="contained"
-                  disabled={
-                    name.length === 0 ||
-                    email.length === 0 ||
-                    emailValid.length !== 0 ||
-                    phoneValid.length !== 0 ||
-                    message.length === 0
-                  }
-                  className={classes.button}
-                  onClick={onSendMessage}
+                <Grid container item justify="center">
+                  <TextField
+                    fullWidth={matchesSM}
+                    className={classes.textField}
+                    label="Name*"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    InputLabelProps={{
+                      classes: {
+                        root: classes.inputLabel,
+                        focused: "focused",
+                        shrink: "shrink",
+                      },
+                    }}
+                    InputProps={{
+                      classes: {
+                        root: classes.fieldset,
+                        notchedOutline: classes.notchedOutline,
+                      },
+                    }}
+                    variant="outlined"
+                    id="name-field"
+                  />
+                </Grid>
+                <Grid container item justify="center">
+                  <TextField
+                    id="email-field"
+                    fullWidth={matchesSM}
+                    className={classes.textField}
+                    label="Email*"
+                    error={emailValid.length !== 0}
+                    helperText={emailValid}
+                    value={email}
+                    onBlur={onBlur}
+                    onChange={(e) => setEmail(e.target.value)}
+                    InputLabelProps={{
+                      classes: {
+                        root: classes.inputLabel,
+                        error: classes.inputLabelError,
+                        focused: "focused",
+                        shrink: "shrink",
+                      },
+                    }}
+                    InputProps={{
+                      classes: {
+                        root: classes.fieldset,
+                        notchedOutline: classes.notchedOutline,
+                        error: classes.fieldsetError,
+                      },
+                    }}
+                    variant="outlined"
+                  />
+                </Grid>
+                <Grid container item justify="center">
+                  <TextField
+                    id="phone-field"
+                    fullWidth={matchesSM}
+                    className={classes.textField}
+                    label="Phone"
+                    error={phoneValid.length !== 0}
+                    helperText={phoneValid}
+                    value={phone}
+                    onBlur={onBlur}
+                    onChange={(e) => setPhone(e.target.value)}
+                    InputLabelProps={{
+                      classes: {
+                        root: classes.inputLabel,
+                        error: classes.inputLabelError,
+                        focused: "focused",
+                        shrink: "shrink",
+                      },
+                    }}
+                    InputProps={{
+                      classes: {
+                        root: classes.fieldset,
+                        notchedOutline: classes.notchedOutline,
+                        error: classes.fieldsetError,
+                      },
+                    }}
+                    variant="outlined"
+                  />
+                </Grid>
+                <Grid
+                  container
+                  item
+                  style={{ marginTop: "2.6em" }}
+                  justify="center"
                 >
-                  {loading ? (
-                    <CircularProgress className={classes.circularProgress} />
-                  ) : (
-                    sendButtonContent
-                  )}
-                </Button>
+                  <TextField
+                    fullWidth={matchesSM}
+                    className={classes.textField}
+                    label="Message*"
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                    InputLabelProps={{
+                      classes: {
+                        root: classes.inputLabel,
+                        focused: "focused",
+                        shrink: "shrink",
+                      },
+                    }}
+                    InputProps={{
+                      classes: {
+                        root: classes.fieldset,
+                        notchedOutline: classes.notchedOutline,
+                      },
+                    }}
+                    multiline
+                    rows={12}
+                    variant="outlined"
+                    id="message-field"
+                  />
+                </Grid>
+                <Grid
+                  item
+                  container
+                  justify="center"
+                  style={{ marginBottom: "2em" }}
+                >
+                  <Button
+                    variant="contained"
+                    disabled={
+                      name.length === 0 ||
+                      email.length === 0 ||
+                      emailValid.length !== 0 ||
+                      phoneValid.length !== 0 ||
+                      message.length === 0
+                    }
+                    className={classes.button}
+                    onClick={onSendMessage}
+                  >
+                    {loading ? (
+                      <CircularProgress className={classes.circularProgress} />
+                    ) : (
+                      sendButtonContent
+                    )}
+                  </Button>
+                </Grid>
               </Grid>
             </Grid>
           </Grid>
         </Grid>
+        <Hidden smDown>
+          <Grid item xl={7} lg={7}>
+            <Grid container className={classes.contactBg} />
+          </Grid>
+        </Hidden>
+        <Snackbar
+          open={snackBar.open}
+          message={snackBar.message}
+          ContentProps={{
+            style: { backgroundColor: snackBar.backgroundColor },
+          }}
+          anchorOrigin={{ vertical: "top", horizontal: "center" }}
+          onClose={() => setSnackBar({ ...snackBar, open: false })}
+          autoHideDuration={4500}
+        />
       </Grid>
-      <Hidden smDown>
-        <Grid item xl={7} lg={7}>
-          <Grid container className={classes.contactBg} />
-        </Grid>
-      </Hidden>
-      <Snackbar
-        open={snackBar.open}
-        message={snackBar.message}
-        ContentProps={{ style: { backgroundColor: snackBar.backgroundColor } }}
-        anchorOrigin={{ vertical: "top", horizontal: "center" }}
-        onClose={() => setSnackBar({ ...snackBar, open: false })}
-        autoHideDuration={4500}
-      />
-    </Grid>
+    </LazyLoad>
   );
 };
 

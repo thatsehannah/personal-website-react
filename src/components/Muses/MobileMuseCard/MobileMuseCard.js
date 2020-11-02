@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import FadeIn from "react-lazyload-fadein";
 
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
@@ -21,20 +22,25 @@ const MobileMuseCard = (props) => {
 
   return (
     <>
-      <Card
-        onClick={() => setOpenDialog(true)}
-        className={classes.museCard}
-      >
-        <CardMedia
-          className={classes.museImage}
-          component={"img"}
-          classes={{
-            root: classes.museImageResize,
-          }}
-          image={muse.pic.url}
-          title={muse.pic.title}
-        />
-      </Card>
+      <FadeIn
+        render={(onload) => (
+          <Card
+            onLoad={onload}
+            onClick={() => setOpenDialog(true)}
+            className={classes.museCard}
+          >
+            <CardMedia
+              className={classes.museImage}
+              component={"img"}
+              classes={{
+                root: classes.museImageResize,
+              }}
+              image={muse.pic.url}
+              title={muse.pic.title}
+            />
+          </Card>
+        )}
+      />
       <Dialog
         open={openDialog}
         disableBackdropClick
