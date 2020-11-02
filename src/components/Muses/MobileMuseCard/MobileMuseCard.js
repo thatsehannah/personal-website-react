@@ -23,6 +23,7 @@ const MobileMuseCard = (props) => {
   return (
     <>
       <FadeIn
+        duration={muse.fadeInDuration}
         render={(onload) => (
           <Card
             onLoad={onload}
